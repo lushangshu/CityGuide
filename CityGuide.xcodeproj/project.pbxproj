@@ -51,6 +51,7 @@
 		CC3547E11B4563EA00A9812B /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3547DD1B4563EA00A9812B /* TwitterCore.framework */; };
 		CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */; };
 		CC66AEAE1B46B7940002C846 /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC66AEAD1B46B7940002C846 /* city.png */; };
+		CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyActViewController.h; sourceTree = "<group>"; };
 		CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyActViewController.m; sourceTree = "<group>"; };
 		CC66AEAD1B46B7940002C846 /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
+		CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTimelineViewController.h; sourceTree = "<group>"; };
+		CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTimelineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 				CC3547D51B45409200A9812B /* PreferenceController.m */,
 				CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */,
 				CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */,
+				CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */,
+				CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */,
 				CC3547CB1B44E53200A9812B /* CollectionView Cells */,
 				CC35475B1B41D88B00A9812B /* Images.xcassets */,
 				CC3547CE1B44F47E00A9812B /* Main.storyboard */,
@@ -467,6 +472,7 @@
 				CC3547BA1B44E46D00A9812B /* InstagramEngine.m in Sources */,
 				CC3547991B44E33800A9812B /* AFHTTPRequestOperation.m in Sources */,
 				CC35479C1B44E33800A9812B /* AFNetworkReachabilityManager.m in Sources */,
+				CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */,
 				CC3547A11B44E33800A9812B /* AFURLSessionManager.m in Sources */,
 				CC35479F1B44E33800A9812B /* AFURLRequestSerialization.m in Sources */,
 				CC3547511B41D88B00A9812B /* AppDelegate.m in Sources */,
