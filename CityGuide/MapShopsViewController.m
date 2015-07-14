@@ -19,6 +19,16 @@
     // Map View
     MKMapView *mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
     mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    CLLocationCoordinate2D noLocation;
+    MKCoordinateRegion viewRegion;
+    viewRegion.center.latitude = 53.38;
+    viewRegion.center.longitude = -1.46;
+    viewRegion.span.latitudeDelta = 0.112872;
+    viewRegion.span.longitudeDelta = 0.109863;
+    //= MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
+    MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion];
+    [mapView setRegion:adjustedRegion animated:YES];
+    mapView.showsUserLocation = YES;
     mapView.delegate = self;
     [self.view addSubview:mapView];
     
@@ -35,7 +45,7 @@
     empire.image = [UIImage imageNamed:@"empire.jpg"];
     empire.title = @"Empire State Building";
     empire.subtitle = @"NYC Landmark";
-    empire.coordinate = CLLocationCoordinate2DMake(40.75, -73.99);
+    empire.coordinate = CLLocationCoordinate2DMake(53.38, -1.46);
     empire.disclosureBlock = ^{ NSLog(@"selected Empire"); };
     
     [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:empire]];
@@ -45,7 +55,7 @@
     apple.image = [UIImage imageNamed:@"apple.jpg"];
     apple.title = @"Apple HQ";
     apple.subtitle = @"Apple Headquarters";
-    apple.coordinate = CLLocationCoordinate2DMake(37.33, -122.03);
+    apple.coordinate = CLLocationCoordinate2DMake(53.38, -1.47);
     apple.disclosureBlock = ^{ NSLog(@"selected Appple"); };
     
     [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:apple]];
@@ -55,7 +65,7 @@
     ottawa.image = [UIImage imageNamed:@"ottawa.jpg"];
     ottawa.title = @"Parliament of Canada";
     ottawa.subtitle = @"Oh Canada!";
-    ottawa.coordinate = CLLocationCoordinate2DMake(45.43, -75.70);
+    ottawa.coordinate = CLLocationCoordinate2DMake(53.39, -1.48);
     ottawa.disclosureBlock = ^{ NSLog(@"selected Ottawa"); };
     
     [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:ottawa]];
