@@ -152,13 +152,23 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gxn-IF-h0W">
-                                <rect key="frame" x="186" y="481" width="105" height="30"/>
+                                <rect key="frame" x="210" y="480" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="map navigation">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="60J-mc-uXA" kind="modal" id="Fsf-uJ-DTe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MoL-6J-kp9">
+                                <rect key="frame" x="16" y="481" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create Route">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tTh-5l-5ci" kind="modal" id="3wZ-QY-4Lm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -176,6 +186,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ez-J5-iN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="596" y="-321"/>
+        </scene>
+        <!--Map Shops View Controller-->
+        <scene sceneID="dkk-ed-t4B">
+            <objects>
+                <viewController id="tTh-5l-5ci" customClass="MapShopsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qBJ-Zx-hKk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qt3-tU-hhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-1063"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tTW-GN-wKN">
@@ -308,7 +332,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfw-i6-ycm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1379" y="-321"/>
+            <point key="canvasLocation" x="1521" y="-321"/>
         </scene>
         <!--Route-->
         <scene sceneID="cPV-vm-BZV">
@@ -338,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9C-10-HVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829" y="-321"/>
+            <point key="canvasLocation" x="1957" y="-315"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="82J-vT-fRB">
@@ -354,7 +378,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xt-x4-vJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="-321"/>
+            <point key="canvasLocation" x="1087" y="-321"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zLd-83-epK">
@@ -569,6 +593,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ePC-oJ-Lmu"/>
+        <segue reference="fJW-rb-oU8"/>
     </inferredMetricsTieBreakers>
 </document>

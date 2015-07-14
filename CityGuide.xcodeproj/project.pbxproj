@@ -52,6 +52,13 @@
 		CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */; };
 		CC66AEAE1B46B7940002C846 /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC66AEAD1B46B7940002C846 /* city.png */; };
 		CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */; };
+		CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */; };
+		CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */; };
+		CCF3CA181B55CC69007EF470 /* JPSThumbnailAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA151B55CC69007EF470 /* JPSThumbnailAnnotationView.m */; };
+		CCF3CA191B55CC69007EF470 /* JPSThumnail.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA161B55CC69007EF470 /* JPSThumnail.m */; };
+		CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1A1B55CCC5007EF470 /* apple.jpg */; };
+		CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1B1B55CCC5007EF470 /* empire.jpg */; };
+		CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +150,17 @@
 		CC66AEAD1B46B7940002C846 /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
 		CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTimelineViewController.h; sourceTree = "<group>"; };
 		CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTimelineViewController.m; sourceTree = "<group>"; };
+		CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapShopsViewController.h; sourceTree = "<group>"; };
+		CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapShopsViewController.m; sourceTree = "<group>"; };
+		CCF3CA111B55CC69007EF470 /* JPSThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSThumbnail.h; sourceTree = "<group>"; };
+		CCF3CA121B55CC69007EF470 /* JPSThumbnailAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSThumbnailAnnotation.h; sourceTree = "<group>"; };
+		CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSThumbnailAnnotation.m; sourceTree = "<group>"; };
+		CCF3CA141B55CC69007EF470 /* JPSThumbnailAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSThumbnailAnnotationView.h; sourceTree = "<group>"; };
+		CCF3CA151B55CC69007EF470 /* JPSThumbnailAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSThumbnailAnnotationView.m; sourceTree = "<group>"; };
+		CCF3CA161B55CC69007EF470 /* JPSThumnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSThumnail.m; sourceTree = "<group>"; };
+		CCF3CA1A1B55CCC5007EF470 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
+		CCF3CA1B1B55CCC5007EF470 /* empire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empire.jpg; sourceTree = "<group>"; };
+		CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ottawa.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +211,7 @@
 		CC35474A1B41D88B00A9812B /* CityGuide */ = {
 			isa = PBXGroup;
 			children = (
+				CCF3CA101B55CC69007EF470 /* JPSThumbnailAnnotation */,
 				CC3547A61B44E46D00A9812B /* InstagramKit */,
 				CC3547831B44E33800A9812B /* AFNetworking */,
 				CC35474F1B41D88B00A9812B /* AppDelegate.h */,
@@ -209,6 +228,8 @@
 				CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */,
 				CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */,
 				CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */,
+				CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */,
+				CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */,
 				CC3547CB1B44E53200A9812B /* CollectionView Cells */,
 				CC35475B1B41D88B00A9812B /* Images.xcassets */,
 				CC3547CE1B44F47E00A9812B /* Main.storyboard */,
@@ -223,6 +244,9 @@
 		CC35474B1B41D88B00A9812B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCF3CA1A1B55CCC5007EF470 /* apple.jpg */,
+				CCF3CA1B1B55CCC5007EF470 /* empire.jpg */,
+				CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */,
 				CC66AEAD1B46B7940002C846 /* city.png */,
 				CC3547D71B4545FF00A9812B /* map.png */,
 				CC35474C1B41D88B00A9812B /* Info.plist */,
@@ -344,6 +368,19 @@
 			name = "CollectionView Cells";
 			sourceTree = "<group>";
 		};
+		CCF3CA101B55CC69007EF470 /* JPSThumbnailAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				CCF3CA111B55CC69007EF470 /* JPSThumbnail.h */,
+				CCF3CA121B55CC69007EF470 /* JPSThumbnailAnnotation.h */,
+				CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */,
+				CCF3CA141B55CC69007EF470 /* JPSThumbnailAnnotationView.h */,
+				CCF3CA151B55CC69007EF470 /* JPSThumbnailAnnotationView.m */,
+				CCF3CA161B55CC69007EF470 /* JPSThumnail.m */,
+			);
+			path = JPSThumbnailAnnotation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -427,7 +464,10 @@
 			files = (
 				CC3547D81B4545FF00A9812B /* map.png in Resources */,
 				CC3547D01B44F47E00A9812B /* Main.storyboard in Resources */,
+				CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */,
 				CC66AEAE1B46B7940002C846 /* city.png in Resources */,
+				CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */,
+				CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */,
 				CC35475F1B41D88B00A9812B /* LaunchScreen.xib in Resources */,
 				CC35475C1B41D88B00A9812B /* Images.xcassets in Resources */,
 				CC3547E01B4563EA00A9812B /* TwitterKitResources.bundle in Resources */,
@@ -482,16 +522,20 @@
 				CC3547BB1B44E46D00A9812B /* InstagramComment.m in Sources */,
 				CC3547C11B44E46D00A9812B /* InstagramUser.m in Sources */,
 				CC3547801B42290D00A9812B /* MapViewController.m in Sources */,
+				CCF3CA191B55CC69007EF470 /* JPSThumnail.m in Sources */,
 				CC35479A1B44E33800A9812B /* AFHTTPRequestOperationManager.m in Sources */,
+				CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */,
 				CC3547C41B44E4DC00A9812B /* IKCell.m in Sources */,
 				CC35479D1B44E33800A9812B /* AFSecurityPolicy.m in Sources */,
 				CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */,
+				CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */,
 				CC3547D61B45409200A9812B /* PreferenceController.m in Sources */,
 				CC3547D31B44F60A00A9812B /* IKCollectionViewController.m in Sources */,
 				CC3547571B41D88B00A9812B /* ViewController.m in Sources */,
 				CC35474E1B41D88B00A9812B /* main.m in Sources */,
 				CC3547BD1B44E46D00A9812B /* InstagramMedia.m in Sources */,
 				CC3547CA1B44E52500A9812B /* IKMediaCell.m in Sources */,
+				CCF3CA181B55CC69007EF470 /* JPSThumbnailAnnotationView.m in Sources */,
 				CC35479B1B44E33800A9812B /* AFHTTPSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
