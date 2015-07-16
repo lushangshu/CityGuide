@@ -23,7 +23,7 @@
 -(void) YelpAPIShopsJSON
 {
     NSString *defaultTerm = @"dinner";
-    NSString *defaultLocation = @"San Francisco, CA";
+    NSString *defaultLocation = @"Sheffield, UK";
     
     //Get the term and location from the command line if there were any, otherwise assign default values.
     NSString *term = [[NSUserDefaults standardUserDefaults] valueForKey:@"term"] ?: defaultTerm;
@@ -40,6 +40,7 @@
             NSLog(@"An error happened during the request: %@", error);
         } else if (topBusinessJSON) {
             NSLog(@"Top business info: \n %@", topBusinessJSON);
+            [self.txtView setText:[topBusinessJSON description]];
         } else {
             NSLog(@"No business was found");
         }

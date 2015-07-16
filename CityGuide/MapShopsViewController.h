@@ -10,5 +10,5 @@
 #import <MapKit/MapKit.h>
 
 @interface MapShopsViewController : UIViewController <MKMapViewDelegate>
-@property (nonatomic,strong) IBOutlet UITextView *txtView;
+@property (nonatomic,strong) IBOutlet UILabel *txtView;
 @end
