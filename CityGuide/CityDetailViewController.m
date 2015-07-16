@@ -1,29 +1,22 @@
 //
-//  NearbyActViewController.m
+//  CityDetailViewController.m
 //  CityGuide
 //
-//  Created by lushangshu on 15-7-3.
+//  Created by lushangshu on 15-7-16.
 //  Copyright (c) 2015年 lushangshu. All rights reserved.
 //
 
-#import "NearbyActViewController.h"
-#import <TwitterKit/TwitterKit.h>
+#import "CityDetailViewController.h"
 
-@interface NearbyActViewController ()
+@interface CityDetailViewController ()
 
 @end
 
-@implementation NearbyActViewController
+@implementation CityDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[Twitter sharedInstance] logInGuestWithCompletion:^(TWTRGuestSession *guestSession, NSError *error) {
-        [[[Twitter sharedInstance] APIClient] loadTweetWithID:@"20" completion:^(TWTRTweet *tweet, NSError *error) {
-            TWTRTweetView *tweetView = [[TWTRTweetView alloc] initWithTweet:tweet style:TWTRTweetViewStyleRegular];
-            [self.view addSubview:tweetView];
-        }];
-    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +33,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 #pragma mark - SlideNavigationController Methods -
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu
@@ -52,5 +44,6 @@
 {
     return YES;
 }
+
 
 @end

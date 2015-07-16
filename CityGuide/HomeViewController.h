@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 lushangshu. All rights reserved.
 //
 
-
+#import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
 #import "SlideNavigationController.h"
 
-@interface HomeViewController : UIViewController <SlideNavigationControllerDelegate>
+@interface HomeViewController : UIViewController <UISearchBarDelegate, MKMapViewDelegate,SlideNavigationControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UISwitch *limitPanGestureSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *slideOutAnimationSwitch;
@@ -19,6 +19,9 @@
 @property (nonatomic, strong) IBOutlet UISegmentedControl *portraitSlideOffsetSegment;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *landscapeSlideOffsetSegment;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+
+@property (strong,nonatomic) IBOutlet UISearchBar *mySearch;
+@property (strong,nonatomic) IBOutlet MKMapView *myMapView;
 
 - (IBAction)bounceMenu:(id)sender;
 - (IBAction)slideOutAnimationSwitchChanged:(id)sender;

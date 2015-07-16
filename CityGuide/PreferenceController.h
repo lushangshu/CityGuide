@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SlideNavigationController.h"
 
-@interface PreferenceController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PreferenceController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate,SlideNavigationControllerDelegate>
 
 
 @end

@@ -21,16 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    //loginButton.center = self.view.center;
-    [loginButton setFrame:CGRectMake(85, 190, 180, 70)];
-    [self.view addSubview:loginButton];
-    TWTRLogInButton *logInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession *session, NSError *error) {
-        // play with Twitter session
-    }];
-    //[logInButton setFrame:CGRectMake(85, 265, 180, 70)];
-    logInButton.center = self.view.center;
-    [self.view addSubview:logInButton];
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    //loginButton.center = self.view.center;
+//    [loginButton setFrame:CGRectMake(85, 190, 180, 70)];
+//    [self.view addSubview:loginButton];
+//    TWTRLogInButton *logInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession *session, NSError *error) {
+//        // play with Twitter session
+//    }];
+//    //[logInButton setFrame:CGRectMake(85, 265, 180, 70)];
+//    logInButton.center = self.view.center;
+//    [self.view addSubview:logInButton];
    
 
 

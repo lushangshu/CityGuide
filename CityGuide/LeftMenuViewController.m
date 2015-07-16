@@ -41,7 +41,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 7;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -67,19 +67,30 @@
             break;
             
         case 1:
-            cell.textLabel.text = @"Friends Activity";
+            cell.textLabel.text = @"Hot Activity";
             break;
             
         case 2:
-            cell.textLabel.text = @"Topic";
+            cell.textLabel.text = @"Images Topics";
             break;
             
         case 3:
             cell.textLabel.text = @"City Detail";
+            break;
         
         case 4:
+            cell.textLabel.text = @"Preferences Setting";
+            break;
+            
+        case 5:
             cell.textLabel.text = @"log out";
             break;
+            
+        case 6:
+            cell.textLabel.text = @"Help";
+            break;
+            
+       
     }
     
     cell.backgroundColor = [UIColor clearColor];
@@ -101,19 +112,29 @@
             break;
             
         case 1:
-            vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ProfileViewController"];
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"NearbyActViewController"];
             break;
             
         case 2:
-            vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"FriendsViewController"];
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"IKCollectionViewController"];
             break;
+            
         case 3:
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CityDetailViewController"];
             break;
+            
         case 4:
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"PreferenceController"];
+            break;
+        case 5:
             [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
             [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
             return;
             break;
+        case 6:
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ConfigurationViewController"];
+            break;
+        
     }
     
     [[SlideNavigationController sharedInstance] popToRootAndSwitchToViewController:vc

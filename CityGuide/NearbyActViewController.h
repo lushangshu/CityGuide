@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SlideNavigationController.h"
 
-@interface NearbyActViewController : UIViewController
+@interface NearbyActViewController : UIViewController <SlideNavigationControllerDelegate>
 
 @end

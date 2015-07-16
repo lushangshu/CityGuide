@@ -48,9 +48,6 @@
                                 <state key="normal" title="Help">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="yZH-oE-v6k" kind="modal" id="fBp-Cn-gao"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -63,7 +60,7 @@
         <!--View Controller-->
         <scene sceneID="5W2-xL-ggI">
             <objects>
-                <viewController id="yZH-oE-v6k" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpViewController" id="yZH-oE-v6k" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oJy-C7-8tb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,16 +72,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pol-8n-SIR">
-                                <rect key="frame" x="206" y="491" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="JwV-a0-WKW"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zDe-6N-AOj">
                                 <rect key="frame" x="40" y="281" width="39" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -126,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdf-AP-MvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-980" y="1127"/>
+            <point key="canvasLocation" x="-1100" y="1038"/>
         </scene>
         <!--Left Menu View Controller-->
         <scene sceneID="1EH-6G-dLH">
@@ -295,26 +282,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login using accounts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GCK-tO-PfF">
-                                <rect key="frame" x="29" y="105" width="164" height="21"/>
+                                <rect key="frame" x="37" y="203" width="164" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.37353706857746838" green="0.41735572592697712" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.24018779317885763" green="0.81040757862964596" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="Ksu-FA-5Np">
-                                <rect key="frame" x="29" y="168" width="225" height="30"/>
+                                <rect key="frame" x="37" y="244" width="225" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="0YY-wd-Axe">
-                                <rect key="frame" x="29" y="217" width="225" height="30"/>
+                                <rect key="frame" x="37" y="293" width="225" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY GUIDE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yeb-0n-W8W">
+                                <rect key="frame" x="25" y="94" width="248" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.20507122298953162" green="0.65710614472103701" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2M5-ed-v6F">
+                                <rect key="frame" x="191" y="357" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Signup">
+                                    <color key="titleColor" red="0.0" green="0.52909206504810857" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kb6-4t-0LM">
-                                <rect key="frame" x="160" y="295" width="94" height="31"/>
+                                <rect key="frame" x="30" y="356" width="94" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -344,12 +346,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qt3-tU-hhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="-1079"/>
+            <point key="canvasLocation" x="1079" y="-947"/>
         </scene>
-        <!--View Controller-->
+        <!--Configuration View Controller-->
         <scene sceneID="tTW-GN-wKN">
             <objects>
-                <viewController id="7xx-gv-nBv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfigurationViewController" id="7xx-gv-nBv" customClass="ConfigurationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TKL-sx-wJC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,28 +371,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cbM-9X-kfs">
-                                <rect key="frame" x="230" y="505" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="jCi-EB-msY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAh-aJ-vHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1398" y="314"/>
+            <point key="canvasLocation" x="-676" y="889"/>
         </scene>
         <!--Title-->
         <scene sceneID="7SP-HC-IpE">
             <objects>
-                <viewController id="lei-Ko-hdk" customClass="NearbyActViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NearbyActViewController" id="lei-Ko-hdk" customClass="NearbyActViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cpO-TX-1pL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -427,7 +419,7 @@
         <!--City-->
         <scene sceneID="nn2-6E-Qk0">
             <objects>
-                <viewController id="um0-WP-vYh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityDetailViewController" id="um0-WP-vYh" customClass="CityDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EE1-zN-eau">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -536,10 +528,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="lei-Ko-hdk" kind="relationship" relationship="viewControllers" id="21K-IW-lAS"/>
                         <segue destination="vi4-Wj-bCq" kind="relationship" relationship="viewControllers" id="JkD-JS-Ybv"/>
                         <segue destination="6Mw-sN-br7" kind="relationship" relationship="viewControllers" id="lyy-pb-zXa"/>
-                        <segue destination="um0-WP-vYh" kind="relationship" relationship="viewControllers" id="oyU-l8-acl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zq6-7p-1Oz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -549,7 +539,7 @@
         <!--Title-->
         <scene sceneID="RR2-vg-1x4">
             <objects>
-                <viewController id="7Ci-Pm-fZ1" customClass="PreferenceController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreferenceController" id="7Ci-Pm-fZ1" customClass="PreferenceController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mDw-GH-R5w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -638,7 +628,7 @@
         <!--topic-->
         <scene sceneID="2da-pQ-2a4">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="UVg-If-u0I" customClass="IKCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="IKCollectionViewController" autoresizesArchivedViewToFullSize="NO" id="UVg-If-u0I" customClass="IKCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="n1p-AV-0XI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -767,9 +757,14 @@
                                         </connections>
                                     </button>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="OmJ-0a-jfJ">
-                                        <rect key="frame" x="0.0" y="64" width="325" height="504"/>
+                                        <rect key="frame" x="0.0" y="118" width="325" height="450"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </mapView>
+                                    <searchBar contentMode="redraw" id="A55-C3-Dqi">
+                                        <rect key="frame" x="2" y="74" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
@@ -778,6 +773,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Dth-wK-4Uc"/>
                     <connections>
+                        <outlet property="myMapView" destination="OmJ-0a-jfJ" id="uXB-Kp-N3j"/>
+                        <outlet property="mySearch" destination="A55-C3-Dqi" id="VGN-Pc-9It"/>
                         <outlet property="scrollView" destination="48g-bV-TaK" id="via-kJ-Tw4"/>
                     </connections>
                 </viewController>
@@ -796,6 +793,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ePC-oJ-Lmu"/>
+        <segue reference="fJW-rb-oU8"/>
     </inferredMetricsTieBreakers>
 </document>

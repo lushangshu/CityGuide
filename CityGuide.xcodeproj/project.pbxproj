@@ -65,6 +65,8 @@
 		CCA70F5D1B5727380071FD17 /* leftMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F591B5727380071FD17 /* leftMenu.jpg */; };
 		CCA70F5E1B5727380071FD17 /* rightMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F5A1B5727380071FD17 /* rightMenu.jpg */; };
 		CCA70F601B572C640071FD17 /* menu-button.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F5F1B572C640071FD17 /* menu-button.png */; };
+		CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */; };
+		CCA70F661B57377F0071FD17 /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */; };
 		CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */; };
 		CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */; };
 		CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */; };
@@ -186,6 +188,10 @@
 		CCA70F591B5727380071FD17 /* leftMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu.jpg; sourceTree = "<group>"; };
 		CCA70F5A1B5727380071FD17 /* rightMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightMenu.jpg; sourceTree = "<group>"; };
 		CCA70F5F1B572C640071FD17 /* menu-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button.png"; sourceTree = "<group>"; };
+		CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailViewController.h; sourceTree = "<group>"; };
+		CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailViewController.m; sourceTree = "<group>"; };
+		CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationViewController.h; sourceTree = "<group>"; };
+		CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationViewController.m; sourceTree = "<group>"; };
 		CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTimelineViewController.h; sourceTree = "<group>"; };
 		CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTimelineViewController.m; sourceTree = "<group>"; };
 		CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapShopsViewController.h; sourceTree = "<group>"; };
@@ -277,6 +283,10 @@
 				CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */,
 				CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */,
 				CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */,
+				CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */,
+				CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */,
+				CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */,
+				CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */,
 				CC3547CB1B44E53200A9812B /* CollectionView Cells */,
 				CC35475B1B41D88B00A9812B /* Images.xcassets */,
 				CC3547CE1B44F47E00A9812B /* Main.storyboard */,
@@ -614,6 +624,7 @@
 				CC3547D61B45409200A9812B /* PreferenceController.m in Sources */,
 				CC3547D31B44F60A00A9812B /* IKCollectionViewController.m in Sources */,
 				CCA70F531B56C4F00071FD17 /* RightMenuViewController.m in Sources */,
+				CCA70F661B57377F0071FD17 /* ConfigurationViewController.m in Sources */,
 				CC3547571B41D88B00A9812B /* ViewController.m in Sources */,
 				CC35474E1B41D88B00A9812B /* main.m in Sources */,
 				CC3547BD1B44E46D00A9812B /* InstagramMedia.m in Sources */,
@@ -621,6 +632,7 @@
 				CCF3CA181B55CC69007EF470 /* JPSThumbnailAnnotationView.m in Sources */,
 				CCA70F4A1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				CC35479B1B44E33800A9812B /* AFHTTPSessionManager.m in Sources */,
+				CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
