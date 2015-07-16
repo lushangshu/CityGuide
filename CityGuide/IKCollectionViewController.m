@@ -53,7 +53,7 @@
 - (void)loadMedia
 {
     [textField resignFirstResponder];
-    textField.text = @"";
+    textField.text = @"Sheffield";
     
     InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
     

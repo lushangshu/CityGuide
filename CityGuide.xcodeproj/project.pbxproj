@@ -38,8 +38,6 @@
 		CC3547BF1B44E46D00A9812B /* InstagramPaginationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547B51B44E46D00A9812B /* InstagramPaginationInfo.m */; };
 		CC3547C01B44E46D00A9812B /* InstagramTag.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547B71B44E46D00A9812B /* InstagramTag.m */; };
 		CC3547C11B44E46D00A9812B /* InstagramUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547B91B44E46D00A9812B /* InstagramUser.m */; };
-		CC3547C41B44E4DC00A9812B /* IKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547C31B44E4DC00A9812B /* IKCell.m */; };
-		CC3547CA1B44E52500A9812B /* IKMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547C91B44E52500A9812B /* IKMediaCell.m */; };
 		CC3547CD1B44E99D00A9812B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3547CC1B44E99D00A9812B /* MobileCoreServices.framework */; };
 		CC3547D01B44F47E00A9812B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3547CE1B44F47E00A9812B /* Main.storyboard */; };
 		CC3547D31B44F60A00A9812B /* IKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547D21B44F60A00A9812B /* IKCollectionViewController.m */; };
@@ -67,6 +65,9 @@
 		CCA70F601B572C640071FD17 /* menu-button.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F5F1B572C640071FD17 /* menu-button.png */; };
 		CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */; };
 		CCA70F661B57377F0071FD17 /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */; };
+		CCA70F691B5749130071FD17 /* IKMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F681B5749130071FD17 /* IKMediaViewController.m */; };
+		CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6C1B57496F0071FD17 /* IKCell.m */; };
+		CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */; };
 		CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */; };
 		CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */; };
 		CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */; };
@@ -146,10 +147,6 @@
 		CC3547B71B44E46D00A9812B /* InstagramTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramTag.m; sourceTree = "<group>"; };
 		CC3547B81B44E46D00A9812B /* InstagramUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramUser.h; sourceTree = "<group>"; };
 		CC3547B91B44E46D00A9812B /* InstagramUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramUser.m; sourceTree = "<group>"; };
-		CC3547C21B44E4DC00A9812B /* IKCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKCell.h; sourceTree = "<group>"; };
-		CC3547C31B44E4DC00A9812B /* IKCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKCell.m; sourceTree = "<group>"; };
-		CC3547C81B44E52500A9812B /* IKMediaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IKMediaCell.h; path = ../IKMediaCell.h; sourceTree = "<group>"; };
-		CC3547C91B44E52500A9812B /* IKMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IKMediaCell.m; path = ../IKMediaCell.m; sourceTree = "<group>"; };
 		CC3547CC1B44E99D00A9812B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		CC3547CF1B44F47E00A9812B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC3547D11B44F60A00A9812B /* IKCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKCollectionViewController.h; sourceTree = "<group>"; };
@@ -192,6 +189,12 @@
 		CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailViewController.m; sourceTree = "<group>"; };
 		CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationViewController.h; sourceTree = "<group>"; };
 		CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationViewController.m; sourceTree = "<group>"; };
+		CCA70F671B5749130071FD17 /* IKMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKMediaViewController.h; sourceTree = "<group>"; };
+		CCA70F681B5749130071FD17 /* IKMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMediaViewController.m; sourceTree = "<group>"; };
+		CCA70F6B1B57496F0071FD17 /* IKCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKCell.h; sourceTree = "<group>"; };
+		CCA70F6C1B57496F0071FD17 /* IKCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKCell.m; sourceTree = "<group>"; };
+		CCA70F6D1B57496F0071FD17 /* IKMediaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKMediaCell.h; sourceTree = "<group>"; };
+		CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMediaCell.m; sourceTree = "<group>"; };
 		CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTimelineViewController.h; sourceTree = "<group>"; };
 		CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTimelineViewController.m; sourceTree = "<group>"; };
 		CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapShopsViewController.h; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				CC35477F1B42290D00A9812B /* MapViewController.m */,
 				CC3547D11B44F60A00A9812B /* IKCollectionViewController.h */,
 				CC3547D21B44F60A00A9812B /* IKCollectionViewController.m */,
+				CCA70F671B5749130071FD17 /* IKMediaViewController.h */,
+				CCA70F681B5749130071FD17 /* IKMediaViewController.m */,
 				CC3547D41B45409200A9812B /* PreferenceController.h */,
 				CC3547D51B45409200A9812B /* PreferenceController.m */,
 				CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */,
@@ -287,7 +292,6 @@
 				CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */,
 				CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */,
 				CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */,
-				CC3547CB1B44E53200A9812B /* CollectionView Cells */,
 				CC35475B1B41D88B00A9812B /* Images.xcassets */,
 				CC3547CE1B44F47E00A9812B /* Main.storyboard */,
 				CC35475D1B41D88B00A9812B /* LaunchScreen.xib */,
@@ -382,6 +386,7 @@
 		CC3547A61B44E46D00A9812B /* InstagramKit */ = {
 			isa = PBXGroup;
 			children = (
+				CCA70F6A1B57496F0071FD17 /* CollectionView Cells */,
 				CC3547A71B44E46D00A9812B /* Engine */,
 				CC3547AA1B44E46D00A9812B /* InstagramKit.h */,
 				CC3547AB1B44E46D00A9812B /* Models */,
@@ -419,17 +424,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CC3547CB1B44E53200A9812B /* CollectionView Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CC3547C21B44E4DC00A9812B /* IKCell.h */,
-				CC3547C31B44E4DC00A9812B /* IKCell.m */,
-				CC3547C81B44E52500A9812B /* IKMediaCell.h */,
-				CC3547C91B44E52500A9812B /* IKMediaCell.m */,
-			);
-			name = "CollectionView Cells";
-			sourceTree = "<group>";
-		};
 		CCA70F3A1B56C2E50071FD17 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,15 +442,26 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		CCA70F6A1B57496F0071FD17 /* CollectionView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CCA70F6B1B57496F0071FD17 /* IKCell.h */,
+				CCA70F6C1B57496F0071FD17 /* IKCell.m */,
+				CCA70F6D1B57496F0071FD17 /* IKMediaCell.h */,
+				CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */,
+			);
+			path = "CollectionView Cells";
+			sourceTree = "<group>";
+		};
 		CCF3CA101B55CC69007EF470 /* JPSThumbnailAnnotation */ = {
 			isa = PBXGroup;
 			children = (
 				CCF3CA111B55CC69007EF470 /* JPSThumbnail.h */,
+				CCF3CA161B55CC69007EF470 /* JPSThumnail.m */,
 				CCF3CA121B55CC69007EF470 /* JPSThumbnailAnnotation.h */,
 				CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */,
 				CCF3CA141B55CC69007EF470 /* JPSThumbnailAnnotationView.h */,
 				CCF3CA151B55CC69007EF470 /* JPSThumbnailAnnotationView.m */,
-				CCF3CA161B55CC69007EF470 /* JPSThumnail.m */,
 			);
 			path = JPSThumbnailAnnotation;
 			sourceTree = "<group>";
@@ -600,6 +605,7 @@
 				CC3547991B44E33800A9812B /* AFHTTPRequestOperation.m in Sources */,
 				CC35479C1B44E33800A9812B /* AFNetworkReachabilityManager.m in Sources */,
 				CCA70F481B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */,
 				CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */,
 				CC3547A11B44E33800A9812B /* AFURLSessionManager.m in Sources */,
 				CC35479F1B44E33800A9812B /* AFURLRequestSerialization.m in Sources */,
@@ -617,21 +623,21 @@
 				CCF3CA191B55CC69007EF470 /* JPSThumnail.m in Sources */,
 				CC35479A1B44E33800A9812B /* AFHTTPRequestOperationManager.m in Sources */,
 				CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */,
-				CC3547C41B44E4DC00A9812B /* IKCell.m in Sources */,
 				CC35479D1B44E33800A9812B /* AFSecurityPolicy.m in Sources */,
 				CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */,
 				CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */,
 				CC3547D61B45409200A9812B /* PreferenceController.m in Sources */,
 				CC3547D31B44F60A00A9812B /* IKCollectionViewController.m in Sources */,
 				CCA70F531B56C4F00071FD17 /* RightMenuViewController.m in Sources */,
+				CCA70F691B5749130071FD17 /* IKMediaViewController.m in Sources */,
 				CCA70F661B57377F0071FD17 /* ConfigurationViewController.m in Sources */,
 				CC3547571B41D88B00A9812B /* ViewController.m in Sources */,
 				CC35474E1B41D88B00A9812B /* main.m in Sources */,
 				CC3547BD1B44E46D00A9812B /* InstagramMedia.m in Sources */,
-				CC3547CA1B44E52500A9812B /* IKMediaCell.m in Sources */,
 				CCF3CA181B55CC69007EF470 /* JPSThumbnailAnnotationView.m in Sources */,
 				CCA70F4A1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				CC35479B1B44E33800A9812B /* AFHTTPSessionManager.m in Sources */,
+				CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */,
 				CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,7 +768,9 @@
 				INFOPLIST_FILE = CityGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "";
 			};
 			name = Debug;
 		};
@@ -778,7 +786,9 @@
 				INFOPLIST_FILE = CityGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "";
 			};
 			name = Release;
 		};
