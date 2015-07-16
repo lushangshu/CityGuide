@@ -59,6 +59,12 @@
 		CCA70F4D1B56C3B50071FD17 /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F4C1B56C3B50071FD17 /* SlideNavigationController.m */; };
 		CCA70F501B56C48E0071FD17 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F4F1B56C48E0071FD17 /* LeftMenuViewController.m */; };
 		CCA70F531B56C4F00071FD17 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F521B56C4F00071FD17 /* RightMenuViewController.m */; };
+		CCA70F561B5724D80071FD17 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F551B5724D80071FD17 /* HomeViewController.m */; };
+		CCA70F5B1B5727380071FD17 /* animation.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F571B5727380071FD17 /* animation.png */; };
+		CCA70F5C1B5727380071FD17 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F581B5727380071FD17 /* gear.png */; };
+		CCA70F5D1B5727380071FD17 /* leftMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F591B5727380071FD17 /* leftMenu.jpg */; };
+		CCA70F5E1B5727380071FD17 /* rightMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F5A1B5727380071FD17 /* rightMenu.jpg */; };
+		CCA70F601B572C640071FD17 /* menu-button.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F5F1B572C640071FD17 /* menu-button.png */; };
 		CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */; };
 		CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */; };
 		CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */; };
@@ -173,6 +179,13 @@
 		CCA70F4F1B56C48E0071FD17 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
 		CCA70F511B56C4F00071FD17 /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
 		CCA70F521B56C4F00071FD17 /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
+		CCA70F541B5724D80071FD17 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		CCA70F551B5724D80071FD17 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		CCA70F571B5727380071FD17 /* animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation.png; sourceTree = "<group>"; };
+		CCA70F581B5727380071FD17 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		CCA70F591B5727380071FD17 /* leftMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu.jpg; sourceTree = "<group>"; };
+		CCA70F5A1B5727380071FD17 /* rightMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightMenu.jpg; sourceTree = "<group>"; };
+		CCA70F5F1B572C640071FD17 /* menu-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button.png"; sourceTree = "<group>"; };
 		CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTimelineViewController.h; sourceTree = "<group>"; };
 		CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTimelineViewController.m; sourceTree = "<group>"; };
 		CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapShopsViewController.h; sourceTree = "<group>"; };
@@ -244,6 +257,8 @@
 				CC3547501B41D88B00A9812B /* AppDelegate.m */,
 				CC3547551B41D88B00A9812B /* ViewController.h */,
 				CC3547561B41D88B00A9812B /* ViewController.m */,
+				CCA70F541B5724D80071FD17 /* HomeViewController.h */,
+				CCA70F551B5724D80071FD17 /* HomeViewController.m */,
 				CCA70F4B1B56C3B50071FD17 /* SlideNavigationController.h */,
 				CCA70F4C1B56C3B50071FD17 /* SlideNavigationController.m */,
 				CCA70F4E1B56C48E0071FD17 /* LeftMenuViewController.h */,
@@ -276,6 +291,11 @@
 		CC35474B1B41D88B00A9812B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCA70F571B5727380071FD17 /* animation.png */,
+				CCA70F5F1B572C640071FD17 /* menu-button.png */,
+				CCA70F581B5727380071FD17 /* gear.png */,
+				CCA70F591B5727380071FD17 /* leftMenu.jpg */,
+				CCA70F5A1B5727380071FD17 /* rightMenu.jpg */,
 				CCF3CA1A1B55CCC5007EF470 /* apple.jpg */,
 				CCF3CA1B1B55CCC5007EF470 /* empire.jpg */,
 				CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */,
@@ -512,14 +532,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA70F5E1B5727380071FD17 /* rightMenu.jpg in Resources */,
 				CC3547D81B4545FF00A9812B /* map.png in Resources */,
 				CC3547D01B44F47E00A9812B /* Main.storyboard in Resources */,
 				CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */,
+				CCA70F5D1B5727380071FD17 /* leftMenu.jpg in Resources */,
 				CC66AEAE1B46B7940002C846 /* city.png in Resources */,
+				CCA70F5C1B5727380071FD17 /* gear.png in Resources */,
 				CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */,
 				CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */,
 				CC35475F1B41D88B00A9812B /* LaunchScreen.xib in Resources */,
 				CC35475C1B41D88B00A9812B /* Images.xcassets in Resources */,
+				CCA70F5B1B5727380071FD17 /* animation.png in Resources */,
+				CCA70F601B572C640071FD17 /* menu-button.png in Resources */,
 				CC3547E01B4563EA00A9812B /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +584,7 @@
 				CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				CC35479E1B44E33800A9812B /* AFURLConnectionOperation.m in Sources */,
 				CC3547A21B44E33800A9812B /* UIImageView+AFNetworking.m in Sources */,
+				CCA70F561B5724D80071FD17 /* HomeViewController.m in Sources */,
 				CC3547BE1B44E46D00A9812B /* InstagramModel.m in Sources */,
 				CC3547BA1B44E46D00A9812B /* InstagramEngine.m in Sources */,
 				CC3547991B44E33800A9812B /* AFHTTPRequestOperation.m in Sources */,

@@ -67,15 +67,18 @@
             break;
             
         case 1:
-            cell.textLabel.text = @"Profile";
+            cell.textLabel.text = @"Friends Activity";
             break;
             
         case 2:
-            cell.textLabel.text = @"Friends";
+            cell.textLabel.text = @"Topic";
             break;
             
         case 3:
-            cell.textLabel.text = @"Sign Out";
+            cell.textLabel.text = @"City Detail";
+        
+        case 4:
+            cell.textLabel.text = @"log out";
             break;
     }
     
@@ -86,7 +89,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
                                                              bundle: nil];
     
     UIViewController *vc ;
@@ -104,8 +107,9 @@
         case 2:
             vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"FriendsViewController"];
             break;
-            
         case 3:
+            break;
+        case 4:
             [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
             [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
             return;
