@@ -7,7 +7,8 @@
 //
 
 #import "MapShopsViewController.h"
-#import "JPSThumbnailAnnotation.h"
+#import "YPAPISample.h"
+
 
 @interface MapShopsViewController ()
 
@@ -16,84 +17,37 @@
 @implementation MapShopsViewController
 
 - (void)viewDidLoad {
-    // Map View
-    MKMapView *mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
-    mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-//    CLLocationCoordinate2D noLocation;
-    MKCoordinateRegion viewRegion;
-    viewRegion.center.latitude = 53.38;
-    viewRegion.center.longitude = -1.46;
-    viewRegion.span.latitudeDelta = 0.112872;
-    viewRegion.span.longitudeDelta = 0.109863;
-    //= MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
-    MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion];
-    [mapView setRegion:adjustedRegion animated:YES];
-    mapView.showsUserLocation = YES;
-    mapView.delegate = self;
-    [self.view addSubview:mapView];
-    
-    // Annotations
-    [mapView addAnnotations:[self generateAnnotations]];
-
+    [self YelpAPIShopsJSON];
 }
 
-- (NSArray *)generateAnnotations {
-    NSMutableArray *annotations = [[NSMutableArray alloc] initWithCapacity:3];
+-(void) YelpAPIShopsJSON
+{
+    NSString *defaultTerm = @"dinner";
+    NSString *defaultLocation = @"San Francisco, CA";
     
-    // Empire State Building
-    JPSThumbnail *empire = [[JPSThumbnail alloc] init];
-    empire.image = [UIImage imageNamed:@"empire.jpg"];
-    empire.title = @"Empire State Building";
-    empire.subtitle = @"NYC Landmark";
-    empire.coordinate = CLLocationCoordinate2DMake(53.38, -1.46);
-    empire.disclosureBlock = ^{ NSLog(@"selected Empire"); };
+    //Get the term and location from the command line if there were any, otherwise assign default values.
+    NSString *term = [[NSUserDefaults standardUserDefaults] valueForKey:@"term"] ?: defaultTerm;
+    NSString *location = [[NSUserDefaults standardUserDefaults] valueForKey:@"location"] ?: defaultLocation;
     
-    [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:empire]];
+    YPAPISample *APISample = [[YPAPISample alloc] init];
     
-    // Apple HQ
-    JPSThumbnail *apple = [[JPSThumbnail alloc] init];
-    apple.image = [UIImage imageNamed:@"apple.jpg"];
-    apple.title = @"Apple HQ";
-    apple.subtitle = @"Apple Headquarters";
-    apple.coordinate = CLLocationCoordinate2DMake(53.38, -1.47);
-    apple.disclosureBlock = ^{ NSLog(@"selected Appple"); };
+    dispatch_group_t requestGroup = dispatch_group_create();
     
-    [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:apple]];
+    dispatch_group_enter(requestGroup);
+    [APISample queryTopBusinessInfoForTerm:term location:location completionHandler:^(NSDictionary *topBusinessJSON, NSError *error) {
+        
+        if (error) {
+            NSLog(@"An error happened during the request: %@", error);
+        } else if (topBusinessJSON) {
+            NSLog(@"Top business info: \n %@", topBusinessJSON);
+        } else {
+            NSLog(@"No business was found");
+        }
+        
+        dispatch_group_leave(requestGroup);
+    }];
     
-    // Parliament of Canada
-    JPSThumbnail *ottawa = [[JPSThumbnail alloc] init];
-    ottawa.image = [UIImage imageNamed:@"ottawa.jpg"];
-    ottawa.title = @"Parliament of Canada";
-    ottawa.subtitle = @"Oh Canada!";
-    ottawa.coordinate = CLLocationCoordinate2DMake(53.39, -1.48);
-    ottawa.disclosureBlock = ^{ NSLog(@"selected Ottawa"); };
-    
-    [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:ottawa]];
-    
-    return annotations;
-}
-
-
-
-#pragma mark - MKMapViewDelegate
-
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    if ([view conformsToProtocol:@protocol(JPSThumbnailAnnotationViewProtocol)]) {
-        [((NSObject<JPSThumbnailAnnotationViewProtocol> *)view) didSelectAnnotationViewInMap:mapView];
-    }
-}
-
-- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-    if ([view conformsToProtocol:@protocol(JPSThumbnailAnnotationViewProtocol)]) {
-        [((NSObject<JPSThumbnailAnnotationViewProtocol> *)view) didDeselectAnnotationViewInMap:mapView];
-    }
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    if ([annotation conformsToProtocol:@protocol(JPSThumbnailAnnotationProtocol)]) {
-        return [((NSObject<JPSThumbnailAnnotationProtocol> *)annotation) annotationViewInMap:mapView];
-    }
-    return nil;
+    dispatch_group_wait(requestGroup, DISPATCH_TIME_FOREVER); // This avoids the program exiting before all our asynchronous callbacks have been made.
 }
 
 @end

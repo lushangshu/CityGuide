@@ -42,13 +42,18 @@
 -(void) Request
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://api.yelp.com/v2/search?term=food&location=San+Francisco"
+    [manager GET:@"http://samwize.com/api/poos/"
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"JSON: %@", responseObject);
+             [self.label_c setText:responseObject];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
+             
+             //self.label_c.text = error;
+             
          }];
+    
     
 }
 #pragma mark - SlideNavigationController Methods -
