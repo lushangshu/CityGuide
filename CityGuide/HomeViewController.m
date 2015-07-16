@@ -18,12 +18,7 @@
     self.mySearch.delegate = self;
     self.myMapView.delegate = self;
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 503);
-    self.portraitSlideOffsetSegment.selectedSegmentIndex = [self indexFromPixels:[SlideNavigationController sharedInstance].portraitSlideOffset];
-    self.landscapeSlideOffsetSegment.selectedSegmentIndex = [self indexFromPixels:[SlideNavigationController sharedInstance].landscapeSlideOffset];
-    self.panGestureSwitch.on = [SlideNavigationController sharedInstance].enableSwipeGesture;
-    self.shadowSwitch.on = [SlideNavigationController sharedInstance].enableShadow;
-    self.limitPanGestureSwitch.on = ([SlideNavigationController sharedInstance].panGestureSideOffset == 0) ? NO : YES;
-    self.slideOutAnimationSwitch.on = ((LeftMenuViewController *)[SlideNavigationController sharedInstance].leftMenu).slideOutAnimationEnabled;
+
     [self searchBarSearchButtonClicked:self.mySearch];
 //    MKCoordinateRegion viewRegion;
 //    viewRegion.center.latitude = 53.38;

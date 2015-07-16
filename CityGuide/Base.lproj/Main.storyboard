@@ -389,9 +389,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gj2-b3-Uew">
-                                <rect key="frame" x="0.0" y="168" width="320" height="350"/>
+                                <rect key="frame" x="0.0" y="155" width="320" height="363"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lei-Ko-hdk" id="6VG-m1-fyK"/>
+                                    <outlet property="delegate" destination="lei-Ko-hdk" id="DIl-bh-gpe"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This part get all users' nearby topics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tJF-rN-8Cb">
                                 <rect key="frame" x="16" y="81" width="279" height="54"/>
@@ -405,10 +409,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Friends Activity" id="lHv-v9-fQS"/>
                     <navigationItem key="navigationItem" title="Title" id="LK8-zN-kc9"/>
+                    <connections>
+                        <outlet property="tableView" destination="Gj2-b3-Uew" id="pxc-TE-LSf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50B-WA-swh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="1195"/>
+            <point key="canvasLocation" x="1935" y="-1365"/>
         </scene>
         <!--City-->
         <scene sceneID="nn2-6E-Qk0">

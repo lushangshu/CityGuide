@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SlideNavigationController.h"
 
-@interface NearbyActViewController : UIViewController <SlideNavigationControllerDelegate>
+@interface NearbyActViewController : UIViewController <UITableViewDataSource,SlideNavigationControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -49,6 +49,7 @@
 		CC3547E11B4563EA00A9812B /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3547DD1B4563EA00A9812B /* TwitterCore.framework */; };
 		CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */; };
 		CC66AEAE1B46B7940002C846 /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC66AEAD1B46B7940002C846 /* city.png */; };
+		CC7A89661B57555500505328 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7A89651B57555500505328 /* Accounts.framework */; };
 		CCA70F461B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F3D1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m */; };
 		CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F3F1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m */; };
 		CCA70F481B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F411B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
@@ -161,6 +162,7 @@
 		CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyActViewController.h; sourceTree = "<group>"; };
 		CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyActViewController.m; sourceTree = "<group>"; };
 		CC66AEAD1B46B7940002C846 /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
+		CC7A89651B57555500505328 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CCA70F3B1B56C2E50071FD17 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
 		CCA70F3C1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
 		CCA70F3D1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7A89661B57555500505328 /* Accounts.framework in Frameworks */,
 				CC3547DE1B4563EA00A9812B /* Fabric.framework in Frameworks */,
 				CC3547CD1B44E99D00A9812B /* MobileCoreServices.framework in Frameworks */,
 				CC3547821B44E1C200A9812B /* CoreGraphics.framework in Frameworks */,
@@ -341,6 +344,7 @@
 		CC35477D1B4228B100A9812B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC7A89651B57555500505328 /* Accounts.framework */,
 				CC3547DA1B4563EA00A9812B /* Fabric.framework */,
 				CC3547DB1B4563EA00A9812B /* TwitterKit.framework */,
 				CC3547DC1B4563EA00A9812B /* TwitterKitResources.bundle */,
@@ -770,7 +774,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "";
+				VALID_ARCHS = "armv7s armv7 arm64";
+				"VALID_ARCHS[sdk=*]" = "armv7s armv7 arm64";
 			};
 			name = Debug;
 		};
