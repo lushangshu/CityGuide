@@ -7,6 +7,10 @@
 //
 
 #import "CityDetailViewController.h"
+#import "AFHTTPRequestOperation.h"
+#import "AFNetworking.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "AFHTTPSessionManager.h"
 
 @interface CityDetailViewController ()
 
@@ -16,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self Request];
     // Do any additional setup after loading the view.
 }
 
@@ -33,6 +38,19 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void) Request
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://api.yelp.com/v2/search?term=food&location=San+Francisco"
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"JSON: %@", responseObject);
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);
+         }];
+    
+}
 #pragma mark - SlideNavigationController Methods -
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu
