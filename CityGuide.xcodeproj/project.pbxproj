@@ -69,6 +69,7 @@
 		CC7A89F11B57C3C100505328 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A89DF1B57C3C100505328 /* OATokenManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC7A89F41B57C3C900505328 /* NSURLRequest+OAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A89F31B57C3C900505328 /* NSURLRequest+OAuth.m */; };
 		CC7A89F71B57C3D200505328 /* YPAPISample.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A89F61B57C3D200505328 /* YPAPISample.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC7A89F91B57D37700505328 /* leftMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC7A89F81B57D37700505328 /* leftMenu.jpg */; };
 		CCA70F461B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F3D1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m */; };
 		CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F3F1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m */; };
 		CCA70F481B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F411B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
@@ -80,7 +81,7 @@
 		CCA70F561B5724D80071FD17 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F551B5724D80071FD17 /* HomeViewController.m */; };
 		CCA70F5B1B5727380071FD17 /* animation.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F571B5727380071FD17 /* animation.png */; };
 		CCA70F5C1B5727380071FD17 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F581B5727380071FD17 /* gear.png */; };
-		CCA70F5D1B5727380071FD17 /* leftMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F591B5727380071FD17 /* leftMenu.jpg */; };
+		CCA70F5D1B5727380071FD17 /* leftMenu1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F591B5727380071FD17 /* leftMenu1.jpg */; };
 		CCA70F5E1B5727380071FD17 /* rightMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F5A1B5727380071FD17 /* rightMenu.jpg */; };
 		CCA70F601B572C640071FD17 /* menu-button.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F5F1B572C640071FD17 /* menu-button.png */; };
 		CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */; };
@@ -222,6 +223,7 @@
 		CC7A89F31B57C3C900505328 /* NSURLRequest+OAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+OAuth.m"; sourceTree = "<group>"; };
 		CC7A89F51B57C3D200505328 /* YPAPISample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPAPISample.h; sourceTree = "<group>"; };
 		CC7A89F61B57C3D200505328 /* YPAPISample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPAPISample.m; sourceTree = "<group>"; };
+		CC7A89F81B57D37700505328 /* leftMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu.jpg; sourceTree = "<group>"; };
 		CCA70F3B1B56C2E50071FD17 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
 		CCA70F3C1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
 		CCA70F3D1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
@@ -243,7 +245,7 @@
 		CCA70F551B5724D80071FD17 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		CCA70F571B5727380071FD17 /* animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation.png; sourceTree = "<group>"; };
 		CCA70F581B5727380071FD17 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
-		CCA70F591B5727380071FD17 /* leftMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu.jpg; sourceTree = "<group>"; };
+		CCA70F591B5727380071FD17 /* leftMenu1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu1.jpg; sourceTree = "<group>"; };
 		CCA70F5A1B5727380071FD17 /* rightMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightMenu.jpg; sourceTree = "<group>"; };
 		CCA70F5F1B572C640071FD17 /* menu-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button.png"; sourceTree = "<group>"; };
 		CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailViewController.h; sourceTree = "<group>"; };
@@ -368,10 +370,11 @@
 		CC35474B1B41D88B00A9812B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC7A89F81B57D37700505328 /* leftMenu.jpg */,
 				CCA70F571B5727380071FD17 /* animation.png */,
 				CCA70F5F1B572C640071FD17 /* menu-button.png */,
 				CCA70F581B5727380071FD17 /* gear.png */,
-				CCA70F591B5727380071FD17 /* leftMenu.jpg */,
+				CCA70F591B5727380071FD17 /* leftMenu1.jpg */,
 				CCA70F5A1B5727380071FD17 /* rightMenu.jpg */,
 				CCF3CA1A1B55CCC5007EF470 /* apple.jpg */,
 				CCF3CA1B1B55CCC5007EF470 /* empire.jpg */,
@@ -678,9 +681,10 @@
 				CC3547D81B4545FF00A9812B /* map.png in Resources */,
 				CC3547D01B44F47E00A9812B /* Main.storyboard in Resources */,
 				CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */,
-				CCA70F5D1B5727380071FD17 /* leftMenu.jpg in Resources */,
+				CCA70F5D1B5727380071FD17 /* leftMenu1.jpg in Resources */,
 				CC66AEAE1B46B7940002C846 /* city.png in Resources */,
 				CCA70F5C1B5727380071FD17 /* gear.png in Resources */,
+				CC7A89F91B57D37700505328 /* leftMenu.jpg in Resources */,
 				CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */,
 				CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */,
 				CC35475F1B41D88B00A9812B /* LaunchScreen.xib in Resources */,
