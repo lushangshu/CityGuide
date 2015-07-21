@@ -11,7 +11,7 @@
 #import "AFNetworking.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "AFHTTPSessionManager.h"
-
+#import "CityDetailCell.h"
 @interface CityDetailViewController ()
 
 @end
@@ -140,12 +140,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *kEarthquakeCellID = @"CityCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kEarthquakeCellID];
+    CityDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kEarthquakeCellID];
     
     // Get the specific earthquake for this row.
 //    APLEarthquake *earthquake = (self.earthquakeList)[indexPath.row];
 //    
 //    [cell configureWithEarthquake:earthquake];
+    [cell configCell];
     return cell;
 }
 

@@ -98,6 +98,7 @@
 		CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1B1B55CCC5007EF470 /* empire.jpg */; };
 		CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */; };
 		CCFFEB251B5E58B100BF6364 /* SPARQL.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEB241B5E58B100BF6364 /* SPARQL.m */; };
+		CCFFEB2B1B5F0B2A00BF6364 /* CityDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,6 +275,8 @@
 		CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ottawa.jpg; sourceTree = "<group>"; };
 		CCFFEB231B5E58B100BF6364 /* SPARQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPARQL.h; sourceTree = "<group>"; };
 		CCFFEB241B5E58B100BF6364 /* SPARQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPARQL.m; sourceTree = "<group>"; };
+		CCFFEB291B5F0B2A00BF6364 /* CityDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailCell.h; sourceTree = "<group>"; };
+		CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +362,8 @@
 				CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */,
 				CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */,
 				CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */,
+				CCFFEB291B5F0B2A00BF6364 /* CityDetailCell.h */,
+				CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */,
 				CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */,
 				CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */,
 				CC35475B1B41D88B00A9812B /* Images.xcassets */,
@@ -803,6 +808,7 @@
 				CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */,
 				CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */,
 				CC7A89F11B57C3C100505328 /* OATokenManager.m in Sources */,
+				CCFFEB2B1B5F0B2A00BF6364 /* CityDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
