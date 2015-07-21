@@ -203,6 +203,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="b1x-SU-sIu" kind="relationship" relationship="rootViewController" id="PJg-NQ-HEF"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZi-jg-r1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -650,7 +653,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gEV-bo-PHZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="289"/>
+                                            <rect key="frame" x="-2" y="-2" width="640" height="580"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>

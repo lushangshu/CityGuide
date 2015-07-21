@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SlideNavigationController.h"
+#import "SPARQL.h"
 
 @interface CityDetailViewController : ViewController <SlideNavigationControllerDelegate>
 

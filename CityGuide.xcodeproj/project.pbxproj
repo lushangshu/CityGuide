@@ -97,6 +97,7 @@
 		CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1A1B55CCC5007EF470 /* apple.jpg */; };
 		CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1B1B55CCC5007EF470 /* empire.jpg */; };
 		CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */; };
+		CCFFEB251B5E58B100BF6364 /* SPARQL.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEB241B5E58B100BF6364 /* SPARQL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +272,8 @@
 		CCF3CA1A1B55CCC5007EF470 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		CCF3CA1B1B55CCC5007EF470 /* empire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empire.jpg; sourceTree = "<group>"; };
 		CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ottawa.jpg; sourceTree = "<group>"; };
+		CCFFEB231B5E58B100BF6364 /* SPARQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPARQL.h; sourceTree = "<group>"; };
+		CCFFEB241B5E58B100BF6364 /* SPARQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPARQL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +325,7 @@
 		CC35474A1B41D88B00A9812B /* CityGuide */ = {
 			isa = PBXGroup;
 			children = (
+				CCFFEB221B5E525D00BF6364 /* SPARQL */,
 				CC7A89BA1B57C3C100505328 /* OAuthConsumer */,
 				CCA70F3A1B56C2E50071FD17 /* Animations */,
 				CCF3CA101B55CC69007EF470 /* JPSThumbnailAnnotation */,
@@ -596,6 +600,15 @@
 			path = JPSThumbnailAnnotation;
 			sourceTree = "<group>";
 		};
+		CCFFEB221B5E525D00BF6364 /* SPARQL */ = {
+			isa = PBXGroup;
+			children = (
+				CCFFEB231B5E58B100BF6364 /* SPARQL.h */,
+				CCFFEB241B5E58B100BF6364 /* SPARQL.m */,
+			);
+			name = SPARQL;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -730,6 +743,7 @@
 				CC7A89EC1B57C3C100505328 /* OAPlaintextSignatureProvider.m in Sources */,
 				CC7A89E21B57C3C100505328 /* NSString+URLEncoding.m in Sources */,
 				CC7A89E71B57C3C100505328 /* OACall.m in Sources */,
+				CCFFEB251B5E58B100BF6364 /* SPARQL.m in Sources */,
 				CC7A89E61B57C3C100505328 /* sha1.c in Sources */,
 				CC3547BC1B44E46D00A9812B /* InstagramLocation.m in Sources */,
 				CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
