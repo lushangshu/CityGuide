@@ -13,5 +13,5 @@
 @interface CityDetailViewController : ViewController <SlideNavigationControllerDelegate>
 
 @property (nonatomic) IBOutlet UILabel * label_c;
-
+@property (nonatomic) IBOutlet UITableView *tableView;
 @end

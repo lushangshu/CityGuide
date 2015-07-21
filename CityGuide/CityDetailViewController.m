@@ -129,5 +129,67 @@
     return YES;
 }
 
+#pragma mark - UITableViewDelegate
+
+// The number of rows is equal to the number of earthquakes in the array.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *kEarthquakeCellID = @"CityCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kEarthquakeCellID];
+    
+    // Get the specific earthquake for this row.
+//    APLEarthquake *earthquake = (self.earthquakeList)[indexPath.row];
+//    
+//    [cell configureWithEarthquake:earthquake];
+    return cell;
+}
+
+/**
+ * When the user taps a row in the table, display the USGS web page that displays details of the earthquake they selected.
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *buttonTitle = NSLocalizedString(@"Cancel", @"Cancel");
+    NSString *buttonTitle1 = NSLocalizedString(@"Show USGS Site in Safari", @"Show USGS Site in Safari");
+    NSString *buttonTitle2 = NSLocalizedString(@"Show Location in Maps", @"Show Location in Maps");
+    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                       delegate:self
+                                              cancelButtonTitle:buttonTitle destructiveButtonTitle:nil
+                                              otherButtonTitles:buttonTitle1, buttonTitle2, nil];
+    [sheet showInView:self.view];
+}
+
+#pragma mark - redirect to web browser
+
+/**
+ * Called when the user selects an option in the sheet. The sheet will automatically be dismissed.
+ */
+- (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    //APLEarthquake *earthquake = (APLEarthquake *)(self.earthquakeList)[selectedIndexPath.row];
+    switch (buttonIndex) {
+        case 0: {
+            // open the earthquake info in Safari
+            //2
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"http://www.baidu.com"]];
+        }
+            break;
+        case 1: {
+            NSLog(@"pressed ");
+            break;
+        }
+    }
+    
+    [self.tableView deselectRowAtIndexPath:selectedIndexPath animated:YES];
+}
+
+
 
 @end
