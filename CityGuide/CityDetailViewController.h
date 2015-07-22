@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import "SlideNavigationController.h"
+#import <MapKit/MapKit.h>
 
 
 @interface CityDetailViewController : ViewController <SlideNavigationControllerDelegate>
 
-@property (nonatomic) IBOutlet UILabel * label_c;
+@property (nonatomic,weak) IBOutlet UILabel * label_c;
 @property (nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) NSMutableArray *placeList;

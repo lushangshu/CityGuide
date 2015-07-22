@@ -95,6 +95,7 @@
 		CCBFCA491B600C610057FAF5 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA441B600C610057FAF5 /* 3.png */; };
 		CCBFCA4A1B600C610057FAF5 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA451B600C610057FAF5 /* 4.png */; };
 		CCBFCA4B1B600C610057FAF5 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA461B600C610057FAF5 /* 1.png */; };
+		CCBFCA4E1B602ACA0057FAF5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCBFCA4D1B602ACA0057FAF5 /* CoreLocation.framework */; };
 		CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */; };
 		CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */; };
 		CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */; };
@@ -272,6 +273,7 @@
 		CCBFCA441B600C610057FAF5 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		CCBFCA451B600C610057FAF5 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		CCBFCA461B600C610057FAF5 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		CCBFCA4D1B602ACA0057FAF5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTimelineViewController.h; sourceTree = "<group>"; };
 		CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTimelineViewController.m; sourceTree = "<group>"; };
 		CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapShopsViewController.h; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBFCA4E1B602ACA0057FAF5 /* CoreLocation.framework in Frameworks */,
 				CC7A89661B57555500505328 /* Accounts.framework in Frameworks */,
 				CC3547DE1B4563EA00A9812B /* Fabric.framework in Frameworks */,
 				CC3547CD1B44E99D00A9812B /* MobileCoreServices.framework in Frameworks */,
@@ -433,6 +436,7 @@
 		CC35477D1B4228B100A9812B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCBFCA4D1B602ACA0057FAF5 /* CoreLocation.framework */,
 				CC7A89651B57555500505328 /* Accounts.framework */,
 				CC3547DA1B4563EA00A9812B /* Fabric.framework */,
 				CC3547DB1B4563EA00A9812B /* TwitterKit.framework */,

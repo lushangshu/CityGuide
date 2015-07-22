@@ -13,71 +13,52 @@
 #import "AFHTTPSessionManager.h"
 #import "CityDetailCell.h"
 #import "location.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface CityDetailViewController ()
+
+
+@interface CityDetailViewController () <CLLocationManagerDelegate>
+
+- (IBAction)buttonPressed:(id)sender;
 
 @end
 
-@implementation CityDetailViewController
+@implementation CityDetailViewController{
+    
+    CLLocationManager *manager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.label_c setText:@"This is frame"];
-    //[self jsonParse];
-    [self loadMountains];
+    //location operation
+    manager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
     
-    // Do any additional setup after loading the view.
+    //[self.label_c setText:@" "];
+    [self loadMountains];
+    [self locationUpdate];
+    //[self getCurrentLocation];
+    
+}
+-(void) locationUpdate{
+    manager.delegate = self;
+    manager.desiredAccuracy = kCLLocationAccuracyBest;
+    [manager startUpdatingLocation];
+}
+-(IBAction)buttonPressed:(id)sender{
+    manager.delegate = self;
+    manager.desiredAccuracy = kCLLocationAccuracyBest;
+    [manager startUpdatingLocation];
+    NSLog(@"pressed+ %@",self.label_c.text);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
--(void) Request
-{
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-////    [manager GET:@"http://samwize.com/api/poos/"
-//    [manager GET:@"http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=select+distinct+%3FConcept+where+%7B%5B%5D+a+%3FConcept%7D+limit+3%0D%0A&format=application%2Fsparql-results%2Bjson&timeout=10000&debug=on"
-//        parameters:nil
-//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//             NSLog(@"JSON: %@", responseObject);
-//             [self.label_c setText:responseObject];
-//         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//             NSLog(@"Error: %@", error);
-//             
-//             //self.label_c.text = error;
-//             
-//         }];
-    
-    NSURL *URL = [NSURL URLWithString:@"http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=SELECT+DISTINCT+%3Fconcept%0D%0AWHERE+%7B%0D%0A++++%3Fs+a+%3Fconcept+.%0D%0A%7D+LIMIT+3%0D%0A&format=application%2Fsparql-results%2Bjson&timeout=30000&debug=on"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]
-                                         initWithRequest:request];
-    
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/sparql-results+json"];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"The sparql query is ++++++ %@", responseObject);
-        [self.label_c setText:responseObject];
-    } failure:^(AFHTTPRequestOperation *operaton, NSError *error){
-        NSLog(@"Error : %@",error);
-    }];
-    [operation start];
-    
-    
-}
-
 
 - (void) loadMountains
 {
@@ -87,7 +68,7 @@
     NSString *encodedLoadMountainQueries = [loadMountainQueries stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *urlString = [NSString stringWithFormat:@"http://dbpedia.org/sparql/?query=%@",encodedLoadMountainQueries];
     //NSString *urlString = [NSString stringWithFormat:urlString_1,encodeloadQueries2];
-    NSLog(@"URL is +++ %@", urlString);
+    //NSLog(@"URL is +++ %@", urlString);
     
     NSString *fakeUrlString = @"http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=SELECT+%3Fsubject+%3Flabel+%3Flat+%3Flong+WHERE%7B%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FSheffield%3E+geo%3Alat+%3FeiffelLat%3Bgeo%3Along+%3FeiffelLong.%3Fsubject+geo%3Alat+%3Flat%3Bgeo%3Along+%3Flong%3Brdfs%3Alabel+%3Flabel.FILTER%28xsd%3Adouble%28%3Flat%29+-+xsd%3Adouble%28%3FeiffelLat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLat%29+-+xsd%3Adouble%28%3Flat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3Flong%29+-+xsd%3Adouble%28%3FeiffelLong%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLong%29+-+xsd%3Adouble%28%3Flong%29+%3C%3D+0.05+%26%26+lang%28%3Flabel%29+%3D+%22en%22%29.%7D+LIMIT+20&format=application%2Fsparql-results%2Bjson&timeout=10000&debug=on";
     NSURL *fakeurl = [NSURL URLWithString:fakeUrlString];
@@ -103,7 +84,7 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          NSString *output = [operation responseString];
-         NSLog(@"Response %%%%%% %@", output);
+         //NSLog(@"Response %%%%%% %@", output);
          self.placeList = [self parseJsonData:output];
          [self.tableView reloadData];
      }
@@ -171,7 +152,58 @@
     NSNumber* lng = [locationDic objectForKey:@"lng"];
     NSLog(@"lat = %@, lng = %@",lat,lng);
     
+    
 }
+
+#pragma mark - CLLocationManagerDelegate Methods
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    
+    NSLog(@"Error: %@", error);
+    NSLog(@"Failed to get location! :(");
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    
+    NSLog(@"Location: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        
+//        self.latitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+//        self.longitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        
+    }
+    
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        if (error == nil && [placemarks count] > 0) {
+            
+            placemark = [placemarks lastObject];
+            [self.label_c setText:[NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+                                   placemark.subThoroughfare, placemark.thoroughfare,
+                                   placemark.postalCode, placemark.locality,
+                                   placemark.administrativeArea,
+                                   placemark.country]];
+//            self.label_c.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+//                                 placemark.subThoroughfare, placemark.thoroughfare,
+//                                 placemark.postalCode, placemark.locality,
+//                                 placemark.administrativeArea,
+//                                 placemark.country];
+            
+        } else {
+            
+            NSLog(@"%@", error.debugDescription);
+            
+        }
+        
+    } ];
+    
+}
+
 
 #pragma mark - SlideNavigationController Methods -
 
@@ -189,7 +221,7 @@
 
 // The number of rows is equal to the number of places in the city
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@" +++++ %lu ",(unsigned long)self.placeList.count);
+   // NSLog(@" +++++ %lu ",(unsigned long)self.placeList.count);
     return self.placeList.count;
 }
 
