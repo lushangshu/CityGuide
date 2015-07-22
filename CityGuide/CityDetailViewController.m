@@ -281,7 +281,6 @@
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
                                                                      bundle: nil];
             UIViewController *vc =[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
-            
             [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];            NSLog(@"pressed ");
             break;
         }

@@ -17,6 +17,7 @@
     [super viewDidLoad];
     self.mySearch.delegate = self;
     self.myMapView.delegate = self;
+    [self.myMapView setShowsUserLocation:YES];
     //self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 503);
     [self searchBarSearchButtonClicked:self.mySearch];
 }
@@ -94,6 +95,10 @@
 }
 
 #pragma mark - MKMapViewDelegate
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+}
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     if ([view conformsToProtocol:@protocol(JPSThumbnailAnnotationViewProtocol)]) {
