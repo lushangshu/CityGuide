@@ -25,6 +25,7 @@
     [self.label_c setText:@"This is frame"];
     //[self jsonParse];
     [self loadMountains];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -103,7 +104,8 @@
      {
          NSString *output = [operation responseString];
          NSLog(@"Response %%%%%% %@", output);
-         [self parseJsonData:output];
+         self.placeList = [self parseJsonData:output];
+         [self.tableView reloadData];
      }
                                      failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
@@ -137,7 +139,7 @@
         NSDictionary *log = [subject objectForKey:@"long"];
         NSString *longi = [log objectForKey:@"value"];
         
-        NSLog(@"^^^ Label is %@, url is %@, lat is %@, long is %@",name,url,lati,longi);
+        //NSLog(@"^^^ Label is %@, url is %@, lat is %@, long is %@",name,url,lati,longi);
         NSArray *array = [[NSArray alloc]initWithObjects:name,url,lati,longi, nil];
         [resultArray addObject:array];
     }
@@ -147,8 +149,7 @@
 }
 
 - (void)jsonParse{
-    
-    //初始化网络路径。
+   
     NSString* path  = @"http://maps.googleapis.com/maps/api/geocode/json?address=nanjing&sensor=true";
     //初始化 url
     NSURL* url = [NSURL URLWithString:path];
@@ -188,8 +189,8 @@
 
 // The number of rows is equal to the number of places in the city
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 5;
+    NSLog(@" +++++ %lu ",(unsigned long)self.placeList.count);
+    return self.placeList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -201,7 +202,9 @@
 //    APLEarthquake *earthquake = (self.earthquakeList)[indexPath.row];
 //    
 //    [cell configureWithEarthquake:earthquake];
-    [cell configCell];
+    NSArray *obj = [self.placeList objectAtIndex:indexPath.row];
+    [cell.label1 setText: obj[0]];
+    [cell.label2 setText: obj[1]];
     return cell;
 }
 
@@ -229,8 +232,9 @@
     //APLEarthquake *earthquake = (APLEarthquake *)(self.earthquakeList)[selectedIndexPath.row];
     switch (buttonIndex) {
         case 0: {
+            NSArray *obj = [self.placeList objectAtIndex:buttonIndex];
             
-            [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"http://www.baidu.com"]];
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString:obj[1]]];
         }
             break;
         case 1: {
