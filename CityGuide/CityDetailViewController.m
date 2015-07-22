@@ -12,6 +12,8 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "AFHTTPSessionManager.h"
 #import "CityDetailCell.h"
+#import "location.h"
+
 @interface CityDetailViewController ()
 
 @end
@@ -20,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self Request];
+    [self.label_c setText:@"This is frame"];
+    //[self jsonParse];
     [self loadMountains];
     // Do any additional setup after loading the view.
 }
@@ -74,27 +77,33 @@
     
 }
 
+
 - (void) loadMountains
 {
-  
+//    NSString *loadMountainQueries = @"select * where { ?Mountain a dbpedia-owl:Mountain; dbpedia-owl:abstract ?abstract. FILTER(langMatches(lang(?abstract),\"EN\")) } limit 3";
+    NSString *loadMountainQueries = @"SELECT ?subject ?label ?lat ?long WHERE{<http://dbpedia.org/resource/Sheffield> geo:lat ?eiffelLat;geo:long ?eiffelLong.?subject geo:lat ?lat;geo:long ?long;rdfs:label ?label.FILTER(xsd:double(?lat) - xsd:double(?eiffelLat) <= 0.05 && xsd:double(?eiffelLat) - xsd:double(?lat) <= 0.05 && xsd:double(?long) - xsd:double(?eiffelLong) <= 0.05 && xsd:double(?eiffelLong) - xsd:double(?long) <= 0.05 && lang(?label) = \"en\").} LIMIT 3";
     
-    NSString *loadMountainQueries = @"select * where { ?Mountain a dbpedia-owl:Mountain; dbpedia-owl:abstract ?abstract. FILTER(langMatches(lang(?abstract),\"EN\")) } limit 3";
     NSString *encodedLoadMountainQueries = [loadMountainQueries stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *urlString = [NSString stringWithFormat:@"http://dbpedia.org/sparql/?query=%@",encodedLoadMountainQueries];
-    NSLog(@"%@", urlString);
+    //NSString *urlString = [NSString stringWithFormat:urlString_1,encodeloadQueries2];
+    NSLog(@"URL is +++ %@", urlString);
+    
+    NSString *fakeUrlString = @"http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=SELECT+%3Fsubject+%3Flabel+%3Flat+%3Flong+WHERE%7B%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FSheffield%3E+geo%3Alat+%3FeiffelLat%3Bgeo%3Along+%3FeiffelLong.%3Fsubject+geo%3Alat+%3Flat%3Bgeo%3Along+%3Flong%3Brdfs%3Alabel+%3Flabel.FILTER%28xsd%3Adouble%28%3Flat%29+-+xsd%3Adouble%28%3FeiffelLat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLat%29+-+xsd%3Adouble%28%3Flat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3Flong%29+-+xsd%3Adouble%28%3FeiffelLong%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLong%29+-+xsd%3Adouble%28%3Flong%29+%3C%3D+0.05+%26%26+lang%28%3Flabel%29+%3D+%22en%22%29.%7D+LIMIT+20&format=application%2Fsparql-results%2Bjson&timeout=10000&debug=on";
+    NSURL *fakeurl = [NSURL URLWithString:fakeUrlString];
     
     NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:fakeurl];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"application/sparql-results+json",@"text/plain",@"sparql-results+json", @"text/json", @"text/html", @"text/xml",@"application/sparql-results+xml", nil];
 //    [AFHTTPRequestOperation addAcceptableContentTypes:
 //     [NSSet setWithObjects:@"application/json", @"sparql-results+json", @"text/json", @"text/html", @"text/xml", nil]];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         NSLog(@"Response %@", [operation responseString]);
-         [self.label_c setText:[operation responseString]];
+         NSString *output = [operation responseString];
+         NSLog(@"Response %%%%%% %@", output);
+         [self parseJsonData:output];
      }
                                      failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
@@ -105,18 +114,64 @@
     [operation start];
 }
 
--(void) requestUsingSPARQL {
-    NSLog(@"hello world");
-    SPARQL *sparql = [[SPARQL alloc]init];
-    [sparql addWhereWithSubject:@"http://dbpedia.org/resource/Daft_Punk" predicate:@"?p" andObject:@"?o"];
-//    [sparql executeQueryWithSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-//        NSArray *items = [[(NSDictionary *)JSON objectForKey:@"results"] objectForKey:@"bindings"];
-//        
-//    } orFailure:nil];
-    [sparql LssExecuteQueryWithSuccess:^(NSURLRequest *request, id responseObject) {
-        NSArray *items = [[(NSDictionary *)responseObject objectForKey:@"results"] objectForKey:@"bindings"];
-    } orFailure:nil];
+-(NSMutableArray *) parseJsonData: (NSString *) json
+{
+    NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
+    
+    NSDictionary *arrayResult = [dic objectForKey:@"results"];
+    
+    NSArray *bindings = [arrayResult objectForKey:@"bindings"];
+    for (int i=0;i< [bindings count];i++)
+    {
+        NSDictionary *subject = [bindings objectAtIndex:i];
+        
+        NSDictionary *label = [subject objectForKey:@"label"];
+        NSString *name = [label objectForKey:@"value"];
+        
+        NSDictionary *sub = [subject objectForKey:@"subject"];
+        NSString *url = [sub objectForKey:@"value"];
+        NSDictionary *lat = [subject objectForKey:@"lat"];
+        NSString *lati = [lat objectForKey:@"value"];
+        NSDictionary *log = [subject objectForKey:@"long"];
+        NSString *longi = [log objectForKey:@"value"];
+        
+        NSLog(@"^^^ Label is %@, url is %@, lat is %@, long is %@",name,url,lati,longi);
+        NSArray *array = [[NSArray alloc]initWithObjects:name,url,lati,longi, nil];
+        [resultArray addObject:array];
+    }
+    
+    
+    return resultArray;
 }
+
+- (void)jsonParse{
+    
+    //初始化网络路径。
+    NSString* path  = @"http://maps.googleapis.com/maps/api/geocode/json?address=nanjing&sensor=true";
+    //初始化 url
+    NSURL* url = [NSURL URLWithString:path];
+    //将文件内容读取到字符串中，注意编码NSUTF8StringEncoding 防止乱码，
+    NSString* jsonString = [[NSString alloc]initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    //将字符串写到缓冲区。
+    NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    //解析json数据，使用系统方法 JSONObjectWithData:  options: error:
+    NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
+    
+    //一下为自定义解析， 自己想怎么干就怎么干
+    
+    NSArray* arrayResult =[dic objectForKey:@"results"];
+    NSDictionary* resultDic = [arrayResult objectAtIndex:0];
+    NSDictionary* geometryDic = [resultDic objectForKey:@"geometry"];
+    NSLog(@"!!!!!!!geometryDic: %@,  resultDic:%@",geometryDic,resultDic);
+    NSDictionary* locationDic = [geometryDic objectForKey:@"location"];
+    NSNumber* lat = [locationDic objectForKey:@"lat"];
+    NSNumber* lng = [locationDic objectForKey:@"lng"];
+    NSLog(@"lat = %@, lng = %@",lat,lng);
+    
+}
+
 #pragma mark - SlideNavigationController Methods -
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu
@@ -131,7 +186,7 @@
 
 #pragma mark - UITableViewDelegate
 
-// The number of rows is equal to the number of earthquakes in the array.
+// The number of rows is equal to the number of places in the city
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 5;
@@ -150,13 +205,10 @@
     return cell;
 }
 
-/**
- * When the user taps a row in the table, display the USGS web page that displays details of the earthquake they selected.
- */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *buttonTitle = NSLocalizedString(@"Cancel", @"Cancel");
-    NSString *buttonTitle1 = NSLocalizedString(@"Show USGS Site in Safari", @"Show USGS Site in Safari");
+    NSString *buttonTitle1 = NSLocalizedString(@"Show Site in Safari", @"Show Site in Safari");
     NSString *buttonTitle2 = NSLocalizedString(@"Show Location in Maps", @"Show Location in Maps");
     
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
@@ -177,8 +229,7 @@
     //APLEarthquake *earthquake = (APLEarthquake *)(self.earthquakeList)[selectedIndexPath.row];
     switch (buttonIndex) {
         case 0: {
-            // open the earthquake info in Safari
-            //2
+            
             [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"http://www.baidu.com"]];
         }
             break;

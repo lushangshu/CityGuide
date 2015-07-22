@@ -14,4 +14,8 @@
 
 @property (nonatomic) IBOutlet UILabel * label_c;
 @property (nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic) NSMutableArray *placeList;
+
 @end
+

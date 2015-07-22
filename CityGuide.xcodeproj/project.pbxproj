@@ -89,6 +89,7 @@
 		CCA70F691B5749130071FD17 /* IKMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F681B5749130071FD17 /* IKMediaViewController.m */; };
 		CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6C1B57496F0071FD17 /* IKCell.m */; };
 		CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */; };
+		CCBFCA411B5FDF190057FAF5 /* location.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBFCA401B5FDF190057FAF5 /* location.m */; };
 		CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */; };
 		CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */; };
 		CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */; };
@@ -260,6 +261,8 @@
 		CCA70F6C1B57496F0071FD17 /* IKCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKCell.m; sourceTree = "<group>"; };
 		CCA70F6D1B57496F0071FD17 /* IKMediaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKMediaCell.h; sourceTree = "<group>"; };
 		CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMediaCell.m; sourceTree = "<group>"; };
+		CCBFCA3F1B5FDF190057FAF5 /* location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = location.h; sourceTree = "<group>"; };
+		CCBFCA401B5FDF190057FAF5 /* location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = location.m; sourceTree = "<group>"; };
 		CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTimelineViewController.h; sourceTree = "<group>"; };
 		CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTimelineViewController.m; sourceTree = "<group>"; };
 		CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapShopsViewController.h; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */,
 				CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */,
 				CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */,
+				CCBFCA3F1B5FDF190057FAF5 /* location.h */,
+				CCBFCA401B5FDF190057FAF5 /* location.m */,
 				CCFFEB291B5F0B2A00BF6364 /* CityDetailCell.h */,
 				CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */,
 				CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */,
@@ -807,6 +812,7 @@
 				CC35479B1B44E33800A9812B /* AFHTTPSessionManager.m in Sources */,
 				CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */,
 				CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */,
+				CCBFCA411B5FDF190057FAF5 /* location.m in Sources */,
 				CC7A89F11B57C3C100505328 /* OATokenManager.m in Sources */,
 				CCFFEB2B1B5F0B2A00BF6364 /* CityDetailCell.m in Sources */,
 			);
