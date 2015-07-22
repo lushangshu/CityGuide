@@ -14,6 +14,12 @@
 #import "CityDetailCell.h"
 #import "location.h"
 #import <CoreLocation/CoreLocation.h>
+#import "SlideNavigationController.h"
+#import "SlideNavigationContorllerAnimatorFade.h"
+#import "SlideNavigationContorllerAnimatorSlide.h"
+#import "SlideNavigationContorllerAnimatorScale.h"
+#import "SlideNavigationContorllerAnimatorScaleAndFade.h"
+#import "SlideNavigationContorllerAnimatorSlideAndFade.h"
 
 
 
@@ -272,7 +278,11 @@
         }
             break;
         case 1: {
-            NSLog(@"pressed ");
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                     bundle: nil];
+            UIViewController *vc =[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
+            
+            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];            NSLog(@"pressed ");
             break;
         }
     }
