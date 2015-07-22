@@ -281,6 +281,11 @@
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
                                                                      bundle: nil];
             UIViewController *vc =[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
+            
+             NSDictionary *dicts = [NSDictionary dictionaryWithObjectsAndKeys:@"one1",@"one",@"two2",@"two",@"three3",@"three", nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification2" object:self.placeList];
+            NSLog(@"send data to another view");
+            
             [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];            NSLog(@"pressed ");
             break;
         }
