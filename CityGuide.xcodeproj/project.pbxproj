@@ -90,6 +90,11 @@
 		CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6C1B57496F0071FD17 /* IKCell.m */; };
 		CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */; };
 		CCBFCA411B5FDF190057FAF5 /* location.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBFCA401B5FDF190057FAF5 /* location.m */; };
+		CCBFCA471B600C610057FAF5 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA421B600C610057FAF5 /* 0.png */; };
+		CCBFCA481B600C610057FAF5 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA431B600C610057FAF5 /* 2.png */; };
+		CCBFCA491B600C610057FAF5 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA441B600C610057FAF5 /* 3.png */; };
+		CCBFCA4A1B600C610057FAF5 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA451B600C610057FAF5 /* 4.png */; };
+		CCBFCA4B1B600C610057FAF5 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA461B600C610057FAF5 /* 1.png */; };
 		CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */; };
 		CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */; };
 		CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */; };
@@ -98,7 +103,6 @@
 		CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1A1B55CCC5007EF470 /* apple.jpg */; };
 		CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1B1B55CCC5007EF470 /* empire.jpg */; };
 		CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */; };
-		CCFFEB251B5E58B100BF6364 /* SPARQL.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEB241B5E58B100BF6364 /* SPARQL.m */; };
 		CCFFEB2B1B5F0B2A00BF6364 /* CityDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */; };
 /* End PBXBuildFile section */
 
@@ -263,6 +267,11 @@
 		CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMediaCell.m; sourceTree = "<group>"; };
 		CCBFCA3F1B5FDF190057FAF5 /* location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = location.h; sourceTree = "<group>"; };
 		CCBFCA401B5FDF190057FAF5 /* location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = location.m; sourceTree = "<group>"; };
+		CCBFCA421B600C610057FAF5 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		CCBFCA431B600C610057FAF5 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		CCBFCA441B600C610057FAF5 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		CCBFCA451B600C610057FAF5 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		CCBFCA461B600C610057FAF5 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTimelineViewController.h; sourceTree = "<group>"; };
 		CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTimelineViewController.m; sourceTree = "<group>"; };
 		CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapShopsViewController.h; sourceTree = "<group>"; };
@@ -276,8 +285,6 @@
 		CCF3CA1A1B55CCC5007EF470 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		CCF3CA1B1B55CCC5007EF470 /* empire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empire.jpg; sourceTree = "<group>"; };
 		CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ottawa.jpg; sourceTree = "<group>"; };
-		CCFFEB231B5E58B100BF6364 /* SPARQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPARQL.h; sourceTree = "<group>"; };
-		CCFFEB241B5E58B100BF6364 /* SPARQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPARQL.m; sourceTree = "<group>"; };
 		CCFFEB291B5F0B2A00BF6364 /* CityDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailCell.h; sourceTree = "<group>"; };
 		CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -331,7 +338,6 @@
 		CC35474A1B41D88B00A9812B /* CityGuide */ = {
 			isa = PBXGroup;
 			children = (
-				CCFFEB221B5E525D00BF6364 /* SPARQL */,
 				CC7A89BA1B57C3C100505328 /* OAuthConsumer */,
 				CCA70F3A1B56C2E50071FD17 /* Animations */,
 				CCF3CA101B55CC69007EF470 /* JPSThumbnailAnnotation */,
@@ -384,6 +390,12 @@
 		CC35474B1B41D88B00A9812B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCBFCA421B600C610057FAF5 /* 0.png */,
+				CCBFCA431B600C610057FAF5 /* 2.png */,
+				CCBFCA441B600C610057FAF5 /* 3.png */,
+				CCBFCA451B600C610057FAF5 /* 4.png */,
+				CCBFCA461B600C610057FAF5 /* 1.png */,
+				CCBFCA4C1B600C690057FAF5 /* bankbuilding */,
 				CC7A89F81B57D37700505328 /* leftMenu.jpg */,
 				CCA70F571B5727380071FD17 /* animation.png */,
 				CCA70F5F1B572C640071FD17 /* menu-button.png */,
@@ -597,6 +609,13 @@
 			path = "CollectionView Cells";
 			sourceTree = "<group>";
 		};
+		CCBFCA4C1B600C690057FAF5 /* bankbuilding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = bankbuilding;
+			sourceTree = "<group>";
+		};
 		CCF3CA101B55CC69007EF470 /* JPSThumbnailAnnotation */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,15 +627,6 @@
 				CCF3CA151B55CC69007EF470 /* JPSThumbnailAnnotationView.m */,
 			);
 			path = JPSThumbnailAnnotation;
-			sourceTree = "<group>";
-		};
-		CCFFEB221B5E525D00BF6364 /* SPARQL */ = {
-			isa = PBXGroup;
-			children = (
-				CCFFEB231B5E58B100BF6364 /* SPARQL.h */,
-				CCFFEB241B5E58B100BF6364 /* SPARQL.m */,
-			);
-			name = SPARQL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -704,14 +714,19 @@
 				CC3547D81B4545FF00A9812B /* map.png in Resources */,
 				CC3547D01B44F47E00A9812B /* Main.storyboard in Resources */,
 				CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */,
+				CCBFCA491B600C610057FAF5 /* 3.png in Resources */,
 				CCA70F5D1B5727380071FD17 /* leftMenu1.jpg in Resources */,
 				CC66AEAE1B46B7940002C846 /* city.png in Resources */,
 				CCA70F5C1B5727380071FD17 /* gear.png in Resources */,
+				CCBFCA481B600C610057FAF5 /* 2.png in Resources */,
 				CC7A89F91B57D37700505328 /* leftMenu.jpg in Resources */,
 				CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */,
 				CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */,
 				CC35475F1B41D88B00A9812B /* LaunchScreen.xib in Resources */,
 				CC35475C1B41D88B00A9812B /* Images.xcassets in Resources */,
+				CCBFCA4B1B600C610057FAF5 /* 1.png in Resources */,
+				CCBFCA471B600C610057FAF5 /* 0.png in Resources */,
+				CCBFCA4A1B600C610057FAF5 /* 4.png in Resources */,
 				CCA70F5B1B5727380071FD17 /* animation.png in Resources */,
 				CCA70F601B572C640071FD17 /* menu-button.png in Resources */,
 				CC3547E01B4563EA00A9812B /* TwitterKitResources.bundle in Resources */,
@@ -753,7 +768,6 @@
 				CC7A89EC1B57C3C100505328 /* OAPlaintextSignatureProvider.m in Sources */,
 				CC7A89E21B57C3C100505328 /* NSString+URLEncoding.m in Sources */,
 				CC7A89E71B57C3C100505328 /* OACall.m in Sources */,
-				CCFFEB251B5E58B100BF6364 /* SPARQL.m in Sources */,
 				CC7A89E61B57C3C100505328 /* sha1.c in Sources */,
 				CC3547BC1B44E46D00A9812B /* InstagramLocation.m in Sources */,
 				CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */,

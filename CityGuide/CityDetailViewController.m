@@ -205,6 +205,8 @@
     NSArray *obj = [self.placeList objectAtIndex:indexPath.row];
     [cell.label1 setText: obj[0]];
     [cell.label2 setText: obj[1]];
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",(long)(indexPath.row % 5)]];
+    [cell.imageView setImage:image];
     return cell;
 }
 
