@@ -14,11 +14,10 @@
 
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-
 @property (strong,nonatomic) IBOutlet UISearchBar *mySearch;
 @property (strong,nonatomic) IBOutlet MKMapView *myMapView;
 
-- (IBAction)bounceMenu:(id)sender;
-- (IBAction)changeAnimationSelected:(id)sender;
+//- (IBAction)bounceMenu:(id)sender;
+//- (IBAction)changeAnimationSelected:(id)sender;
 
 @end
