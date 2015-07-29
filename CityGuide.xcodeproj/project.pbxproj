@@ -353,16 +353,8 @@
 				CC3547501B41D88B00A9812B /* AppDelegate.m */,
 				CC3547551B41D88B00A9812B /* ViewController.h */,
 				CC3547561B41D88B00A9812B /* ViewController.m */,
-				CCA70F541B5724D80071FD17 /* HomeViewController.h */,
-				CCA70F551B5724D80071FD17 /* HomeViewController.m */,
-				CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */,
-				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
-				CCA70F4B1B56C3B50071FD17 /* SlideNavigationController.h */,
-				CCA70F4C1B56C3B50071FD17 /* SlideNavigationController.m */,
-				CCA70F4E1B56C48E0071FD17 /* LeftMenuViewController.h */,
-				CCA70F4F1B56C48E0071FD17 /* LeftMenuViewController.m */,
-				CCA70F511B56C4F00071FD17 /* RightMenuViewController.h */,
-				CCA70F521B56C4F00071FD17 /* RightMenuViewController.m */,
+				CC6E27D41B6982BE004A08E2 /* Map */,
+				CC6E27D31B6982B3004A08E2 /* Navigation */,
 				CC35477E1B42290D00A9812B /* MapViewController.h */,
 				CC35477F1B42290D00A9812B /* MapViewController.m */,
 				CC3547D11B44F60A00A9812B /* IKCollectionViewController.h */,
@@ -524,6 +516,30 @@
 				CC3547B91B44E46D00A9812B /* InstagramUser.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CC6E27D31B6982B3004A08E2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CCA70F4B1B56C3B50071FD17 /* SlideNavigationController.h */,
+				CCA70F4C1B56C3B50071FD17 /* SlideNavigationController.m */,
+				CCA70F4E1B56C48E0071FD17 /* LeftMenuViewController.h */,
+				CCA70F4F1B56C48E0071FD17 /* LeftMenuViewController.m */,
+				CCA70F511B56C4F00071FD17 /* RightMenuViewController.h */,
+				CCA70F521B56C4F00071FD17 /* RightMenuViewController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		CC6E27D41B6982BE004A08E2 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CCA70F541B5724D80071FD17 /* HomeViewController.h */,
+				CCA70F551B5724D80071FD17 /* HomeViewController.m */,
+				CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */,
+				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		CC7A89BA1B57C3C100505328 /* OAuthConsumer */ = {
