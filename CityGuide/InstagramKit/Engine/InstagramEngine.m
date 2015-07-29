@@ -19,7 +19,8 @@
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "InstagramEngine.h"
-#import "AFNetworking.h"
+//#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 #import "InstagramUser.h"
 #import "InstagramMedia.h"
 #import "InstagramComment.h"

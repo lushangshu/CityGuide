@@ -20,16 +20,6 @@
 		CC35477C1B42286E00A9812B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC35477B1B42286E00A9812B /* MapKit.framework */; };
 		CC3547801B42290D00A9812B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC35477F1B42290D00A9812B /* MapViewController.m */; };
 		CC3547821B44E1C200A9812B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3547811B44E1C200A9812B /* CoreGraphics.framework */; };
-		CC3547991B44E33800A9812B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547851B44E33800A9812B /* AFHTTPRequestOperation.m */; };
-		CC35479A1B44E33800A9812B /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547871B44E33800A9812B /* AFHTTPRequestOperationManager.m */; };
-		CC35479B1B44E33800A9812B /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547891B44E33800A9812B /* AFHTTPSessionManager.m */; };
-		CC35479C1B44E33800A9812B /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC35478C1B44E33800A9812B /* AFNetworkReachabilityManager.m */; };
-		CC35479D1B44E33800A9812B /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC35478E1B44E33800A9812B /* AFSecurityPolicy.m */; };
-		CC35479E1B44E33800A9812B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547901B44E33800A9812B /* AFURLConnectionOperation.m */; };
-		CC35479F1B44E33800A9812B /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547921B44E33800A9812B /* AFURLRequestSerialization.m */; };
-		CC3547A01B44E33800A9812B /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547941B44E33800A9812B /* AFURLResponseSerialization.m */; };
-		CC3547A11B44E33800A9812B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547961B44E33800A9812B /* AFURLSessionManager.m */; };
-		CC3547A21B44E33800A9812B /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547981B44E33800A9812B /* UIImageView+AFNetworking.m */; };
 		CC3547BA1B44E46D00A9812B /* InstagramEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547A91B44E46D00A9812B /* InstagramEngine.m */; };
 		CC3547BB1B44E46D00A9812B /* InstagramComment.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547AD1B44E46D00A9812B /* InstagramComment.m */; };
 		CC3547BC1B44E46D00A9812B /* InstagramLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547AF1B44E46D00A9812B /* InstagramLocation.m */; };
@@ -90,6 +80,8 @@
 		CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6C1B57496F0071FD17 /* IKCell.m */; };
 		CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */; };
 		CCAC04901B6920D600D5D7A9 /* GenerateRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */; };
+		CCAC04931B692C5D00D5D7A9 /* RecommendLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC04921B692C5D00D5D7A9 /* RecommendLocationViewController.m */; };
+		CCAC04981B69543A00D5D7A9 /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC04971B69543A00D5D7A9 /* VenueCell.m */; };
 		CCBFCA411B5FDF190057FAF5 /* location.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBFCA401B5FDF190057FAF5 /* location.m */; };
 		CCBFCA471B600C610057FAF5 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA421B600C610057FAF5 /* 0.png */; };
 		CCBFCA481B600C610057FAF5 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA431B600C610057FAF5 /* 2.png */; };
@@ -106,6 +98,7 @@
 		CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1B1B55CCC5007EF470 /* empire.jpg */; };
 		CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */; };
 		CCFFEB2B1B5F0B2A00BF6364 /* CityDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */; };
+		FF6B70F4B66DE367C11738FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B76E4535075228CC4B3CA2EF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +112,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34DE71F817B673F78852EC3D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B76E4535075228CC4B3CA2EF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA04C0690A1BAD4E8228BD4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CC3547481B41D88B00A9812B /* CityGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC35474C1B41D88B00A9812B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC35474D1B41D88B00A9812B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,27 +135,6 @@
 		CC35477E1B42290D00A9812B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		CC35477F1B42290D00A9812B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		CC3547811B44E1C200A9812B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CC3547841B44E33800A9812B /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		CC3547851B44E33800A9812B /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		CC3547861B44E33800A9812B /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		CC3547871B44E33800A9812B /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		CC3547881B44E33800A9812B /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		CC3547891B44E33800A9812B /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		CC35478A1B44E33800A9812B /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		CC35478B1B44E33800A9812B /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		CC35478C1B44E33800A9812B /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		CC35478D1B44E33800A9812B /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		CC35478E1B44E33800A9812B /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		CC35478F1B44E33800A9812B /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		CC3547901B44E33800A9812B /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		CC3547911B44E33800A9812B /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		CC3547921B44E33800A9812B /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		CC3547931B44E33800A9812B /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		CC3547941B44E33800A9812B /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		CC3547951B44E33800A9812B /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		CC3547961B44E33800A9812B /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		CC3547971B44E33800A9812B /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		CC3547981B44E33800A9812B /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		CC3547A81B44E46D00A9812B /* InstagramEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramEngine.h; sourceTree = "<group>"; };
 		CC3547A91B44E46D00A9812B /* InstagramEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramEngine.m; sourceTree = "<group>"; };
 		CC3547AA1B44E46D00A9812B /* InstagramKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramKit.h; sourceTree = "<group>"; };
@@ -269,6 +244,10 @@
 		CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMediaCell.m; sourceTree = "<group>"; };
 		CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateRouteViewController.h; sourceTree = "<group>"; };
 		CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateRouteViewController.m; sourceTree = "<group>"; };
+		CCAC04911B692C5D00D5D7A9 /* RecommendLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendLocationViewController.h; sourceTree = "<group>"; };
+		CCAC04921B692C5D00D5D7A9 /* RecommendLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendLocationViewController.m; sourceTree = "<group>"; };
+		CCAC04961B69543A00D5D7A9 /* VenueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCell.h; sourceTree = "<group>"; };
+		CCAC04971B69543A00D5D7A9 /* VenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCell.m; sourceTree = "<group>"; };
 		CCBFCA3F1B5FDF190057FAF5 /* location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = location.h; sourceTree = "<group>"; };
 		CCBFCA401B5FDF190057FAF5 /* location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = location.m; sourceTree = "<group>"; };
 		CCBFCA421B600C610057FAF5 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -310,6 +289,7 @@
 				CC3547781B41D90D00A9812B /* FBSDKLoginKit.framework in Frameworks */,
 				CC3547771B41D90D00A9812B /* FBSDKCoreKit.framework in Frameworks */,
 				CC3547791B41D90D00A9812B /* FBSDKShareKit.framework in Frameworks */,
+				FF6B70F4B66DE367C11738FD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,12 +303,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		563D5139BC3BEB2A6749C373 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B76E4535075228CC4B3CA2EF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB04ED9EA836C838D8E823E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34DE71F817B673F78852EC3D /* Pods.debug.xcconfig */,
+				BEA04C0690A1BAD4E8228BD4 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CC35473F1B41D88B00A9812B = {
 			isa = PBXGroup;
 			children = (
 				CC35474A1B41D88B00A9812B /* CityGuide */,
 				CC3547671B41D88B00A9812B /* CityGuideTests */,
 				CC3547491B41D88B00A9812B /* Products */,
+				CB04ED9EA836C838D8E823E6 /* Pods */,
+				563D5139BC3BEB2A6749C373 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -348,21 +347,12 @@
 				CCA70F3A1B56C2E50071FD17 /* Animations */,
 				CCF3CA101B55CC69007EF470 /* JPSThumbnailAnnotation */,
 				CC3547A61B44E46D00A9812B /* InstagramKit */,
-				CC3547831B44E33800A9812B /* AFNetworking */,
 				CC35474F1B41D88B00A9812B /* AppDelegate.h */,
 				CC3547501B41D88B00A9812B /* AppDelegate.m */,
 				CC3547551B41D88B00A9812B /* ViewController.h */,
 				CC3547561B41D88B00A9812B /* ViewController.m */,
-				CCA70F541B5724D80071FD17 /* HomeViewController.h */,
-				CCA70F551B5724D80071FD17 /* HomeViewController.m */,
-				CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */,
-				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
-				CCA70F4B1B56C3B50071FD17 /* SlideNavigationController.h */,
-				CCA70F4C1B56C3B50071FD17 /* SlideNavigationController.m */,
-				CCA70F4E1B56C48E0071FD17 /* LeftMenuViewController.h */,
-				CCA70F4F1B56C48E0071FD17 /* LeftMenuViewController.m */,
-				CCA70F511B56C4F00071FD17 /* RightMenuViewController.h */,
-				CCA70F521B56C4F00071FD17 /* RightMenuViewController.m */,
+				CCAC04941B692C6800D5D7A9 /* MapVC */,
+				CCAC04951B692C7700D5D7A9 /* NavigationVC */,
 				CC35477E1B42290D00A9812B /* MapViewController.h */,
 				CC35477F1B42290D00A9812B /* MapViewController.m */,
 				CC3547D11B44F60A00A9812B /* IKCollectionViewController.h */,
@@ -455,34 +445,6 @@
 				CC3547761B41D90D00A9812B /* FBSDKShareKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CC3547831B44E33800A9812B /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				CC3547841B44E33800A9812B /* AFHTTPRequestOperation.h */,
-				CC3547851B44E33800A9812B /* AFHTTPRequestOperation.m */,
-				CC3547861B44E33800A9812B /* AFHTTPRequestOperationManager.h */,
-				CC3547871B44E33800A9812B /* AFHTTPRequestOperationManager.m */,
-				CC3547881B44E33800A9812B /* AFHTTPSessionManager.h */,
-				CC3547891B44E33800A9812B /* AFHTTPSessionManager.m */,
-				CC35478A1B44E33800A9812B /* AFNetworking.h */,
-				CC35478B1B44E33800A9812B /* AFNetworkReachabilityManager.h */,
-				CC35478C1B44E33800A9812B /* AFNetworkReachabilityManager.m */,
-				CC35478D1B44E33800A9812B /* AFSecurityPolicy.h */,
-				CC35478E1B44E33800A9812B /* AFSecurityPolicy.m */,
-				CC35478F1B44E33800A9812B /* AFURLConnectionOperation.h */,
-				CC3547901B44E33800A9812B /* AFURLConnectionOperation.m */,
-				CC3547911B44E33800A9812B /* AFURLRequestSerialization.h */,
-				CC3547921B44E33800A9812B /* AFURLRequestSerialization.m */,
-				CC3547931B44E33800A9812B /* AFURLResponseSerialization.h */,
-				CC3547941B44E33800A9812B /* AFURLResponseSerialization.m */,
-				CC3547951B44E33800A9812B /* AFURLSessionManager.h */,
-				CC3547961B44E33800A9812B /* AFURLSessionManager.m */,
-				CC3547971B44E33800A9812B /* UIImageView+AFNetworking.h */,
-				CC3547981B44E33800A9812B /* UIImageView+AFNetworking.m */,
-			);
-			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 		CC3547A61B44E46D00A9812B /* InstagramKit */ = {
@@ -618,6 +580,34 @@
 			path = "CollectionView Cells";
 			sourceTree = "<group>";
 		};
+		CCAC04941B692C6800D5D7A9 /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				CCA70F541B5724D80071FD17 /* HomeViewController.h */,
+				CCA70F551B5724D80071FD17 /* HomeViewController.m */,
+				CCAC04911B692C5D00D5D7A9 /* RecommendLocationViewController.h */,
+				CCAC04921B692C5D00D5D7A9 /* RecommendLocationViewController.m */,
+				CCAC04961B69543A00D5D7A9 /* VenueCell.h */,
+				CCAC04971B69543A00D5D7A9 /* VenueCell.m */,
+				CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */,
+				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
+			);
+			name = MapVC;
+			sourceTree = "<group>";
+		};
+		CCAC04951B692C7700D5D7A9 /* NavigationVC */ = {
+			isa = PBXGroup;
+			children = (
+				CCA70F4B1B56C3B50071FD17 /* SlideNavigationController.h */,
+				CCA70F4C1B56C3B50071FD17 /* SlideNavigationController.m */,
+				CCA70F4E1B56C48E0071FD17 /* LeftMenuViewController.h */,
+				CCA70F4F1B56C48E0071FD17 /* LeftMenuViewController.m */,
+				CCA70F511B56C4F00071FD17 /* RightMenuViewController.h */,
+				CCA70F521B56C4F00071FD17 /* RightMenuViewController.m */,
+			);
+			name = NavigationVC;
+			sourceTree = "<group>";
+		};
 		CCBFCA4C1B600C690057FAF5 /* bankbuilding */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,10 +635,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC35476E1B41D88B00A9812B /* Build configuration list for PBXNativeTarget "CityGuide" */;
 			buildPhases = (
+				AD6F902172E3AB17045D965C /* Check Pods Manifest.lock */,
 				CC3547441B41D88B00A9812B /* Sources */,
 				CC3547451B41D88B00A9812B /* Frameworks */,
 				CC3547461B41D88B00A9812B /* Resources */,
 				CC3547D91B4563AB00A9812B /* ShellScript */,
+				BDB43D509A85CA745A112DDD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -752,6 +744,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AD6F902172E3AB17045D965C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BDB43D509A85CA745A112DDD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CC3547D91B4563AB00A9812B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -780,28 +802,22 @@
 				CC7A89E61B57C3C100505328 /* sha1.c in Sources */,
 				CC3547BC1B44E46D00A9812B /* InstagramLocation.m in Sources */,
 				CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
-				CC35479E1B44E33800A9812B /* AFURLConnectionOperation.m in Sources */,
-				CC3547A21B44E33800A9812B /* UIImageView+AFNetworking.m in Sources */,
 				CCA70F561B5724D80071FD17 /* HomeViewController.m in Sources */,
 				CC7A89E41B57C3C100505328 /* Base64Transcoder.c in Sources */,
 				CC3547BE1B44E46D00A9812B /* InstagramModel.m in Sources */,
 				CC7A89F71B57C3D200505328 /* YPAPISample.m in Sources */,
 				CC3547BA1B44E46D00A9812B /* InstagramEngine.m in Sources */,
 				CC7A89F01B57C3C100505328 /* OAToken.m in Sources */,
-				CC3547991B44E33800A9812B /* AFHTTPRequestOperation.m in Sources */,
-				CC35479C1B44E33800A9812B /* AFNetworkReachabilityManager.m in Sources */,
+				CCAC04931B692C5D00D5D7A9 /* RecommendLocationViewController.m in Sources */,
 				CCA70F481B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */,
 				CCF3CA0C1B53C480007EF470 /* FetchTimelineViewController.m in Sources */,
-				CC3547A11B44E33800A9812B /* AFURLSessionManager.m in Sources */,
-				CC35479F1B44E33800A9812B /* AFURLRequestSerialization.m in Sources */,
 				CC7A89ED1B57C3C100505328 /* OAProblem.m in Sources */,
 				CC3547511B41D88B00A9812B /* AppDelegate.m in Sources */,
 				CC7A89E31B57C3C100505328 /* NSURL+Base.m in Sources */,
 				CC7A89E11B57C3C100505328 /* NSMutableURLRequest+Parameters.m in Sources */,
 				CC3547C01B44E46D00A9812B /* InstagramTag.m in Sources */,
 				CC7A89EA1B57C3C100505328 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
-				CC3547A01B44E33800A9812B /* AFURLResponseSerialization.m in Sources */,
 				CC3547541B41D88B00A9812B /* CityGuide.xcdatamodeld in Sources */,
 				CC3547BB1B44E46D00A9812B /* InstagramComment.m in Sources */,
 				CCA70F501B56C48E0071FD17 /* LeftMenuViewController.m in Sources */,
@@ -814,9 +830,7 @@
 				CC3547801B42290D00A9812B /* MapViewController.m in Sources */,
 				CCA70F491B56C2E50071FD17 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				CCF3CA191B55CC69007EF470 /* JPSThumnail.m in Sources */,
-				CC35479A1B44E33800A9812B /* AFHTTPRequestOperationManager.m in Sources */,
 				CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */,
-				CC35479D1B44E33800A9812B /* AFSecurityPolicy.m in Sources */,
 				CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */,
 				CC7A89E91B57C3C100505328 /* OADataFetcher.m in Sources */,
 				CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */,
@@ -833,8 +847,8 @@
 				CC3547BD1B44E46D00A9812B /* InstagramMedia.m in Sources */,
 				CCF3CA181B55CC69007EF470 /* JPSThumbnailAnnotationView.m in Sources */,
 				CCA70F4A1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
-				CC35479B1B44E33800A9812B /* AFHTTPSessionManager.m in Sources */,
 				CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */,
+				CCAC04981B69543A00D5D7A9 /* VenueCell.m in Sources */,
 				CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */,
 				CCBFCA411B5FDF190057FAF5 /* location.m in Sources */,
 				CC7A89F11B57C3C100505328 /* OATokenManager.m in Sources */,
@@ -958,6 +972,7 @@
 		};
 		CC35476F1B41D88B00A9812B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34DE71F817B673F78852EC3D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -966,7 +981,7 @@
 					"$(PROJECT_DIR)/CityGuide/AFNetworking",
 				);
 				INFOPLIST_FILE = CityGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -977,6 +992,7 @@
 		};
 		CC3547701B41D88B00A9812B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEA04C0690A1BAD4E8228BD4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -985,7 +1001,7 @@
 					"$(PROJECT_DIR)/CityGuide/AFNetworking",
 				);
 				INFOPLIST_FILE = CityGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
