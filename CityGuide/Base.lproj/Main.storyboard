@@ -229,9 +229,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hut-Ze-Tu6">
-                                <rect key="frame" x="131" y="532" width="46" height="30"/>
+                                <rect key="frame" x="105" y="526" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Show Locations">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -278,7 +278,7 @@
         <!--Map-->
         <scene sceneID="96r-ny-UBO">
             <objects>
-                <viewController id="3mJ-Z4-jTR" sceneMemberID="viewController">
+                <viewController id="3mJ-Z4-jTR" customClass="GenerateRouteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OKs-Q1-UKL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,11 +286,17 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="86r-f6-tOx">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3mJ-Z4-jTR" id="WvS-J7-e2B"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="4VH-Ft-AD1"/>
+                    <connections>
+                        <outlet property="mapView" destination="86r-f6-tOx" id="fvL-Sp-XjD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqC-T3-DiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,21 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50B-WA-swh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="-1365"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="CYU-B2-jf3">
-            <objects>
-                <viewController id="eoI-92-GEv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="r8Q-Yr-8Fw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bCk-TL-Fw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2387" y="-1782"/>
+            <point key="canvasLocation" x="1841" y="-1365"/>
         </scene>
         <!--City-->
         <scene sceneID="nn2-6E-Qk0">
@@ -545,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8h-EB-NYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="-1298"/>
+            <point key="canvasLocation" x="1400" y="-1374"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="fKh-Od-Scf">

@@ -89,6 +89,7 @@
 		CCA70F691B5749130071FD17 /* IKMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F681B5749130071FD17 /* IKMediaViewController.m */; };
 		CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6C1B57496F0071FD17 /* IKCell.m */; };
 		CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */; };
+		CCAC04901B6920D600D5D7A9 /* GenerateRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */; };
 		CCBFCA411B5FDF190057FAF5 /* location.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBFCA401B5FDF190057FAF5 /* location.m */; };
 		CCBFCA471B600C610057FAF5 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA421B600C610057FAF5 /* 0.png */; };
 		CCBFCA481B600C610057FAF5 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA431B600C610057FAF5 /* 2.png */; };
@@ -266,6 +267,8 @@
 		CCA70F6C1B57496F0071FD17 /* IKCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKCell.m; sourceTree = "<group>"; };
 		CCA70F6D1B57496F0071FD17 /* IKMediaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKMediaCell.h; sourceTree = "<group>"; };
 		CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMediaCell.m; sourceTree = "<group>"; };
+		CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateRouteViewController.h; sourceTree = "<group>"; };
+		CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateRouteViewController.m; sourceTree = "<group>"; };
 		CCBFCA3F1B5FDF190057FAF5 /* location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = location.h; sourceTree = "<group>"; };
 		CCBFCA401B5FDF190057FAF5 /* location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = location.m; sourceTree = "<group>"; };
 		CCBFCA421B600C610057FAF5 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				CC3547561B41D88B00A9812B /* ViewController.m */,
 				CCA70F541B5724D80071FD17 /* HomeViewController.h */,
 				CCA70F551B5724D80071FD17 /* HomeViewController.m */,
+				CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */,
+				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
 				CCA70F4B1B56C3B50071FD17 /* SlideNavigationController.h */,
 				CCA70F4C1B56C3B50071FD17 /* SlideNavigationController.m */,
 				CCA70F4E1B56C48E0071FD17 /* LeftMenuViewController.h */,
@@ -803,6 +808,7 @@
 				CCA70F4D1B56C3B50071FD17 /* SlideNavigationController.m in Sources */,
 				CC7A89E81B57C3C100505328 /* OAConsumer.m in Sources */,
 				CC7A89F41B57C3C900505328 /* NSURLRequest+OAuth.m in Sources */,
+				CCAC04901B6920D600D5D7A9 /* GenerateRouteViewController.m in Sources */,
 				CCA70F461B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				CC3547C11B44E46D00A9812B /* InstagramUser.m in Sources */,
 				CC3547801B42290D00A9812B /* MapViewController.m in Sources */,
