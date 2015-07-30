@@ -54,6 +54,8 @@
     return [NSMutableArray array];
 }
 
+
+
 #pragma mark - UITableViewDelegate
 
 // The number of rows is equal to the number of places in the city
@@ -72,11 +74,31 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-   
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+}
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    UITableViewCell *cell = [self.tableV cellForRowAtIndexPath:indexPath];
+//    [cell setBackgroundColor:[UIColor whiteColor ]];
+    [self updateDataWithTableview:self.tableV];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [self.tableV cellForRowAtIndexPath:indexPath];
+    [cell setBackgroundColor:[UIColor blueColor]];
+    [self updateDataWithTableview:self.tableV];
+}
+
+- (void)updateDataWithTableview:(UITableView *)tableView {
+    NSArray *indexpaths = [self.tableV indexPathsForSelectedRows];
+    NSMutableArray *selectedItems = [NSMutableArray new];
+    for (NSIndexPath *indexpath in indexpaths) {
+        UITableViewCell *cell = [self.tableV cellForRowAtIndexPath:indexpath];
+        [selectedItems addObject:cell.textLabel];
+    }
+    self.selectedVenus.text = [selectedItems componentsJoinedByString:@";"];
+}
 
 
 @end

@@ -831,10 +831,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venues name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZjD-Jk-hzS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venues name" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZjD-Jk-hzS">
                                 <rect key="frame" x="32" y="81" width="116" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -880,6 +880,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Venues" id="MHd-0C-1mM"/>
                     <connections>
+                        <outlet property="selectedVenus" destination="ZjD-Jk-hzS" id="z7Y-DW-ONr"/>
                         <outlet property="tableV" destination="db9-XR-7MJ" id="1ei-gY-bRu"/>
                     </connections>
                 </viewController>
