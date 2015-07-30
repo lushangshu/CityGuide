@@ -15,5 +15,11 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
+@property (strong,nonatomic) IBOutlet UIView *searchSubV;
+@property (strong,nonatomic) IBOutlet UISearchBar *dep;
+@property (strong,nonatomic) IBOutlet UISearchBar *arr;
+@property (strong,nonatomic) IBOutlet UIButton *search;
+
+-(IBAction)GenerateRoute;
 
 @end

@@ -5,14 +5,17 @@
 //  Created by lushangshu on 15-7-29.
 //  Copyright (c) 2015年 lushangshu. All rights reserved.
 //
-
+#import <CoreLocation/CoreLocation.h>
 #import "GenerateRouteViewController.h"
 
-@interface GenerateRouteViewController ()
+@interface GenerateRouteViewController () <CLLocationManagerDelegate>
 {
     CLLocationManager *locationManager;
     float myLat,myLon;
     MKRoute *rout;
+    
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
 }
 
 @end
@@ -21,12 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
     self.mapView.delegate=self;
     self.mapView.showsUserLocation=YES;
+    [self.arr setText:@"Sheffield Railway Station (SHF),53.377846,-1.461872"];
     
     //to get the current location
     locationManager=[[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -45,22 +50,51 @@
     
     
     //To draw poly line between mok source and destination
-    [self showLinesFromSourceLati:0.0 Long:0.0];
+    //[self showLinesFromSourceLati:0.0 Long:0.0];
     
     
     
 }
 
+-(IBAction)GenerateRoute{
+    [self showLinesFromSourceLati:0.0 Long:0.0];
+}
+
+#pragma mark - CLLocationManagerDelegate Methods
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    
+    NSLog(@"Error: %@", error);
+    NSLog(@"Failed to get location! :(");
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"Location: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    if (currentLocation != nil) {
+        //        self.latitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        //        self.longitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+    }
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            [self.dep setText:[NSString stringWithFormat:@"%@,%@",placemark.thoroughfare,placemark.subThoroughfare]];
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    } ];
+}
+
 
 - (void)showLinesFromSourceLati:(float)lat Long:(float)Lon
 {
-    
     //    myLat=lat;
     //    myLon=Lon;
-    
-    
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake
-    (53.38557900,-1.46176330);
+    (53.385132,-1.480261);
     
     //Uncomment this below line to zoom at user current location and comment the above line
     //    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(lat, Lon);
@@ -74,14 +108,14 @@
     
     //To zoom in to the source location
     CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake
-    (53.38, -1.46);
+    (53.385132,-1.480261);
     //    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(lat, Lon);
     MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 2000, 2000)];
     [_mapView setRegion:adjustedRegion animated:YES];
     
     //Setting up Source point // start point
     MKPlacemark *source = [[MKPlacemark alloc]initWithCoordinate:CLLocationCoordinate2DMake
-                           (53.47557900,-1.46176330) addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
+                           (53.385132,-1.480261) addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
     //    MKPlacemark *source = [[MKPlacemark alloc]initWithCoordinate:CLLocationCoordinate2DMake(lat,Lon) addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
     
     MKMapItem *srcMapItem = [[MKMapItem alloc]initWithPlacemark:source];
@@ -89,12 +123,12 @@
     
     
     //Setting the destination
-    MKPlacemark *destination = [[MKPlacemark alloc]initWithCoordinate:CLLocationCoordinate2DMake(53.36557900,-1.45176330) addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
+    MKPlacemark *destination = [[MKPlacemark alloc]initWithCoordinate:CLLocationCoordinate2DMake(53.377846,-1.461872) addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
     MKMapItem *distMapItem = [[MKMapItem alloc]initWithPlacemark:destination];
     [distMapItem setName:@"Destination"];
     
     //Place annotation for the destination
-    CLLocationCoordinate2D coordinate1 = CLLocationCoordinate2DMake(53.36557900,-1.45176330);
+    CLLocationCoordinate2D coordinate1 = CLLocationCoordinate2DMake(53.377846,-1.461872);
     MKPointAnnotation *annotation1 = [[MKPointAnnotation alloc] init];
     [annotation1 setCoordinate:coordinate1];
     [annotation1 setTitle:@"Apple Inc"];
@@ -159,7 +193,6 @@
 }
 
 
-
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotationPoint
 {
     
@@ -178,36 +211,6 @@
     
     return pinView;
 }
-
-
-#pragma mark - CLLocationManagerDelegate
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [errorAlert show];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
-    
-    if (currentLocation != nil) {
-        
-        NSLog(@"%@,%@",[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude],[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude]);
-    }
-    [locationManager stopUpdatingLocation];
-    
-    /* To show the directions from users current location to the destination*/
-    // Uncomment below code to get the directions from the current location to the destination
-    
-    //        [self showLinesFromSourceLati:currentLocation.coordinate.latitude
-    //                                 Long:currentLocation.coordinate.longitude];
-}
-
 
 
 - (void)didReceiveMemoryWarning {

@@ -86,7 +86,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [self.tableV cellForRowAtIndexPath:indexPath];
-    [cell setBackgroundColor:[UIColor blueColor]];
+    [cell setBackgroundColor:[UIColor colorWithRed:69.0/255.0 green:147.0/255.0 blue:240.0/255.0 alpha:1.0] ];
     [self updateDataWithTableview:self.tableV];
 }
 

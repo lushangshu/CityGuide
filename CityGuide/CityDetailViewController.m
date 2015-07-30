@@ -173,41 +173,24 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    
     NSLog(@"Location: %@", newLocation);
     CLLocation *currentLocation = newLocation;
-    
     if (currentLocation != nil) {
-        
 //        self.latitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
 //        self.longitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-        
     }
-    
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        
         if (error == nil && [placemarks count] > 0) {
-            
             placemark = [placemarks lastObject];
             [self.label_c setText:[NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
                                    placemark.subThoroughfare, placemark.thoroughfare,
                                    placemark.postalCode, placemark.locality,
                                    placemark.administrativeArea,
                                    placemark.country]];
-//            self.label_c.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-//                                 placemark.subThoroughfare, placemark.thoroughfare,
-//                                 placemark.postalCode, placemark.locality,
-//                                 placemark.administrativeArea,
-//                                 placemark.country];
-            
         } else {
-            
             NSLog(@"%@", error.debugDescription);
-            
         }
-        
     } ];
-    
 }
 
 
