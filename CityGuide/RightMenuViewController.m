@@ -18,7 +18,7 @@
     
     self.tableView.separatorColor = [UIColor lightGrayColor];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rightMenu.jpg"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenu.jpg"]];
     self.tableView.backgroundView = imageView;
     
     self.view.layer.borderWidth = .6;
@@ -47,31 +47,32 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"rightMenuCell"];
+    cell.textLabel.textAlignment = NSTextAlignmentRight;
     
     switch (indexPath.row)
     {
         case 0:
-            cell.textLabel.text = @"None";
+            cell.textLabel.text = @"Events From Local";
             break;
             
         case 1:
-            cell.textLabel.text = @"Slide";
+            cell.textLabel.text = @"Events 1";
             break;
             
         case 2:
-            cell.textLabel.text = @"Fade";
+            cell.textLabel.text = @"Events 2";
             break;
             
         case 3:
-            cell.textLabel.text = @"Slide And Fade";
+            cell.textLabel.text = @"Events 3";
             break;
             
         case 4:
-            cell.textLabel.text = @"Scale";
+            cell.textLabel.text = @"Events 4";
             break;
             
         case 5:
-            cell.textLabel.text = @"Scale And Fade";
+            cell.textLabel.text = @"Events 5";
             break;
     }
     

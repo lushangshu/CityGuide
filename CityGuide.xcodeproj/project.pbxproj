@@ -50,6 +50,9 @@
 		CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */; };
 		CC66AEAE1B46B7940002C846 /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC66AEAD1B46B7940002C846 /* city.png */; };
 		CC6E27DD1B698600004A08E2 /* VenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DC1B698600004A08E2 /* VenuesViewController.m */; };
+		CC6E27E21B69A9D6004A08E2 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DF1B69A9D6004A08E2 /* FSConverter.m */; };
+		CC6E27E31B69A9D6004A08E2 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27E11B69A9D6004A08E2 /* FSVenue.m */; };
+		CC6E27E61B69AEEA004A08E2 /* venuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27E51B69AEEA004A08E2 /* venuCell.m */; };
 		CC7A89661B57555500505328 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7A89651B57555500505328 /* Accounts.framework */; };
 		CC7A89E11B57C3C100505328 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A89BD1B57C3C100505328 /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC7A89E21B57C3C100505328 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A89BF1B57C3C100505328 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -194,6 +197,12 @@
 		CC66AEAD1B46B7940002C846 /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
 		CC6E27DB1B698600004A08E2 /* VenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesViewController.h; sourceTree = "<group>"; };
 		CC6E27DC1B698600004A08E2 /* VenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesViewController.m; sourceTree = "<group>"; };
+		CC6E27DE1B69A9D6004A08E2 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
+		CC6E27DF1B69A9D6004A08E2 /* FSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSConverter.m; sourceTree = "<group>"; };
+		CC6E27E01B69A9D6004A08E2 /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenue.h; sourceTree = "<group>"; };
+		CC6E27E11B69A9D6004A08E2 /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
+		CC6E27E41B69AEEA004A08E2 /* venuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = venuCell.h; sourceTree = "<group>"; };
+		CC6E27E51B69AEEA004A08E2 /* venuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = venuCell.m; sourceTree = "<group>"; };
 		CC7A89651B57555500505328 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CC7A89BC1B57C3C100505328 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		CC7A89BD1B57C3C100505328 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
@@ -543,6 +552,12 @@
 				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
 				CC6E27DB1B698600004A08E2 /* VenuesViewController.h */,
 				CC6E27DC1B698600004A08E2 /* VenuesViewController.m */,
+				CC6E27E41B69AEEA004A08E2 /* venuCell.h */,
+				CC6E27E51B69AEEA004A08E2 /* venuCell.m */,
+				CC6E27DE1B69A9D6004A08E2 /* FSConverter.h */,
+				CC6E27DF1B69A9D6004A08E2 /* FSConverter.m */,
+				CC6E27E01B69A9D6004A08E2 /* FSVenue.h */,
+				CC6E27E11B69A9D6004A08E2 /* FSVenue.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -807,6 +822,7 @@
 				CC7A89E41B57C3C100505328 /* Base64Transcoder.c in Sources */,
 				CC3547BE1B44E46D00A9812B /* InstagramModel.m in Sources */,
 				CC7A89F71B57C3D200505328 /* YPAPISample.m in Sources */,
+				CC6E27E61B69AEEA004A08E2 /* venuCell.m in Sources */,
 				CC3547BA1B44E46D00A9812B /* InstagramEngine.m in Sources */,
 				CC7A89F01B57C3C100505328 /* OAToken.m in Sources */,
 				CC3547991B44E33800A9812B /* AFHTTPRequestOperation.m in Sources */,
@@ -848,6 +864,7 @@
 				CCA70F531B56C4F00071FD17 /* RightMenuViewController.m in Sources */,
 				CCA70F691B5749130071FD17 /* IKMediaViewController.m in Sources */,
 				CC7A89EB1B57C3C100505328 /* OAMutableURLRequest.m in Sources */,
+				CC6E27E21B69A9D6004A08E2 /* FSConverter.m in Sources */,
 				CCA70F661B57377F0071FD17 /* ConfigurationViewController.m in Sources */,
 				CC3547571B41D88B00A9812B /* ViewController.m in Sources */,
 				CC35474E1B41D88B00A9812B /* main.m in Sources */,
@@ -856,6 +873,7 @@
 				CCF3CA181B55CC69007EF470 /* JPSThumbnailAnnotationView.m in Sources */,
 				CCA70F4A1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				CC35479B1B44E33800A9812B /* AFHTTPSessionManager.m in Sources */,
+				CC6E27E31B69A9D6004A08E2 /* FSVenue.m in Sources */,
 				CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */,
 				CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */,
 				CCBFCA411B5FDF190057FAF5 /* location.m in Sources */,

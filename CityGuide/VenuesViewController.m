@@ -8,8 +8,12 @@
 
 #import "VenuesViewController.h"
 #import "AFNetworking.h"
+#import "FSVenue.h"
+#import "FSConverter.h"
+#import "venuCell.h"
 
 @implementation VenuesViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,12 +30,53 @@
     [params setObject:@"food" forKey:@"query"];
     [params setObject:@"53.38,-1.46" forKey:@"ll"];
     [params setObject:@"20140118" forKey:@"v"];
+    [params setObject:@"30" forKey:@"limit"];
     
     [manager GET:@"https://api.foursquare.com/v2/venues/search" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        //Process the JSON response here and output each venue name as search suggestion
+        //NSLog(@"JSON: %@", responseObject);
+        NSDictionary *dic = responseObject;
+        NSArray *venues = [dic valueForKeyPath:@"response.venues"];
+        FSConverter *converter = [[FSConverter alloc]init];
+        self.nearbyVenues = [converter convertToObjects:venues];
+        for (int i=0; i<[self.nearbyVenues count]; i++) {
+            FSVenue *v =self.nearbyVenues[i];
+            NSLog(@"name is +++ %@",v.name);
+        }
+        [self.tableV reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 }
+
+-(NSMutableArray*)returnVenuesDetails:(NSString*)result{
+    
+    
+    return [NSMutableArray array];
+}
+
+#pragma mark - UITableViewDelegate
+
+// The number of rows is equal to the number of places in the city
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *vCell = @"VenueCell";
+    venuCell *cell = [self.tableV dequeueReusableCellWithIdentifier:vCell];
+    FSVenue *venue = self.nearbyVenues[indexPath.row];
+    cell.venuName.text = [venue name];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+   
+}
+
+
+
 @end

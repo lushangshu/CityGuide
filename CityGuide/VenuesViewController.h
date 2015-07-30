@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VenuesViewController : UITableViewController
+@interface VenuesViewController : UIViewController
 
 
+@property (nonatomic) NSMutableArray *res;
+@property (strong, nonatomic) NSArray *nearbyVenues;
+@property (nonatomic,strong) IBOutlet UITableView *tableV;
 
 @end

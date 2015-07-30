@@ -740,33 +740,6 @@
             </objects>
             <point key="canvasLocation" x="1490" y="-3290"/>
         </scene>
-        <!--venues-->
-        <scene sceneID="giI-ym-rCb">
-            <objects>
-                <tableViewController id="w4j-x9-dgF" customClass="VenuesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yxf-4v-fsI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="vcell" id="ydH-Rq-hRi">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ydH-Rq-hRi" id="Jwl-OQ-jXf">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="w4j-x9-dgF" id="cop-id-N3v"/>
-                            <outlet property="delegate" destination="w4j-x9-dgF" id="8Qk-PI-3Gh"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="venues" id="y0p-6U-PQ6"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ei-wW-l89" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1433" y="-2640"/>
-        </scene>
         <!--Media View Controller-->
         <scene sceneID="bar-Ww-COe">
             <objects>
@@ -782,7 +755,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gEV-bo-PHZ">
-                                            <rect key="frame" x="-2" y="-2" width="1280" height="1158"/>
+                                            <rect key="frame" x="-2" y="-2" width="1600" height="1447"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>
@@ -843,12 +816,76 @@
                     </tabBar>
                     <connections>
                         <segue destination="3mJ-Z4-jTR" kind="relationship" relationship="viewControllers" id="UGl-0Z-jzf"/>
-                        <segue destination="w4j-x9-dgF" kind="relationship" relationship="viewControllers" id="Led-if-Ajl"/>
+                        <segue destination="PZq-fW-7iC" kind="relationship" relationship="viewControllers" id="2Sm-sk-vP4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTT-DR-gtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962" y="-2433"/>
+        </scene>
+        <!--Venues-->
+        <scene sceneID="gAR-Zn-NsE">
+            <objects>
+                <viewController id="PZq-fW-7iC" customClass="VenuesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0lN-Bu-exB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venues name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZjD-Jk-hzS">
+                                <rect key="frame" x="32" y="81" width="116" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" id="db9-XR-7MJ">
+                                <rect key="frame" x="0.0" y="152" width="320" height="366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VenueCell" rowHeight="77" id="rLg-EM-oyO" customClass="venuCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rLg-EM-oyO" id="KAx-dB-AAc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d4Q-Ih-dit">
+                                                    <rect key="frame" x="36" y="14" width="244" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="venuName" destination="d4Q-Ih-dit" id="oWc-ko-9LS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PZq-fW-7iC" id="m92-1G-p3W"/>
+                                    <outlet property="delegate" destination="PZq-fW-7iC" id="Oss-0E-pjj"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P8h-HF-Fk9">
+                                <rect key="frame" x="184" y="86" width="110" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search Route">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Venues" id="MHd-0C-1mM"/>
+                    <connections>
+                        <outlet property="tableV" destination="db9-XR-7MJ" id="1ei-gY-bRu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgd-WX-Vcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="-2649"/>
         </scene>
     </scenes>
     <resources>
