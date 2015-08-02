@@ -70,6 +70,8 @@
     venuCell *cell = [self.tableV dequeueReusableCellWithIdentifier:vCell];
     FSVenue *venue = self.nearbyVenues[indexPath.row];
     cell.venuName.text = [venue name];
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",(long)(indexPath.row % 5)]];
+    [cell.icon setImage:image];
     
     return cell;
 }

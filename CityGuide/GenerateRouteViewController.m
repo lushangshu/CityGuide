@@ -158,8 +158,6 @@
             
             MKPolyline *line = [rout polyline];
             [_mapView addOverlay:line];
-            
-            
 //            NSLog(@"Rout Name : %@",rout.name);
 //            NSLog(@"Total Distance (in Meters) :%f",rout.distance);
             

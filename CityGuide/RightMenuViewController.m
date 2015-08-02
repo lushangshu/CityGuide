@@ -29,7 +29,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 11;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -56,24 +56,45 @@
             break;
             
         case 1:
-            cell.textLabel.text = @"Events 1";
+            cell.textLabel.text = @"Creamfields UK 2015 28 August - 30 August Daresbury · Buy Tickets";
             break;
             
         case 2:
-            cell.textLabel.text = @"Events 2";
+            cell.textLabel.text = @"SLIP + SLIDE YORK 29 August at 10:00 SLIP + SLIDE YORK";
             break;
             
         case 3:
-            cell.textLabel.text = @"Events 3";
+            cell.textLabel.text = @"Leeds Festival 2015 28 August - 30 August Leeds Festival · Buy Tickets";
             break;
             
         case 4:
-            cell.textLabel.text = @"Events 4";
+            cell.textLabel.text = @"CITY SLIDE NOTTINGHAM Saturday at 00:00 Nottingham, United Kingdom";
             break;
             
         case 5:
-            cell.textLabel.text = @"Events 5";
+            cell.textLabel.text = @"Cannon Hall Farm Food Festival 28 August - 31 August Cannon Hall Farm";
             break;
+            
+        case 6:
+            cell.textLabel.text = @"Creamfields UK 2015 28 August - 30 August Daresbury · Buy Tickets";
+            break;
+            
+        case 7:
+            cell.textLabel.text = @"SLIP + SLIDE YORK 29 August at 10:00 SLIP + SLIDE YORK";
+            break;
+            
+        case 8:
+            cell.textLabel.text = @"Leeds Festival 2015 28 August - 30 August Leeds Festival · Buy Tickets";
+            break;
+            
+        case 9:
+            cell.textLabel.text = @"CITY SLIDE NOTTINGHAM Saturday at 00:00 Nottingham, United Kingdom";
+            break;
+            
+        case 10:
+            cell.textLabel.text = @"Cannon Hall Farm Food Festival 28 August - 31 August Cannon Hall Farm";
+            break;
+
     }
     
     cell.backgroundColor = [UIColor clearColor];

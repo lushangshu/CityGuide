@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SlideNavigationController.h"
 
-@interface PreferenceController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate,SlideNavigationControllerDelegate>
+@interface PreferenceController : UIViewController <UITableViewDataSource,UITableViewDelegate,SlideNavigationControllerDelegate>
 
-
+@property(nonatomic,strong)NSArray *datas;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @end

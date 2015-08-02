@@ -11,4 +11,5 @@
 @interface venuCell : UITableViewCell
 
 @property (nonatomic,weak) IBOutlet UILabel *venuName;
+@property (nonatomic,weak) IBOutlet UIImageView *icon;
 @end

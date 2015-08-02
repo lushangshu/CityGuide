@@ -17,62 +17,49 @@
     
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    array = [[NSMutableArray alloc] init];
-    
-    [array addObject:@"Education"];
-    [array addObject:@"Shopping"];
-    [array addObject:@"Restaurant"];
-    [array addObject:@"Travelling"];
-    [array addObject:@"Entertaiment"];
-    [array addObject:@"Lifestyle"];
-    [array addObject:@"Sports"];
-    [array addObject:@"Leisure"];
-    [array addObject:@"Renting"];
-    [array addObject:@"Gym"];
-    
-    
+    // Do any additional setup after loading the view from its nib.
+    self.datas = [NSArray arrayWithObjects:@"Arts & Entertainment",
+                  @"College & University",
+                  @"Event",
+                  @"Food",
+                  @"Outdoors & Recreation",
+                  @"States & Municipalities",
+                  @"Professional & Other Places",
+                  @"Residence",
+                  @"Travel & Transport",
+                  nil];
+    [self.tableview setEditing:YES animated:YES];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.datas.count;
 }
-
-#pragma mark Collection View
--(NSInteger )numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    
-    return 1;
-    
-}
-
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    return [array count];
-    
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    UILabel *label = (UILabel *)[cell viewWithTag:100];
-    //UIButton *button = (UIButton *)[cell viewWithTag:100];
-    
-    label.text = [array objectAtIndex:indexPath.row];
-    
-    [cell.layer setBorderWidth:2.0f];
-    [cell.layer setBorderColor:[UIColor blackColor].CGColor];
-    
-    [cell.layer setCornerRadius:50.0f];
-    
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];;
+    cell.textLabel.text = self.datas[indexPath.row];
     return cell;
-    
 }
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self updateDataWithTableview:tableView];
+}
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self updateDataWithTableview:tableView];
+}
+- (void)updateDataWithTableview:(UITableView *)tableView {
+    NSArray *indexpaths = [tableView indexPathsForSelectedRows];
+    NSMutableArray *selectedItems = [NSMutableArray new];
+    for (NSIndexPath *indexpath in indexpaths) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexpath];
+        [selectedItems addObject:cell.textLabel.text];
+    }
+    self.label.text = [selectedItems componentsJoinedByString:@";"];
+}
+
 
 #pragma mark - SlideNavigationController Methods -
 
