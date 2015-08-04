@@ -35,16 +35,43 @@
 
 -(IBAction)saveData
 {
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"settings"];
-    [self.datas writeToFile:path atomically:YES];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"settings.plist"];
+    
+    NSDictionary *plistDict = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:@"124", nil] forKeys:[NSArray arrayWithObjects:@"test", nil]];
+    
+    NSString *error = nil;
+//    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+    NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:plistDict format:NSPropertyListXMLFormat_v1_0 options:NSPropertyListMutableContainersAndLeaves error:&error];
+    
+    if(plistData)
+    {
+        [plistData writeToFile:plistPath atomically:YES];
+        NSLog(@"saved data");
+    }
+    else
+    {
+        NSLog(@"save failed");
+    }
+
     
 }
 
 -(IBAction)outPutData
 {
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"settings"];
-    NSMutableArray *arr = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    NSLog(@"%@",arr);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"settings.plist"];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        plistPath = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    }
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSLog(@"$$$ %@",[dict objectForKey:@"test"]);
+   // NSLog(@"### %@",[dict objectForKey:@"name"]);
 }
 
 #pragma mark - tableview

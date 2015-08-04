@@ -337,6 +337,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC10AA561B716C7C0097BD15 /* CityDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */,
+				CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */,
+				CCFFEB291B5F0B2A00BF6364 /* CityDetailCell.h */,
+				CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */,
+			);
+			name = CityDetail;
+			sourceTree = "<group>";
+		};
 		CC35473F1B41D88B00A9812B = {
 			isa = PBXGroup;
 			children = (
@@ -384,12 +395,9 @@
 				CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */,
 				CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */,
 				CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */,
-				CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */,
-				CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */,
+				CC10AA561B716C7C0097BD15 /* CityDetail */,
 				CCBFCA3F1B5FDF190057FAF5 /* location.h */,
 				CCBFCA401B5FDF190057FAF5 /* location.m */,
-				CCFFEB291B5F0B2A00BF6364 /* CityDetailCell.h */,
-				CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */,
 				CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */,
 				CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */,
 				CC35475B1B41D88B00A9812B /* Images.xcassets */,
