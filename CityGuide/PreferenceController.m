@@ -33,6 +33,21 @@
     [self.tableview setEditing:YES animated:YES];
 }
 
+-(IBAction)saveData
+{
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"settings"];
+    [self.datas writeToFile:path atomically:YES];
+}
+
+-(IBAction)outPutData
+{
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"settings"];
+    NSMutableArray *arr = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    NSLog(@"%@",arr);
+}
+
+#pragma mark - tableview
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.datas.count;
 }

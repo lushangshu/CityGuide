@@ -14,4 +14,8 @@
 @property(nonatomic,strong)NSArray *datas;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (nonatomic,strong) IBOutlet UIButton *save;
+
+-(IBAction)saveData;
+-(IBAction)outPutData;
 @end
