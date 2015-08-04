@@ -37,6 +37,7 @@
 {
     NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"settings"];
     [self.datas writeToFile:path atomically:YES];
+    
 }
 
 -(IBAction)outPutData
@@ -52,19 +53,30 @@
     return self.datas.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];;
+    UITableViewCell *cell = cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     cell.textLabel.text = self.datas[indexPath.row];
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"settings"];
+    NSMutableArray *arr = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    //NSLog(@"@@@@@ %@,$$$$ %@",cell.textLabel.text,[arr objectAtIndex:indexPath.row]);
+    
+    if ([cell.textLabel.text isEqualToString: [arr objectAtIndex:indexPath.row] ]) {
+        [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    }
     return cell;
 }
+
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self updateDataWithTableview:tableView];
 }
+
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self updateDataWithTableview:tableView];
 }
+
 - (void)updateDataWithTableview:(UITableView *)tableView {
     NSArray *indexpaths = [tableView indexPathsForSelectedRows];
     NSMutableArray *selectedItems = [NSMutableArray new];
