@@ -483,7 +483,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search other city" minimumFontSize="17" id="dxy-Th-gC5">
-                                <rect key="frame" x="16" y="60" width="278" height="30"/>
+                                <rect key="frame" x="16" y="69" width="221" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -536,10 +536,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sAn-Rt-eYi">
-                                <rect key="frame" x="206" y="59" width="105" height="33"/>
+                                <rect key="frame" x="250" y="66" width="61" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Search">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -552,6 +552,7 @@
                     <tabBarItem key="tabBarItem" title="City" id="9Ms-0N-ZRe"/>
                     <connections>
                         <outlet property="label_c" destination="j3J-uw-nAd" id="cPP-jR-tiF"/>
+                        <outlet property="searchCity" destination="dxy-Th-gC5" id="z9U-ej-MQC"/>
                         <outlet property="tableView" destination="8UK-3u-Aod" id="TW1-8T-mMa"/>
                     </connections>
                 </viewController>

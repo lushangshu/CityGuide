@@ -42,10 +42,21 @@
     //location operation
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
-    NSLog(@"city name is &&& %@",self.cityName);
-    [self performSelector:@selector(loadCityDetails) withObject:self afterDelay:1.5];
     [self locationUpdate];
-    
+    [self setCurrentCity];
+
+//    dispatch_queue_attr_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_group_t group = dispatch_group_create();
+//    
+//    dispatch_group_async(group, queue, ^{
+//        [self setCurrentCity];
+//        NSLog(@"sync city name is *** %@",self.cityName);
+//    });
+//    dispatch_group_notify(group, queue, ^{
+//        [self loadCityDetails];
+//    });
+//    NSLog(@"city name is &&& %@",self.cityName);
+//    [self performSelector:@selector(loadCityDetails) withObject:self afterDelay:1.5];
     //[self loadCityDetails];
 }
 -(void) locationUpdate{
@@ -55,10 +66,15 @@
     
 }
 -(IBAction)buttonPressed:(id)sender{
-    manager.delegate = self;
-    manager.desiredAccuracy = kCLLocationAccuracyBest;
-    [manager startUpdatingLocation];
-    NSLog(@"pressed+ %@",self.label_c.text);
+//    manager.delegate = self;
+//    manager.desiredAccuracy = kCLLocationAccuracyBest;
+//    [manager startUpdatingLocation];
+//    NSLog(@"pressed+ %@",self.label_c.text);
+    self.cityName = self.searchCity.text;
+    [self loadCityDetails];
+    [self.label_c setText:self.cityName];
+    [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,6 +86,7 @@
 {
 //    [self setCurrentCity];
 //    NSString *loadMountainQueries = @"select * where { ?Mountain a dbpedia-owl:Mountain; dbpedia-owl:abstract ?abstract. FILTER(langMatches(lang(?abstract),\"EN\")) } limit 3";
+    NSLog(@"here is load city detail %@",self.cityName);
     NSString *loadMountainQueries = @"SELECT ?subject ?label ?lat ?long WHERE{<http://dbpedia.org/resource/Sheffield> geo:lat ?eiffelLat;geo:long ?eiffelLong.?subject geo:lat ?lat;geo:long ?long;rdfs:label ?label.FILTER(xsd:double(?lat) - xsd:double(?eiffelLat) <= 0.05 && xsd:double(?eiffelLat) - xsd:double(?lat) <= 0.05 && xsd:double(?long) - xsd:double(?eiffelLong) <= 0.05 && xsd:double(?eiffelLong) - xsd:double(?long) <= 0.05 && lang(?label) = \"en\").} LIMIT 3";
     
     NSString *encodedLoadMountainQueries = [loadMountainQueries stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -79,8 +96,8 @@
     NSString *url_2 = @"%3E+geo%3Alat+%3FeiffelLat%3Bgeo%3Along+%3FeiffelLong.%3Fsubject+geo%3Alat+%3Flat%3Bgeo%3Along+%3Flong%3Brdfs%3Alabel+%3Flabel.FILTER%28xsd%3Adouble%28%3Flat%29+-+xsd%3Adouble%28%3FeiffelLat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLat%29+-+xsd%3Adouble%28%3Flat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3Flong%29+-+xsd%3Adouble%28%3FeiffelLong%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLong%29+-+xsd%3Adouble%28%3Flong%29+%3C%3D+0.05+%26%26+lang%28%3Flabel%29+%3D+%22en%22%29.%7D+LIMIT+20&format=application%2Fsparql-results%2Bjson&timeout=10000&debug=on";
     
     //NSLog(@"city name is $$$$ %@",self.cityName);
-    NSString *fakeUrlstr = [[url_1 stringByAppendingString:@"Munich"]stringByAppendingString:url_2];
-    NSLog(@"faeke url is ------ %@",fakeUrlstr);
+    NSString *fakeUrlstr = [[url_1 stringByAppendingString:self.cityName]stringByAppendingString:url_2];
+    //NSLog(@"faeke url is ------ %@",fakeUrlstr);
     NSURL *fakeurl = [NSURL URLWithString:fakeUrlstr];
     
     NSURL *url = [NSURL URLWithString:urlString];
@@ -155,21 +172,19 @@
 
 -(void)setCurrentCity
 {
-    CLLocation *currentLocation;
-    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        if (error == nil && [placemarks count] > 0) {
-            placemark = [placemarks lastObject];
-            [self.label_c setText:[NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-                                   placemark.subThoroughfare, placemark.thoroughfare,
-                                   placemark.postalCode, placemark.locality,
-                                   placemark.administrativeArea,
-                                   placemark.country]];
-            self.cityName = [NSString stringWithFormat:@"%@",placemark.locality];
-            NSLog(@"cityname = %@",self.cityName);
-        } else {
-            NSLog(@"%@", error.debugDescription);
-        }
-    } ];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:manager.location
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       self.cityName = placemark.locality;
+                       NSLog(@"!!!!! placemark.country %@",self.cityName);
+                       [self loadCityDetails];
+                   }];
 }
 
 #pragma mark - CLLocationManagerDelegate Methods
@@ -184,7 +199,6 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    //NSLog(@"Location: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     if (currentLocation != nil) {
 //        self.latitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
