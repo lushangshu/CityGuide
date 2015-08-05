@@ -125,9 +125,14 @@
     NSMutableArray *selectedItems = [NSMutableArray new];
     for (NSIndexPath *indexpath in indexpaths) {
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexpath];
+        NSString *strKey = [[NSString alloc] initWithString:cell.textLabel.text];
+        NSString *strObj = [[NSString alloc] initWithString:[self.categoryID objectForKey:strKey]];
+        [self.selectedCateg setObject:strObj  forKey:strKey];
         [selectedItems addObject:cell.textLabel.text];
     }
-    self.label.text = [selectedItems componentsJoinedByString:@";"];
+    
+    self.label.text = [selectedItems componentsJoinedByString:@"_and_"];
+    NSLog(@"selected dic is && %@",self.selectedCateg);
 }
 
 
