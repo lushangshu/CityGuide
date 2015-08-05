@@ -49,7 +49,7 @@
                      [annotation setTitle:self.mySearch.text];
                      // add functions
                      JPSThumbnail *empire = [[JPSThumbnail alloc] init];
-                     empire.image = [UIImage imageNamed:@"1.png"];
+                     //empire.image = [UIImage imageNamed:@"1.png"];
                      empire.title = self.mySearch.text;
                      empire.subtitle = @"Information required";
 //                     empire.coordinate = CLLocationCoordinate2DMake(53.38, -1.46);
@@ -75,7 +75,7 @@
         NSArray *obj = [dic objectAtIndex:i];
         
         JPSThumbnail *empire = [[JPSThumbnail alloc] init];
-        empire.image = [UIImage imageNamed:@"1.png"];
+        //empire.image = [UIImage imageNamed:@"1.png"];
         empire.title = obj[0];
         empire.subtitle = obj[1];
         NSString *lati = obj[2];
@@ -119,6 +119,10 @@
     return annotations;
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
 #pragma mark - MKMapViewDelegate
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
@@ -131,11 +135,11 @@
     }
 }
 
-//- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-//    if ([view conformsToProtocol:@protocol(JPSThumbnailAnnotationViewProtocol)]) {
-//        [((NSObject<JPSThumbnailAnnotationViewProtocol> *)view) didDeselectAnnotationViewInMap:mapView];
-//    }
-//}
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
+    if ([view conformsToProtocol:@protocol(JPSThumbnailAnnotationViewProtocol)]) {
+        [((NSObject<JPSThumbnailAnnotationViewProtocol> *)view) didDeselectAnnotationViewInMap:mapView];
+    }
+}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     if ([annotation conformsToProtocol:@protocol(JPSThumbnailAnnotationProtocol)]) {

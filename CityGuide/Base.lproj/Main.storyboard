@@ -260,67 +260,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="86r-f6-tOx">
-                                <rect key="frame" x="0.0" y="150" width="320" height="369"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="3mJ-Z4-jTR" id="WvS-J7-e2B"/>
-                                </connections>
-                            </mapView>
-                            <view contentMode="scaleToFill" id="Zpk-Ld-pbN">
-                                <rect key="frame" x="0.0" y="64" width="320" height="88"/>
+                            <view contentMode="scaleToFill" id="oOv-sp-Voq" userLabel="View-map">
+                                <rect key="frame" x="0.0" y="64" width="334" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" id="Lj7-im-5jz">
-                                        <rect key="frame" x="43" y="0.0" width="227" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <searchBar contentMode="redraw" id="Isl-5L-eDU">
-                                        <rect key="frame" x="43" y="44" width="227" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j36-kW-gtc">
-                                        <rect key="frame" x="270" y="0.0" width="46" height="88"/>
+                                    <view contentMode="scaleToFill" id="Zpk-Ld-pbN">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Route">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <subviews>
+                                            <searchBar contentMode="redraw" id="Lj7-im-5jz">
+                                                <rect key="frame" x="49" y="0.0" width="227" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <searchBar contentMode="redraw" id="Isl-5L-eDU">
+                                                <rect key="frame" x="49" y="44" width="227" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j36-kW-gtc">
+                                                <rect key="frame" x="276" y="0.0" width="46" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Route">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="GenerateRoute" destination="3mJ-Z4-jTR" eventType="touchUpInside" id="vaL-X3-jPC"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dept:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n1m-j1-tvg">
+                                                <rect key="frame" x="7" y="11" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arriv:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B1Q-2Z-xkI">
+                                                <rect key="frame" x="7" y="55" width="40" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="86r-f6-tOx">
+                                        <rect key="frame" x="0.0" y="95" width="334" height="360"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <connections>
-                                            <action selector="GenerateRoute" destination="3mJ-Z4-jTR" eventType="touchUpInside" id="vaL-X3-jPC"/>
+                                            <outlet property="delegate" destination="3mJ-Z4-jTR" id="WvS-J7-e2B"/>
                                         </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dept:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n1m-j1-tvg">
-                                        <rect key="frame" x="1" y="11" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arriv:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B1Q-2Z-xkI">
-                                        <rect key="frame" x="1" y="55" width="40" height="21"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="MIB-o2-rbM" userLabel="View-route">
+                                <rect key="frame" x="0.0" y="64" width="335" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dbZ-0N-i4V">
+                                        <rect key="frame" x="0.0" y="88" width="335" height="367"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route Generated" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eOq-7d-Vrh">
+                                        <rect key="frame" x="78" y="25" width="335" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.20458380430000001" green="0.66595316790000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="gZP-Yj-zSa">
+                                <rect key="frame" x="89" y="475" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Route"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="3mJ-Z4-jTR" eventType="valueChanged" id="5Ln-Zi-Zlf"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="4VH-Ft-AD1"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="arr" destination="Isl-5L-eDU" id="kXn-a1-5pm"/>
                         <outlet property="dep" destination="Lj7-im-5jz" id="Dkg-ps-jGo"/>
                         <outlet property="mapView" destination="86r-f6-tOx" id="fvL-Sp-XjD"/>
+                        <outlet property="map_View" destination="oOv-sp-Voq" id="XQH-7d-Cy1"/>
+                        <outlet property="route_View" destination="MIB-o2-rbM" id="DUc-W2-7FS"/>
+                        <outlet property="segment" destination="gZP-Yj-zSa" id="8nQ-EX-xhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqC-T3-DiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-2009"/>
+            <point key="canvasLocation" x="2056" y="-2017"/>
         </scene>
         <!--Map-->
         <scene sceneID="0Mx-4U-9kb">
@@ -531,10 +573,6 @@
                                     <outlet property="delegate" destination="um0-WP-vYh" id="Hyk-Xa-ByQ"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ottawa.jpg" id="8kv-D9-Day">
-                                <rect key="frame" x="16" y="98" width="119" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sAn-Rt-eYi">
                                 <rect key="frame" x="250" y="66" width="61" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -546,6 +584,10 @@
                                     <action selector="buttonPressed:" destination="um0-WP-vYh" eventType="touchUpInside" id="oLc-5s-9gZ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ottawa.jpg" id="8kv-D9-Day">
+                                <rect key="frame" x="24" y="112" width="104" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

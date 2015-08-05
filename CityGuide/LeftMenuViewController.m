@@ -83,10 +83,6 @@
             break;
             
         case 5:
-            cell.textLabel.text = @"log out";
-            break;
-            
-        case 6:
             cell.textLabel.text = @"Help";
             break;
             
@@ -127,13 +123,14 @@
             vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"PreferenceController"];
             break;
         case 5:
-            [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
-            return;
-            break;
-        case 6:
             vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ConfigurationViewController"];
+//            [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+//            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
+//            return;
             break;
+//        case 6:
+//            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ConfigurationViewController"];
+//            break;
         
     }
     

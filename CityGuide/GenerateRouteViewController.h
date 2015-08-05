@@ -13,6 +13,10 @@
 
 @interface GenerateRouteViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
 
+@property (strong,nonatomic) IBOutlet UIView *map_View;
+@property (strong,nonatomic) IBOutlet UIView *route_View;
+@property (strong,nonatomic) IBOutlet UISegmentedControl *segment;
+
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (strong,nonatomic) IBOutlet UIView *searchSubV;
@@ -21,5 +25,5 @@
 @property (strong,nonatomic) IBOutlet UIButton *search;
 
 -(IBAction)GenerateRoute;
-
+-(IBAction)segmentValueChanged:(id)sender;
 @end

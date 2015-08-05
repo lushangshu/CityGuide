@@ -8,6 +8,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "GenerateRouteViewController.h"
 
+
+
 @interface GenerateRouteViewController () <CLLocationManagerDelegate>
 {
     CLLocationManager *locationManager;
@@ -20,7 +22,8 @@
 
 @end
 
-@implementation GenerateRouteViewController 
+@implementation GenerateRouteViewController
+@synthesize map_View,route_View;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,8 +59,28 @@
     
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
 -(IBAction)GenerateRoute{
     [self showLinesFromSourceLati:0.0 Long:0.0];
+}
+
+-(IBAction)segmentValueChanged:(UISegmentedControl *)sender
+{
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.map_View.hidden = NO;
+            self.route_View.hidden = YES;
+            break;
+        case 1:
+            self.map_View.hidden = YES;
+            self.route_View.hidden = NO;
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate Methods
