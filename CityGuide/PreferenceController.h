@@ -12,6 +12,11 @@
 @interface PreferenceController : UIViewController <UITableViewDataSource,UITableViewDelegate,SlideNavigationControllerDelegate>
 
 @property(nonatomic,strong)NSArray *datas;
+@property(nonatomic,strong)NSMutableDictionary *categoryID;
+@property(nonatomic,strong)NSMutableDictionary *selectedCateg;
+
+@property(nonatomic,strong)NSArray *selectedData;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (nonatomic,strong) IBOutlet UIButton *save;

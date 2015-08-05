@@ -30,7 +30,23 @@
                   @"Residence",
                   @"Travel & Transport",
                   nil];
+    [self initCategory];
     [self.tableview setEditing:YES animated:YES];
+}
+
+-(void)initCategory{
+    self.categoryID = [NSMutableDictionary dictionary];
+    self.selectedCateg = [NSMutableDictionary dictionary];
+    [self.categoryID setObject:@"4d4b7104d754a06370d81259" forKey:@"Arts & Entertainment"];
+    [self.categoryID setObject:@"4d4b7105d754a06372d81259" forKey:@"College & University"];
+    [self.categoryID setObject:@"4d4b7105d754a06373d81259" forKey:@"Event"];
+    [self.categoryID setObject:@"4d4b7105d754a06374d81259" forKey:@"Food"];
+    [self.categoryID setObject:@"4d4b7105d754a06377d81259" forKey:@"Outdoors & Recreation"];
+    [self.categoryID setObject:@"530e33ccbcbc57f1066bbfe4" forKey:@"States & Municipalities"];
+    [self.categoryID setObject:@"4d4b7105d754a06375d81259" forKey:@"Professional & Other Places"];
+    [self.categoryID setObject:@"4e67e38e036454776db1fb3a" forKey:@"Residence"];
+    [self.categoryID setObject:@"4d4b7105d754a06379d81259" forKey:@"Travel & Transport"];
+    //NSLog(@"%@",self.categoryID);
 }
 
 -(IBAction)saveData
@@ -39,11 +55,11 @@
     NSString *documentsPath = [paths objectAtIndex:0];
     NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"settings.plist"];
     
-    NSDictionary *plistDict = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:@"124", nil] forKeys:[NSArray arrayWithObjects:@"test", nil]];
+//    NSDictionary *plistDict = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:@"124", nil] forKeys:[NSArray arrayWithObjects:@"test", nil]];
     
     NSString *error = nil;
 //    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
-    NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:plistDict format:NSPropertyListXMLFormat_v1_0 options:NSPropertyListMutableContainersAndLeaves error:&error];
+    NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:self.selectedCateg  format:NSPropertyListXMLFormat_v1_0 options:NSPropertyListMutableContainersAndLeaves error:&error];
     
     if(plistData)
     {
@@ -69,8 +85,8 @@
         plistPath = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
     }
     
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    NSLog(@"$$$ %@",[dict objectForKey:@"test"]);
+   self.selectedCateg = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSLog(@"$$$ %@",self.selectedCateg);
    // NSLog(@"### %@",[dict objectForKey:@"name"]);
 }
 

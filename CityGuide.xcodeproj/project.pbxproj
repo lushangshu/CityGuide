@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC10AA551B70AA3F0097BD15 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC10AA541B70AA3F0097BD15 /* settings.plist */; };
+		CC10AA581B7224CB0097BD15 /* cateG.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC10AA571B7224CB0097BD15 /* cateG.plist */; };
 		CC35474E1B41D88B00A9812B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC35474D1B41D88B00A9812B /* main.m */; };
 		CC3547511B41D88B00A9812B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547501B41D88B00A9812B /* AppDelegate.m */; };
 		CC3547541B41D88B00A9812B /* CityGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC3547521B41D88B00A9812B /* CityGuide.xcdatamodeld */; };
@@ -124,7 +124,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CC10AA541B70AA3F0097BD15 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
+		CC10AA571B7224CB0097BD15 /* cateG.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cateG.plist; sourceTree = "<group>"; };
 		CC3547481B41D88B00A9812B /* CityGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC35474C1B41D88B00A9812B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC35474D1B41D88B00A9812B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -388,7 +388,7 @@
 				CCA70F681B5749130071FD17 /* IKMediaViewController.m */,
 				CC3547D41B45409200A9812B /* PreferenceController.h */,
 				CC3547D51B45409200A9812B /* PreferenceController.m */,
-				CC10AA541B70AA3F0097BD15 /* settings.plist */,
+				CC10AA571B7224CB0097BD15 /* cateG.plist */,
 				CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */,
 				CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */,
 				CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */,
@@ -785,8 +785,8 @@
 				CCBFCA4A1B600C610057FAF5 /* 4.png in Resources */,
 				CCA70F5B1B5727380071FD17 /* animation.png in Resources */,
 				CCA70F601B572C640071FD17 /* menu-button.png in Resources */,
-				CC10AA551B70AA3F0097BD15 /* settings.plist in Resources */,
 				CC3547E01B4563EA00A9812B /* TwitterKitResources.bundle in Resources */,
+				CC10AA581B7224CB0097BD15 /* cateG.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
