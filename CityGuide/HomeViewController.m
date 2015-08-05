@@ -20,8 +20,6 @@
     [self.myMapView setShowsUserLocation:YES];
     //self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 503);
     [self searchBarSearchButtonClicked:self.mySearch];
-    
-    //below receive data sent from citydetailvc by radio
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler2:) name:@"mynotification2" object:nil];
 }
 

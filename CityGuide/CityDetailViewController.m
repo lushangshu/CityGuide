@@ -42,17 +42,17 @@
     //location operation
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
-    
-    //[self.label_c setText:@" "];
-    [self loadMountains];
+    NSLog(@"city name is &&& %@",self.cityName);
+    [self performSelector:@selector(loadCityDetails) withObject:self afterDelay:1.5];
     [self locationUpdate];
-    //[self getCurrentLocation];
     
+    //[self loadCityDetails];
 }
 -(void) locationUpdate{
     manager.delegate = self;
     manager.desiredAccuracy = kCLLocationAccuracyBest;
     [manager startUpdatingLocation];
+    
 }
 -(IBAction)buttonPressed:(id)sender{
     manager.delegate = self;
@@ -66,27 +66,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) loadMountains
+- (void) loadCityDetails
 {
+//    [self setCurrentCity];
 //    NSString *loadMountainQueries = @"select * where { ?Mountain a dbpedia-owl:Mountain; dbpedia-owl:abstract ?abstract. FILTER(langMatches(lang(?abstract),\"EN\")) } limit 3";
     NSString *loadMountainQueries = @"SELECT ?subject ?label ?lat ?long WHERE{<http://dbpedia.org/resource/Sheffield> geo:lat ?eiffelLat;geo:long ?eiffelLong.?subject geo:lat ?lat;geo:long ?long;rdfs:label ?label.FILTER(xsd:double(?lat) - xsd:double(?eiffelLat) <= 0.05 && xsd:double(?eiffelLat) - xsd:double(?lat) <= 0.05 && xsd:double(?long) - xsd:double(?eiffelLong) <= 0.05 && xsd:double(?eiffelLong) - xsd:double(?long) <= 0.05 && lang(?label) = \"en\").} LIMIT 3";
     
     NSString *encodedLoadMountainQueries = [loadMountainQueries stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *urlString = [NSString stringWithFormat:@"http://dbpedia.org/sparql/?query=%@",encodedLoadMountainQueries];
-    //NSString *urlString = [NSString stringWithFormat:urlString_1,encodeloadQueries2];
-    //NSLog(@"URL is +++ %@", urlString);
+
+    NSString *url_1 = @"http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=SELECT+%3Fsubject+%3Flabel+%3Flat+%3Flong+WHERE%7B%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F";
+    NSString *url_2 = @"%3E+geo%3Alat+%3FeiffelLat%3Bgeo%3Along+%3FeiffelLong.%3Fsubject+geo%3Alat+%3Flat%3Bgeo%3Along+%3Flong%3Brdfs%3Alabel+%3Flabel.FILTER%28xsd%3Adouble%28%3Flat%29+-+xsd%3Adouble%28%3FeiffelLat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLat%29+-+xsd%3Adouble%28%3Flat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3Flong%29+-+xsd%3Adouble%28%3FeiffelLong%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLong%29+-+xsd%3Adouble%28%3Flong%29+%3C%3D+0.05+%26%26+lang%28%3Flabel%29+%3D+%22en%22%29.%7D+LIMIT+20&format=application%2Fsparql-results%2Bjson&timeout=10000&debug=on";
     
-    NSString *fakeUrlString = @"http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=SELECT+%3Fsubject+%3Flabel+%3Flat+%3Flong+WHERE%7B%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FSheffield%3E+geo%3Alat+%3FeiffelLat%3Bgeo%3Along+%3FeiffelLong.%3Fsubject+geo%3Alat+%3Flat%3Bgeo%3Along+%3Flong%3Brdfs%3Alabel+%3Flabel.FILTER%28xsd%3Adouble%28%3Flat%29+-+xsd%3Adouble%28%3FeiffelLat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLat%29+-+xsd%3Adouble%28%3Flat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3Flong%29+-+xsd%3Adouble%28%3FeiffelLong%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLong%29+-+xsd%3Adouble%28%3Flong%29+%3C%3D+0.05+%26%26+lang%28%3Flabel%29+%3D+%22en%22%29.%7D+LIMIT+20&format=application%2Fsparql-results%2Bjson&timeout=10000&debug=on";
-    NSURL *fakeurl = [NSURL URLWithString:fakeUrlString];
+    //NSLog(@"city name is $$$$ %@",self.cityName);
+    NSString *fakeUrlstr = [[url_1 stringByAppendingString:@"Munich"]stringByAppendingString:url_2];
+    NSLog(@"faeke url is ------ %@",fakeUrlstr);
+    NSURL *fakeurl = [NSURL URLWithString:fakeUrlstr];
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:fakeurl];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"application/sparql-results+json",@"text/plain",@"sparql-results+json", @"text/json", @"text/html", @"text/xml",@"application/sparql-results+xml", nil];
-//    [AFHTTPRequestOperation addAcceptableContentTypes:
-//     [NSSet setWithObjects:@"application/json", @"sparql-results+json", @"text/json", @"text/html", @"text/xml", nil]];
-    
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          NSString *output = [operation responseString];
@@ -130,25 +131,16 @@
         NSArray *array = [[NSArray alloc]initWithObjects:name,url,lati,longi, nil];
         [resultArray addObject:array];
     }
-    
-    
     return resultArray;
 }
 
 - (void)jsonParse{
    
     NSString* path  = @"http://maps.googleapis.com/maps/api/geocode/json?address=nanjing&sensor=true";
-    //初始化 url
     NSURL* url = [NSURL URLWithString:path];
-    //将文件内容读取到字符串中，注意编码NSUTF8StringEncoding 防止乱码，
     NSString* jsonString = [[NSString alloc]initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-    //将字符串写到缓冲区。
     NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    //解析json数据，使用系统方法 JSONObjectWithData:  options: error:
     NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
-    
-    //一下为自定义解析， 自己想怎么干就怎么干
-    
     NSArray* arrayResult =[dic objectForKey:@"results"];
     NSDictionary* resultDic = [arrayResult objectAtIndex:0];
     NSDictionary* geometryDic = [resultDic objectForKey:@"geometry"];
@@ -159,6 +151,25 @@
     NSLog(@"lat = %@, lng = %@",lat,lng);
     
     
+}
+
+-(void)setCurrentCity
+{
+    CLLocation *currentLocation;
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            [self.label_c setText:[NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+                                   placemark.subThoroughfare, placemark.thoroughfare,
+                                   placemark.postalCode, placemark.locality,
+                                   placemark.administrativeArea,
+                                   placemark.country]];
+            self.cityName = [NSString stringWithFormat:@"%@",placemark.locality];
+            NSLog(@"cityname = %@",self.cityName);
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    } ];
 }
 
 #pragma mark - CLLocationManagerDelegate Methods
@@ -173,7 +184,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"Location: %@", newLocation);
+    //NSLog(@"Location: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     if (currentLocation != nil) {
 //        self.latitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
@@ -187,6 +198,8 @@
                                    placemark.postalCode, placemark.locality,
                                    placemark.administrativeArea,
                                    placemark.country]];
+            self.cityName = [NSString stringWithFormat:@"%@",placemark.locality];
+            //NSLog(@"cityname = %@",self.cityName);
         } else {
             NSLog(@"%@", error.debugDescription);
         }

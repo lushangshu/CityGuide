@@ -15,6 +15,7 @@
 
 @property (nonatomic,weak) IBOutlet UILabel * label_c;
 @property (nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSString *cityName;
 
 @property (nonatomic) NSMutableArray *placeList;
 

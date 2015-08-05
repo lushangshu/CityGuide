@@ -86,7 +86,7 @@
     }
     
    self.selectedCateg = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    NSLog(@"$$$ %@",self.selectedCateg);
+    //NSLog(@"$$$ %@",self.selectedCateg);
    // NSLog(@"### %@",[dict objectForKey:@"name"]);
 }
 
@@ -132,7 +132,7 @@
     }
     
     self.label.text = [selectedItems componentsJoinedByString:@"_and_"];
-    NSLog(@"selected dic is && %@",self.selectedCateg);
+    //NSLog(@"selected dic is && %@",self.selectedCateg);
 }
 
 
