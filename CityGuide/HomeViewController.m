@@ -44,6 +44,27 @@
     
 }
 
+- (void)removeAllAnnotationExceptOfCurrentUser {
+    NSMutableArray *annForRemove = [[NSMutableArray alloc] initWithArray:self.myMapView.annotations];
+    if ([self.myMapView.annotations.lastObject isKindOfClass:[MKUserLocation class]]) {
+        [annForRemove removeObject:self.myMapView.annotations.lastObject];
+    } else {
+        for (id <MKAnnotation> annot_ in self.myMapView.annotations) {
+            if ([annot_ isKindOfClass:[MKUserLocation class]] ) {
+                [annForRemove removeObject:annot_];
+                break;
+            }
+        }
+    }
+    
+    [self.myMapView removeAnnotations:annForRemove];
+}
+
+- (void)MapProccessAnnotations {
+    [self removeAllAnnotationExceptOfCurrentUser];
+    [self.myMapView addAnnotations:self.nearbyVenues];
+}
+
 -(void) fetching : (CLLocation *)location{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *lat = [NSString stringWithFormat:@"%f",location.coordinate.latitude ];
@@ -66,9 +87,10 @@
         self.nearbyVenues = [converter convertToObjects:venues];
         for (int i=0; i<[self.nearbyVenues count]; i++) {
             FSVenue *v =self.nearbyVenues[i];
-            NSLog(@"name is +++ %@",v.name);
+            NSLog(@"address is +++ %@",v.location.address);
         }
         [self.tableV reloadData];
+        [self MapProccessAnnotations ];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
