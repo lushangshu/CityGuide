@@ -10,12 +10,19 @@
 #import <UIKit/UIKit.h>
 #import "SlideNavigationController.h"
 
-@interface HomeViewController : UIViewController <UISearchBarDelegate, MKMapViewDelegate,SlideNavigationControllerDelegate>
+@interface HomeViewController : UIViewController <UISearchBarDelegate, MKMapViewDelegate,CLLocationManagerDelegate,SlideNavigationControllerDelegate>
 
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (strong,nonatomic) IBOutlet UISearchBar *mySearch;
 @property (strong,nonatomic) IBOutlet MKMapView *myMapView;
+@property (strong,nonatomic) CLLocationManager *locationManager;
+
+
+@property (nonatomic) NSMutableArray *res;
+@property (strong, nonatomic) NSArray *nearbyVenues;
+@property (nonatomic,strong) IBOutlet UITableView *tableV;
+@property (nonatomic,strong) IBOutlet UILabel *selectedVenus;
 
 //- (IBAction)bounceMenu:(id)sender;
 //- (IBAction)changeAnimationSelected:(id)sender;

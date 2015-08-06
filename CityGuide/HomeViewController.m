@@ -10,17 +10,29 @@
 #import "LeftMenuViewController.h"
 #import "JPSThumbnailAnnotation.h"
 
+#import "AFNetworking.h"
+#import "FSVenue.h"
+#import "FSConverter.h"
+#import "venuCell.h"
+
 @implementation HomeViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableV.tableHeaderView = self.myMapView;
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.delegate = self;
+    
     self.mySearch.delegate = self;
     self.myMapView.delegate = self;
     [self.myMapView setShowsUserLocation:YES];
+    
     //self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 503);
     [self searchBarSearchButtonClicked:self.mySearch];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler2:) name:@"mynotification2" object:nil];
+    [self.locationManager startUpdatingLocation];
 }
 
 -(void) notificationHandler2:(NSNotification *) notification2{
@@ -30,6 +42,36 @@
     NSMutableArray *annot = [self generateAnnotations:dict];
     [self.myMapView addAnnotations:annot];
     
+}
+
+-(void) fetching : (CLLocation *)location{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *lat = [NSString stringWithFormat:@"%f",location.coordinate.latitude ];
+    NSString *lon = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
+    
+    NSString *locat = [[lat stringByAppendingString:@","]stringByAppendingString:lon];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:@"M0AY5MCIO3I5HKZAU35MC1E4WQIBIVUFVPSL2MY0TSRP5JTI" forKey:@"client_id"];
+    [params setObject:@"O3DM3WRVRABPMTMWMMGXC4WDEHUUIGGIRHP1Y0PTUEW2WTK3" forKey:@"client_secret"];
+    [params setObject:@"food" forKey:@"query"];
+    [params setObject:locat forKey:@"ll"];
+    [params setObject:@"20140118" forKey:@"v"];
+    [params setObject:@"30" forKey:@"limit"];
+    
+    [manager GET:@"https://api.foursquare.com/v2/venues/search" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"JSON: %@", responseObject);
+        NSDictionary *dic = responseObject;
+        NSArray *venues = [dic valueForKeyPath:@"response.venues"];
+        FSConverter *converter = [[FSConverter alloc]init];
+        self.nearbyVenues = [converter convertToObjects:venues];
+        for (int i=0; i<[self.nearbyVenues count]; i++) {
+            FSVenue *v =self.nearbyVenues[i];
+            NSLog(@"name is +++ %@",v.name);
+        }
+        [self.tableV reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -86,41 +128,31 @@
         [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:empire]];
     }
     
-//    // Empire State Building
-//    JPSThumbnail *empire = [[JPSThumbnail alloc] init];
-//    empire.image = [UIImage imageNamed:@"empire.jpg"];
-//    empire.title = @"Empire State Building";
-//    empire.subtitle = @"NYC Landmark";
-//    empire.coordinate = CLLocationCoordinate2DMake(53.38, -1.46);
-//    empire.disclosureBlock = ^{ NSLog(@"selected Empire"); };
-//    
-//    [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:empire]];
-//    
-//    // Apple HQ
-//    JPSThumbnail *apple = [[JPSThumbnail alloc] init];
-//    apple.image = [UIImage imageNamed:@"apple.jpg"];
-//    apple.title = @"Apple HQ";
-//    apple.subtitle = @"Apple Headquarters";
-//    apple.coordinate = CLLocationCoordinate2DMake(53.38, -1.47);
-//    apple.disclosureBlock = ^{ NSLog(@"selected Appple"); };
-//    
-//    [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:apple]];
-//    
-//    // Parliament of Canada
-//    JPSThumbnail *ottawa = [[JPSThumbnail alloc] init];
-//    ottawa.image = [UIImage imageNamed:@"ottawa.jpg"];
-//    ottawa.title = @"Parliament of Canada";
-//    ottawa.subtitle = @"Oh Canada!";
-//    ottawa.coordinate = CLLocationCoordinate2DMake(53.39, -1.48);
-//    ottawa.disclosureBlock = ^{ NSLog(@"selected Ottawa"); };
-    
-//    [annotations addObject:[[JPSThumbnailAnnotation alloc] initWithThumbnail:ottawa]];
-    
     return annotations;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+}
+
+#pragma mark -cllocation delegate
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    [self.locationManager stopUpdatingLocation];
+    [self fetching:newLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error {
+    NSLog(@"Location manager did fail with error %@", error);
+    [self.locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [manager startUpdatingLocation];
+    }
 }
 
 #pragma mark - MKMapViewDelegate
@@ -147,6 +179,37 @@
     }
     return nil;
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.nearbyVenues.count;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (self.nearbyVenues.count) {
+        return 1;
+    }
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"cell";
+    UITableViewCell *cell = [self.tableV dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    FSVenue *venue = self.nearbyVenues[indexPath.row];
+    cell.textLabel.text = [venue name];
+    if (venue.location.address) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@m, %@",
+                                     venue.location.distance,
+                                     venue.location.address];
+    } else {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@m",
+                                     venue.location.distance];
+    }
+    return cell;
+}
+
+
 
 #pragma mark - SlideNavigationController Methods -
 
