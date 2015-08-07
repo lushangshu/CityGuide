@@ -12,7 +12,9 @@
 
 @interface ActivityViewController : UIViewController <SlideNavigationControllerDelegate,CLLocationManagerDelegate>
 
+
 @property (nonatomic,strong) IBOutlet UICollectionView *collections;
 @property (nonatomic,strong) IBOutlet UITableView *tableVi;
-@property (nonatomic,strong) IBOutlet UITextField *textField;
+@property (nonatomic,strong) IBOutlet UITextField *textFFF;
+
 @end

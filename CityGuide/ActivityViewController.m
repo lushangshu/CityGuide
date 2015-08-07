@@ -16,7 +16,7 @@
 @interface ActivityViewController ()
 {
     NSMutableArray *mediaArray;
-    __weak IBOutlet UITextField *textField;
+    
 }
 @property (nonatomic,strong) InstagramPaginationInfo *currentPaginationInfo;
 @end
@@ -39,8 +39,8 @@
 
 - (void)loadMedia
 {
-    [textField resignFirstResponder];
-    textField.text = @"Sheffield";
+    [self.textFFF resignFirstResponder];
+    self.textFFF.text = @"Sheffield";
     
     InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
     [self MediaAtLocation];
@@ -53,10 +53,10 @@
     if (mediaArray) {
         [mediaArray removeAllObjects];
     }
-    [textField resignFirstResponder];
+    [self.textFFF resignFirstResponder];
     
-    if ([textField.text length]) {
-        [self testGetMediaFromTag:textField.text];
+    if ([self.textFFF.text length]) {
+        [self testGetMediaFromTag:self.textFFF.text];
         //        [self testSearchUsersWithString:textField.text];
     }
 }
