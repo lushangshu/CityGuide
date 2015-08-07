@@ -14,14 +14,13 @@
 
 @implementation FSVenueViewController
 @synthesize nameLabel;
-@synthesize subtitlelabel;
-@synthesize navbar;
-@synthesize name;
+@synthesize venueName;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.nameLabel.text = venueName;
 }
 
 - (void)didReceiveMemoryWarning {

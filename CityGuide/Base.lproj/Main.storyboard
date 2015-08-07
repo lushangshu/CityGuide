@@ -263,7 +263,7 @@
                                             <outlet property="icon" destination="t0d-uF-Gjz" id="gmZ-vI-TIN"/>
                                             <outlet property="venuName" destination="iYl-Ag-OEQ" id="Pjk-J3-Gi8"/>
                                             <outlet property="venueAddress" destination="bm9-PA-Pfg" id="fdC-Oh-ZJw"/>
-                                            <segue destination="Ug2-ka-R8u" kind="push" id="zEY-ex-2Vp"/>
+                                            <segue destination="Ug2-ka-R8u" kind="push" identifier="VenueDetailSeg" id="44a-by-AbR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -407,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqC-T3-DiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2056" y="-2017"/>
+            <point key="canvasLocation" x="1428" y="-2017"/>
         </scene>
         <!--Map-->
         <scene sceneID="0Mx-4U-9kb">
@@ -923,20 +923,32 @@
             </objects>
             <point key="canvasLocation" x="765" y="489"/>
         </scene>
-        <!--View Controller-->
+        <!--Venue View Controller-->
         <scene sceneID="vnv-PQ-kFo">
             <objects>
-                <viewController id="Ug2-ka-R8u" sceneMemberID="viewController">
+                <viewController id="Ug2-ka-R8u" customClass="FSVenueViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qUq-3U-1Wn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rqz-b8-nSs">
+                                <rect key="frame" x="32" y="94" width="272" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ea0-ly-Atr"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="rqz-b8-nSs" id="0Ml-Ka-v8N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DI8-ho-TJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-2759"/>
+            <point key="canvasLocation" x="981" y="-2900"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wQL-h6-zJv">
@@ -956,7 +968,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTT-DR-gtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="-2328"/>
+            <point key="canvasLocation" x="981" y="-2279"/>
         </scene>
         <!--Venues-->
         <scene sceneID="gAR-Zn-NsE">

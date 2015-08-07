@@ -255,8 +255,12 @@
     return cell;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-        
-
+    if ([segue.identifier isEqualToString:@"VenueDetailSeg"]) {
+        NSIndexPath *indexPath = [self.tableV indexPathForSelectedRow];
+        FSVenueViewController *venuViewController = segue.destinationViewController;
+        FSVenue *venue = self.nearbyVenues[indexPath.row];
+        venuViewController.venueName = venue.name;
+    }
 }
 
 #pragma mark - SlideNavigationController Methods -
