@@ -17,7 +17,12 @@
         FSVenue *ann = [[FSVenue alloc]init];
         ann.name = v[@"name"];
         ann.venueId = v[@"id"];
-
+        NSArray *category = v[@"categories"];
+        //NSLog(@"%@",category);
+        NSDictionary *vv =  [category objectAtIndex:0];
+        ann.prefix = vv[@"icon"][@"prefix"];
+        ann.suffix = vv[@"icon"][@"suffix"];
+        
         ann.location.address = v[@"location"][@"address"];
         ann.location.distance = v[@"location"][@"distance"];
         
@@ -27,5 +32,7 @@
     }
     return objects;
 }
+
+
 
 @end

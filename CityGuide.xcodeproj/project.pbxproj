@@ -95,6 +95,8 @@
 		CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6C1B57496F0071FD17 /* IKCell.m */; };
 		CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */; };
 		CCAC04901B6920D600D5D7A9 /* GenerateRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */; };
+		CCB909711B74FA2700F6A622 /* FSMainMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB909701B74FA2700F6A622 /* FSMainMapCell.m */; };
+		CCB909741B75056100F6A622 /* FSVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB909731B75056100F6A622 /* FSVenueViewController.m */; };
 		CCBFCA411B5FDF190057FAF5 /* location.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBFCA401B5FDF190057FAF5 /* location.m */; };
 		CCBFCA471B600C610057FAF5 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA421B600C610057FAF5 /* 0.png */; };
 		CCBFCA481B600C610057FAF5 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA431B600C610057FAF5 /* 2.png */; };
@@ -283,6 +285,10 @@
 		CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMediaCell.m; sourceTree = "<group>"; };
 		CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateRouteViewController.h; sourceTree = "<group>"; };
 		CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateRouteViewController.m; sourceTree = "<group>"; };
+		CCB9096F1B74FA2700F6A622 /* FSMainMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMainMapCell.h; sourceTree = "<group>"; };
+		CCB909701B74FA2700F6A622 /* FSMainMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMainMapCell.m; sourceTree = "<group>"; };
+		CCB909721B75056100F6A622 /* FSVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenueViewController.h; sourceTree = "<group>"; };
+		CCB909731B75056100F6A622 /* FSVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenueViewController.m; sourceTree = "<group>"; };
 		CCBFCA3F1B5FDF190057FAF5 /* location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = location.h; sourceTree = "<group>"; };
 		CCBFCA401B5FDF190057FAF5 /* location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = location.m; sourceTree = "<group>"; };
 		CCBFCA421B600C610057FAF5 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -559,6 +565,10 @@
 			children = (
 				CCA70F541B5724D80071FD17 /* HomeViewController.h */,
 				CCA70F551B5724D80071FD17 /* HomeViewController.m */,
+				CCB909721B75056100F6A622 /* FSVenueViewController.h */,
+				CCB909731B75056100F6A622 /* FSVenueViewController.m */,
+				CCB9096F1B74FA2700F6A622 /* FSMainMapCell.h */,
+				CCB909701B74FA2700F6A622 /* FSMainMapCell.m */,
 				CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */,
 				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
 				CC6E27DB1B698600004A08E2 /* VenuesViewController.h */,
@@ -858,6 +868,7 @@
 				CCA70F4D1B56C3B50071FD17 /* SlideNavigationController.m in Sources */,
 				CC7A89E81B57C3C100505328 /* OAConsumer.m in Sources */,
 				CC7A89F41B57C3C900505328 /* NSURLRequest+OAuth.m in Sources */,
+				CCB909711B74FA2700F6A622 /* FSMainMapCell.m in Sources */,
 				CCAC04901B6920D600D5D7A9 /* GenerateRouteViewController.m in Sources */,
 				CCA70F461B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				CC3547C11B44E46D00A9812B /* InstagramUser.m in Sources */,
@@ -873,6 +884,7 @@
 				CC3547D61B45409200A9812B /* PreferenceController.m in Sources */,
 				CC7A89EF1B57C3C100505328 /* OAServiceTicket.m in Sources */,
 				CC3547D31B44F60A00A9812B /* IKCollectionViewController.m in Sources */,
+				CCB909741B75056100F6A622 /* FSVenueViewController.m in Sources */,
 				CCA70F531B56C4F00071FD17 /* RightMenuViewController.m in Sources */,
 				CCA70F691B5749130071FD17 /* IKMediaViewController.m in Sources */,
 				CC7A89EB1B57C3C100505328 /* OAMutableURLRequest.m in Sources */,

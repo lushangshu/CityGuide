@@ -13,7 +13,7 @@
 #import "AFNetworking.h"
 #import "FSVenue.h"
 #import "FSConverter.h"
-#import "venuCell.h"
+#import "FSMainMapCell.h"
 
 @implementation HomeViewController
 
@@ -87,7 +87,7 @@
         self.nearbyVenues = [converter convertToObjects:venues];
         for (int i=0; i<[self.nearbyVenues count]; i++) {
             FSVenue *v =self.nearbyVenues[i];
-            NSLog(@"address is +++ %@",v.location.address);
+            //NSLog(@"address is +++ %@",v.location.address);
         }
         [self.tableV reloadData];
         [self MapProccessAnnotations ];
@@ -202,6 +202,22 @@
     return nil;
 }
 
+- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               if ( !error )
+                               {
+                                   UIImage *image = [[UIImage alloc] initWithData:data];
+                                   completionBlock(YES,image);
+                               } else{
+                                   completionBlock(NO,nil);
+                               }
+                           }];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -217,16 +233,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"cell";
-    UITableViewCell *cell = [self.tableV dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    FSMainMapCell *cell = [self.tableV dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     FSVenue *venue = self.nearbyVenues[indexPath.row];
-    cell.textLabel.text = [venue name];
+    [cell.venuName setText:[venue name]];
+    NSString *venueImg = [venue.prefix stringByAppendingString:venue.suffix];
+    cell.imageView.image = [UIImage imageNamed:@"0.png"];
+    [self downloadImageWithURL:[NSURL URLWithString:venueImg] completionBlock:^(BOOL succeeded, UIImage *image) {
+        if (succeeded) {
+            // change the image in the cell
+            cell.icon.image = image;
+        }
+    }];
     if (venue.location.address) {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@m, %@",
+        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m, %@",
                                      venue.location.distance,
-                                     venue.location.address];
+                                     venue.location.address]];
     } else {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@m",
-                                     venue.location.distance];
+        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m",
+                                     venue.location.distance]];
     }
     return cell;
 }
