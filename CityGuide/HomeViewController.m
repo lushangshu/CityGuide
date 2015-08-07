@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "LeftMenuViewController.h"
 #import "JPSThumbnailAnnotation.h"
-
+#import "FSVenueViewController.h"
 #import "AFNetworking.h"
 #import "FSVenue.h"
 #import "FSConverter.h"
@@ -254,8 +254,10 @@
     }
     return cell;
 }
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+        
 
-
+}
 
 #pragma mark - SlideNavigationController Methods -
 
