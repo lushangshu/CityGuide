@@ -97,6 +97,7 @@
 		CCAC04901B6920D600D5D7A9 /* GenerateRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */; };
 		CCB909711B74FA2700F6A622 /* FSMainMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB909701B74FA2700F6A622 /* FSMainMapCell.m */; };
 		CCB909741B75056100F6A622 /* FSVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB909731B75056100F6A622 /* FSVenueViewController.m */; };
+		CCB909791B75581300F6A622 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB909781B75581300F6A622 /* ActivityViewController.m */; };
 		CCBFCA411B5FDF190057FAF5 /* location.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBFCA401B5FDF190057FAF5 /* location.m */; };
 		CCBFCA471B600C610057FAF5 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA421B600C610057FAF5 /* 0.png */; };
 		CCBFCA481B600C610057FAF5 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CCBFCA431B600C610057FAF5 /* 2.png */; };
@@ -289,6 +290,8 @@
 		CCB909701B74FA2700F6A622 /* FSMainMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMainMapCell.m; sourceTree = "<group>"; };
 		CCB909721B75056100F6A622 /* FSVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenueViewController.h; sourceTree = "<group>"; };
 		CCB909731B75056100F6A622 /* FSVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenueViewController.m; sourceTree = "<group>"; };
+		CCB909771B75581300F6A622 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		CCB909781B75581300F6A622 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		CCBFCA3F1B5FDF190057FAF5 /* location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = location.h; sourceTree = "<group>"; };
 		CCBFCA401B5FDF190057FAF5 /* location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = location.m; sourceTree = "<group>"; };
 		CCBFCA421B600C610057FAF5 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -384,19 +387,14 @@
 				CC3547501B41D88B00A9812B /* AppDelegate.m */,
 				CC3547551B41D88B00A9812B /* ViewController.h */,
 				CC3547561B41D88B00A9812B /* ViewController.m */,
+				CCB9097A1B75582200F6A622 /* Activity */,
 				CC6E27D41B6982BE004A08E2 /* Map */,
 				CC6E27D31B6982B3004A08E2 /* Navigation */,
 				CC35477E1B42290D00A9812B /* MapViewController.h */,
 				CC35477F1B42290D00A9812B /* MapViewController.m */,
-				CC3547D11B44F60A00A9812B /* IKCollectionViewController.h */,
-				CC3547D21B44F60A00A9812B /* IKCollectionViewController.m */,
-				CCA70F671B5749130071FD17 /* IKMediaViewController.h */,
-				CCA70F681B5749130071FD17 /* IKMediaViewController.m */,
 				CC3547D41B45409200A9812B /* PreferenceController.h */,
 				CC3547D51B45409200A9812B /* PreferenceController.m */,
 				CC10AA571B7224CB0097BD15 /* cateG.plist */,
-				CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */,
-				CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */,
 				CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */,
 				CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */,
 				CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */,
@@ -675,6 +673,21 @@
 			path = "CollectionView Cells";
 			sourceTree = "<group>";
 		};
+		CCB9097A1B75582200F6A622 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				CCB909771B75581300F6A622 /* ActivityViewController.h */,
+				CCB909781B75581300F6A622 /* ActivityViewController.m */,
+				CC3547D11B44F60A00A9812B /* IKCollectionViewController.h */,
+				CC3547D21B44F60A00A9812B /* IKCollectionViewController.m */,
+				CCA70F671B5749130071FD17 /* IKMediaViewController.h */,
+				CCA70F681B5749130071FD17 /* IKMediaViewController.m */,
+				CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */,
+				CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */,
+			);
+			name = Activity;
+			sourceTree = "<group>";
+		};
 		CCBFCA4C1B600C690057FAF5 /* bankbuilding */ = {
 			isa = PBXGroup;
 			children = (
@@ -901,6 +914,7 @@
 				CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */,
 				CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */,
 				CCBFCA411B5FDF190057FAF5 /* location.m in Sources */,
+				CCB909791B75581300F6A622 /* ActivityViewController.m in Sources */,
 				CC7A89F11B57C3C100505328 /* OATokenManager.m in Sources */,
 				CCFFEB2B1B5F0B2A00BF6364 /* CityDetailCell.m in Sources */,
 			);

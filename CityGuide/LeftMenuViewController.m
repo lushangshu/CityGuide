@@ -41,7 +41,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 8;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -85,7 +85,9 @@
         case 5:
             cell.textLabel.text = @"Help";
             break;
-            
+        case 6:
+            cell.textLabel.text = @"Activity";
+            break;
        
     }
     
@@ -128,9 +130,9 @@
 //            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
 //            return;
             break;
-//        case 6:
-//            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ConfigurationViewController"];
-//            break;
+        case 6:
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ActivityViewController"];
+            break;
         
     }
     
