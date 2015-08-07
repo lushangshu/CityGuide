@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "SlideNavigationController.h"
 
-@interface IKCollectionViewController : UICollectionViewController <SlideNavigationControllerDelegate>
+@interface IKCollectionViewController : UICollectionViewController <SlideNavigationControllerDelegate,CLLocationManagerDelegate>
 
 - (IBAction)reloadMedia;
 @end

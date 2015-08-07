@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 lushangshu. All rights reserved.
 //
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "RightMenuViewController.h"
 
 @implementation RightMenuViewController
@@ -16,6 +18,10 @@
 {
     [super viewDidLoad];
     
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.center = self.view.center;
+    [self.view addSubview:loginButton];
+    
     self.tableView.separatorColor = [UIColor lightGrayColor];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenu.jpg"]];
@@ -23,6 +29,43 @@
     
     self.view.layer.borderWidth = .6;
     self.view.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [self RequestFacebookEvents];
+}
+
+-(void)RequestFacebookEvents
+{
+//    NSDictionary *params = @{
+//                             @"q": @"event",
+//                             @"center":@"53.38,-1.46"
+//                             };
+//    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+//                                  initWithGraphPath:@"search?"
+//                                  parameters:params
+//                                  HTTPMethod:@"GET"];
+//    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+//                                          id result,
+//                                          NSError *error) {
+//        if (error) {
+//            NSLog(@"eror is %@",error.description);
+//        }else{
+//            NSLog(@"result is %@",result);
+//        }
+//    }];
+//        NSDictionary *params = @{
+//                                 @"fieldname": @"{id}",
+//                                 };
+//    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+//                                  initWithGraphPath:@"/me"
+//                                  parameters:params
+//                                  HTTPMethod:@"GET"];
+//    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+//                                          id result,
+//                                          NSError *error) {
+//                if (error) {
+//                    NSLog(@"eror is %@",error.description);
+//                }else{
+//                    NSLog(@"result is %@",result);
+//                }    }];
 }
 
 #pragma mark - UITableView Delegate & Datasrouce -

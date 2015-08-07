@@ -65,7 +65,9 @@
     }
     else
     {
-        [self testLoadPopularMedia];
+        //[self testLoadPopularMedia];
+        [self MediaAtLocation];
+        NSLog(@"located media loaded");
     }
 }
 
@@ -94,6 +96,39 @@
         NSLog(@"Load Popular Media Failed");
     }];
     
+}
+-(CLLocationCoordinate2D )findCurrentLocation
+{
+    
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    if ([locationManager locationServicesEnabled])
+    {
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.distanceFilter = kCLDistanceFilterNone;
+        [locationManager startUpdatingLocation];
+    }
+    
+    
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    
+    NSString *str=[[NSString alloc] initWithFormat:@" latitude:%f longitude:%f",coordinate.latitude,coordinate.longitude];
+    NSLog(@"%@",str);
+    
+    return coordinate;
+
+}
+-(void)MediaAtLocation
+{
+    CLLocationCoordinate2D loc = [self findCurrentLocation];
+    [[InstagramEngine sharedEngine] getMediaAtLocation:loc withSuccess:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
+        [mediaArray removeAllObjects];
+        [mediaArray addObjectsFromArray:media];
+        [self reloadData];
+    } failure:^(NSError *error, NSInteger serverStatusCode) {
+        NSLog(@"Load Popular Media Failed");
+    }];
 }
 
 - (void)getSelfUserDetails

@@ -24,6 +24,8 @@
 @property (nonatomic,strong) IBOutlet UITableView *tableV;
 @property (nonatomic,strong) IBOutlet UILabel *selectedVenus;
 
+-(IBAction)backToLocation:(id)sender;
+
 //- (IBAction)bounceMenu:(id)sender;
 //- (IBAction)changeAnimationSelected:(id)sender;
 

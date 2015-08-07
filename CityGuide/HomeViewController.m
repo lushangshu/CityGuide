@@ -38,7 +38,7 @@
 -(void) notificationHandler2:(NSNotification *) notification2{
     
     NSDictionary *dict = [notification2 object];
-    NSLog(@"!!!!! receive dict :%@,",dict);
+//    NSLog(@"!!!!! receive dict :%@,",dict);
     NSMutableArray *annot = [self generateAnnotations:dict];
     [self.myMapView addAnnotations:annot];
     
@@ -111,19 +111,7 @@
                      MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
                      [annotation setCoordinate:newLocation];
                      [annotation setTitle:self.mySearch.text];
-                     // add functions
-                     JPSThumbnail *empire = [[JPSThumbnail alloc] init];
-                     //empire.image = [UIImage imageNamed:@"1.png"];
-                     empire.title = self.mySearch.text;
-                     empire.subtitle = @"Information required";
-//                     empire.coordinate = CLLocationCoordinate2DMake(53.38, -1.46);
-                     empire.coordinate = newLocation;
-                     empire.disclosureBlock = ^{ NSLog(@"selected Empire"); };
-                     
-                     //added end
-
-                     //[self.myMapView addAnnotation:annotation];
-                     [self.myMapView addAnnotation:[[JPSThumbnailAnnotation alloc]initWithThumbnail:empire]];
+                     [self.myMapView addAnnotation:annotation];
                      MKMapRect mr = [self.myMapView visibleMapRect];
                      MKMapPoint pt=MKMapPointForCoordinate([annotation coordinate]);
                      mr.origin.x = pt.x - mr.size.width*0.5;
@@ -157,6 +145,12 @@
     [self.view endEditing:YES];
 }
 
+-(void)backToLocation:(id)sender
+{
+    //[self.myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    [self.myMapView setCenterCoordinate:self.locationManager.location.coordinate animated:YES];
+    [self.tableV setContentOffset:CGPointZero animated:YES];
+}
 #pragma mark -cllocation delegate
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
