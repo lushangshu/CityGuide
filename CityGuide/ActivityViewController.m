@@ -162,7 +162,6 @@
 
 #pragma mark - UITableview delegete methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // NSLog(@" +++++ %lu ",(unsigned long)self.placeList.count);
     return 1;
 }
 

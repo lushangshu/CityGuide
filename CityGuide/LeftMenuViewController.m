@@ -67,7 +67,7 @@
             break;
             
         case 1:
-            cell.textLabel.text = @"Hot Activity";
+            cell.textLabel.text = @"Activity";
             break;
             
         case 2:
@@ -86,7 +86,7 @@
             cell.textLabel.text = @"Help";
             break;
         case 6:
-            cell.textLabel.text = @"Activity";
+            cell.textLabel.text = @"Hot Activity";
             break;
        
     }
@@ -114,7 +114,7 @@
             break;
             
         case 2:
-            vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"IKCollectionViewController"];
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ActivityViewController"];
             break;
             
         case 3:
@@ -131,7 +131,7 @@
 //            return;
             break;
         case 6:
-            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ActivityViewController"];
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"IKCollectionViewController"];
             break;
         
     }

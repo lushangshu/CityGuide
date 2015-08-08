@@ -820,7 +820,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tp0-Jl-4BH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="tp0-Jl-4BH">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tp0-Jl-4BH" id="r1u-3E-Fqn">
@@ -837,6 +837,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Zc9-vv-bU0" id="jFM-sA-UCJ"/>
+                                    <outlet property="delegate" destination="Zc9-vv-bU0" id="IiH-0p-v3m"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Ck-5p-s6U">
                                 <rect key="frame" x="16" y="75" width="76" height="45"/>
@@ -894,6 +898,7 @@
                     </view>
                     <connections>
                         <outlet property="collections" destination="0Hl-PM-jfJ" id="1VY-ku-Urk"/>
+                        <outlet property="tableVi" destination="nUR-nd-KOu" id="EjO-QA-Sr7"/>
                         <outlet property="textFFF" destination="9IZ-W9-mR8" id="HfK-pI-RRc"/>
                     </connections>
                 </viewController>
