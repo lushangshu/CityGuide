@@ -50,6 +50,9 @@
 		CC3547E11B4563EA00A9812B /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3547DD1B4563EA00A9812B /* TwitterCore.framework */; };
 		CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */; };
 		CC66AEAE1B46B7940002C846 /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC66AEAD1B46B7940002C846 /* city.png */; };
+		CC6CD24F1B76919B009E8A09 /* TWConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD24E1B76919B009E8A09 /* TWConverter.m */; };
+		CC6CD2521B769FF0009E8A09 /* TweetClas.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2511B769FF0009E8A09 /* TweetClas.m */; };
+		CC6CD2551B76A0F5009E8A09 /* TweetsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2541B76A0F5009E8A09 /* TweetsCell.m */; };
 		CC6E27DD1B698600004A08E2 /* VenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DC1B698600004A08E2 /* VenuesViewController.m */; };
 		CC6E27E21B69A9D6004A08E2 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DF1B69A9D6004A08E2 /* FSConverter.m */; };
 		CC6E27E31B69A9D6004A08E2 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27E11B69A9D6004A08E2 /* FSVenue.m */; };
@@ -200,6 +203,12 @@
 		CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyActViewController.h; sourceTree = "<group>"; };
 		CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyActViewController.m; sourceTree = "<group>"; };
 		CC66AEAD1B46B7940002C846 /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
+		CC6CD24D1B76919B009E8A09 /* TWConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWConverter.h; sourceTree = "<group>"; };
+		CC6CD24E1B76919B009E8A09 /* TWConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWConverter.m; sourceTree = "<group>"; };
+		CC6CD2501B769FF0009E8A09 /* TweetClas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetClas.h; sourceTree = "<group>"; };
+		CC6CD2511B769FF0009E8A09 /* TweetClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetClas.m; sourceTree = "<group>"; };
+		CC6CD2531B76A0F5009E8A09 /* TweetsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsCell.h; sourceTree = "<group>"; };
+		CC6CD2541B76A0F5009E8A09 /* TweetsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsCell.m; sourceTree = "<group>"; };
 		CC6E27DB1B698600004A08E2 /* VenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesViewController.h; sourceTree = "<group>"; };
 		CC6E27DC1B698600004A08E2 /* VenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesViewController.m; sourceTree = "<group>"; };
 		CC6E27DE1B69A9D6004A08E2 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -678,6 +687,12 @@
 			children = (
 				CCB909771B75581300F6A622 /* ActivityViewController.h */,
 				CCB909781B75581300F6A622 /* ActivityViewController.m */,
+				CC6CD2531B76A0F5009E8A09 /* TweetsCell.h */,
+				CC6CD2541B76A0F5009E8A09 /* TweetsCell.m */,
+				CC6CD24D1B76919B009E8A09 /* TWConverter.h */,
+				CC6CD24E1B76919B009E8A09 /* TWConverter.m */,
+				CC6CD2501B769FF0009E8A09 /* TweetClas.h */,
+				CC6CD2511B769FF0009E8A09 /* TweetClas.m */,
 				CC3547D11B44F60A00A9812B /* IKCollectionViewController.h */,
 				CC3547D21B44F60A00A9812B /* IKCollectionViewController.m */,
 				CCA70F671B5749130071FD17 /* IKMediaViewController.h */,
@@ -876,6 +891,7 @@
 				CC3547A01B44E33800A9812B /* AFURLResponseSerialization.m in Sources */,
 				CC6E27DD1B698600004A08E2 /* VenuesViewController.m in Sources */,
 				CC3547541B41D88B00A9812B /* CityGuide.xcdatamodeld in Sources */,
+				CC6CD24F1B76919B009E8A09 /* TWConverter.m in Sources */,
 				CC3547BB1B44E46D00A9812B /* InstagramComment.m in Sources */,
 				CCA70F501B56C48E0071FD17 /* LeftMenuViewController.m in Sources */,
 				CCA70F4D1B56C3B50071FD17 /* SlideNavigationController.m in Sources */,
@@ -892,6 +908,7 @@
 				CCF3CA0F1B55CC03007EF470 /* MapShopsViewController.m in Sources */,
 				CC35479D1B44E33800A9812B /* AFSecurityPolicy.m in Sources */,
 				CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */,
+				CC6CD2551B76A0F5009E8A09 /* TweetsCell.m in Sources */,
 				CC7A89E91B57C3C100505328 /* OADataFetcher.m in Sources */,
 				CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */,
 				CC3547D61B45409200A9812B /* PreferenceController.m in Sources */,
@@ -916,6 +933,7 @@
 				CCBFCA411B5FDF190057FAF5 /* location.m in Sources */,
 				CCB909791B75581300F6A622 /* ActivityViewController.m in Sources */,
 				CC7A89F11B57C3C100505328 /* OATokenManager.m in Sources */,
+				CC6CD2521B769FF0009E8A09 /* TweetClas.m in Sources */,
 				CCFFEB2B1B5F0B2A00BF6364 /* CityDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

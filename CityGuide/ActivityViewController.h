@@ -17,4 +17,6 @@
 @property (nonatomic,strong) IBOutlet UITableView *tableVi;
 @property (nonatomic,strong) IBOutlet UITextField *textFFF;
 
+@property (nonatomic,strong) NSArray *array;
+
 @end

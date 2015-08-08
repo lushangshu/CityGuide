@@ -12,6 +12,12 @@
 #import "InstagramMedia.h"
 #import "InstagramUser.h"
 #import "IKCell.h"
+#import "TWConverter.h"
+#import "TweetClas.h"
+#import "TweetsCell.h"
+#import <TwitterKit/TwitterKit.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
 @interface ActivityViewController ()
 {
@@ -35,6 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadMedia];
+    [self twitterSearchTweets];
 }
 
 - (void)loadMedia
@@ -123,6 +130,74 @@
     return mediaArray.count;
 }
 
+#pragma mark - Twitter data retrieve and parse
+- (void)twitterSearchTweets {
+    
+    ACAccountStore *account = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [account accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    [account requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error)
+     {
+         
+         if (granted == YES){
+             NSArray *arrayOfAccounts = [account accountsWithAccountType:accountType];
+             if ([arrayOfAccounts count] > 0) {
+                 ACAccount *twitterAccount = [arrayOfAccounts lastObject];
+                 NSURL *requestAPI = [NSURL URLWithString:@"https://api.twitter.com/1.1/search/tweets.json"];
+                 
+                 NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+                 
+                 [parameters setObject:@"Sheffield" forKey:@"q"];
+                 [parameters setObject:@"53.38,-1.46,10mi" forKey:@"geocode"];
+                 [parameters setObject:@"20" forKey:@"count"];
+                 //[parameters setObject:@"1" forKey:@"include_entities"];
+                 
+                 SLRequest *posts = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:requestAPI parameters:parameters];
+                 posts.account = twitterAccount;
+                 [posts performRequestWithHandler:^(NSData *response, NSHTTPURLResponse
+                                                    *urlResponse, NSError *error)
+                  {
+                      NSDictionary *tempArray = [[NSDictionary alloc]init];
+                      tempArray = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
+                      //NSLog(@"result is *** %@",self.array);
+                      NSArray *tweets = [tempArray valueForKeyPath:@"statuses"];
+                      TWConverter *convert = [[TWConverter alloc]init];
+                      self.array = [convert TWObjectConverter:tweets];
+                      for (int i=0; i<[self.array count]; i++) {
+                          TweetClas *t =self.array[i];
+                          NSLog(@"name is +++ (((( %@,%@",t.userName,t.createdAt);
+                      }
+                      if (self.array.count != 0) {
+                          dispatch_async(dispatch_get_main_queue(), ^{
+                              [self.tableVi reloadData]; // Here we tell the table view to reload the data it just recieved.
+                          });
+                      }
+                  }];
+             }
+         } else {
+             
+             // Handle failure to get account access
+             NSLog(@"%@", [error localizedDescription]);
+         }
+     }];
+    
+}
+
+- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               if ( !error )
+                               {
+                                   UIImage *image = [[UIImage alloc] initWithData:data];
+                                   completionBlock(YES,image);
+                               } else{
+                                   completionBlock(NO,nil);
+                               }
+                           }];
+}
+
 #pragma mark - UICollection view delegate
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -162,13 +237,25 @@
 
 #pragma mark - UITableview delegete methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.array.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *kEarthquakeCellID = @"cell";
-    UITableViewCell *cell = [self.tableVi dequeueReusableCellWithIdentifier:kEarthquakeCellID];
+    static NSString *cellIdentifier = @"cell";
+    TweetsCell *cell = [self.tableVi dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    TweetClas *venue = self.array[indexPath.row];
+    [cell.name setText:[venue userName]];
+    [cell.text setText:[venue tweetText]];
+    [cell.createTime setText:[venue createdAt]];
+    cell.imageView.image = [UIImage imageNamed:@"0.png"];
+    [self downloadImageWithURL:[NSURL URLWithString:[venue profileUrl]] completionBlock:^(BOOL succeeded, UIImage *image) {
+        if (succeeded) {
+            // change the image in the cell
+            cell.imageView.image = image;
+        }
+    }];
+    
     return cell;
 }
 
