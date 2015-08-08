@@ -71,24 +71,16 @@
             break;
             
         case 2:
-            cell.textLabel.text = @"Images Topics";
-            break;
-            
-        case 3:
             cell.textLabel.text = @"City Detail";
             break;
         
-        case 4:
+        case 3:
             cell.textLabel.text = @"Preferences Setting";
             break;
             
-        case 5:
+        case 4:
             cell.textLabel.text = @"Help";
-            break;
-        case 6:
-            cell.textLabel.text = @"Hot Activity";
-            break;
-       
+            break;       
     }
     
     cell.backgroundColor = [UIColor clearColor];
@@ -110,29 +102,23 @@
             break;
             
         case 1:
-            vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"NearbyActViewController"];
-            break;
-            
-        case 2:
             vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ActivityViewController"];
             break;
             
-        case 3:
+        case 2:
             vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CityDetailViewController"];
             break;
             
-        case 4:
+        case 3:
             vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"PreferenceController"];
             break;
-        case 5:
+        case 4:
             vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ConfigurationViewController"];
 //            [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 //            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
 //            return;
             break;
-        case 6:
-            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"IKCollectionViewController"];
-            break;
+
         
     }
     

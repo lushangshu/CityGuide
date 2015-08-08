@@ -19,4 +19,7 @@
 
 @property (nonatomic,strong) NSArray *array;
 
+@property (nonatomic,strong) NSString *cityName;
+@property (nonatomic,strong) NSString *lat;
+@property (nonatomic,strong) NSString *lont;
 @end

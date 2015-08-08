@@ -53,6 +53,10 @@
 		CC6CD24F1B76919B009E8A09 /* TWConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD24E1B76919B009E8A09 /* TWConverter.m */; };
 		CC6CD2521B769FF0009E8A09 /* TweetClas.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2511B769FF0009E8A09 /* TweetClas.m */; };
 		CC6CD2551B76A0F5009E8A09 /* TweetsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2541B76A0F5009E8A09 /* TweetsCell.m */; };
+		CC6CD25A1B76B3D6009E8A09 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2561B76B3D6009E8A09 /* facebook.png */; };
+		CC6CD25B1B76B3D6009E8A09 /* foursquare.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2571B76B3D6009E8A09 /* foursquare.png */; };
+		CC6CD25C1B76B3D6009E8A09 /* instag.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2581B76B3D6009E8A09 /* instag.png */; };
+		CC6CD25D1B76B3D6009E8A09 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2591B76B3D6009E8A09 /* twitter.png */; };
 		CC6E27DD1B698600004A08E2 /* VenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DC1B698600004A08E2 /* VenuesViewController.m */; };
 		CC6E27E21B69A9D6004A08E2 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DF1B69A9D6004A08E2 /* FSConverter.m */; };
 		CC6E27E31B69A9D6004A08E2 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27E11B69A9D6004A08E2 /* FSVenue.m */; };
@@ -209,6 +213,10 @@
 		CC6CD2511B769FF0009E8A09 /* TweetClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetClas.m; sourceTree = "<group>"; };
 		CC6CD2531B76A0F5009E8A09 /* TweetsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsCell.h; sourceTree = "<group>"; };
 		CC6CD2541B76A0F5009E8A09 /* TweetsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsCell.m; sourceTree = "<group>"; };
+		CC6CD2561B76B3D6009E8A09 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		CC6CD2571B76B3D6009E8A09 /* foursquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foursquare.png; sourceTree = "<group>"; };
+		CC6CD2581B76B3D6009E8A09 /* instag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instag.png; sourceTree = "<group>"; };
+		CC6CD2591B76B3D6009E8A09 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		CC6E27DB1B698600004A08E2 /* VenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesViewController.h; sourceTree = "<group>"; };
 		CC6E27DC1B698600004A08E2 /* VenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesViewController.m; sourceTree = "<group>"; };
 		CC6E27DE1B69A9D6004A08E2 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -426,6 +434,7 @@
 		CC35474B1B41D88B00A9812B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC6CD25E1B76B3E1009E8A09 /* icons */,
 				CCBFCA421B600C610057FAF5 /* 0.png */,
 				CCBFCA431B600C610057FAF5 /* 2.png */,
 				CCBFCA441B600C610057FAF5 /* 3.png */,
@@ -552,6 +561,17 @@
 				CC3547B91B44E46D00A9812B /* InstagramUser.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CC6CD25E1B76B3E1009E8A09 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				CC6CD2561B76B3D6009E8A09 /* facebook.png */,
+				CC6CD2571B76B3D6009E8A09 /* foursquare.png */,
+				CC6CD2581B76B3D6009E8A09 /* instag.png */,
+				CC6CD2591B76B3D6009E8A09 /* twitter.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 		CC6E27D31B6982B3004A08E2 /* Navigation */ = {
@@ -807,12 +827,16 @@
 				CCA70F5E1B5727380071FD17 /* rightMenu.jpg in Resources */,
 				CC3547D81B4545FF00A9812B /* map.png in Resources */,
 				CC3547D01B44F47E00A9812B /* Main.storyboard in Resources */,
+				CC6CD25C1B76B3D6009E8A09 /* instag.png in Resources */,
+				CC6CD25A1B76B3D6009E8A09 /* facebook.png in Resources */,
 				CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */,
 				CCBFCA491B600C610057FAF5 /* 3.png in Resources */,
 				CCA70F5D1B5727380071FD17 /* leftMenu1.jpg in Resources */,
+				CC6CD25B1B76B3D6009E8A09 /* foursquare.png in Resources */,
 				CC66AEAE1B46B7940002C846 /* city.png in Resources */,
 				CCA70F5C1B5727380071FD17 /* gear.png in Resources */,
 				CCBFCA481B600C610057FAF5 /* 2.png in Resources */,
+				CC6CD25D1B76B3D6009E8A09 /* twitter.png in Resources */,
 				CC7A89F91B57D37700505328 /* leftMenu.jpg in Resources */,
 				CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */,
 				CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */,

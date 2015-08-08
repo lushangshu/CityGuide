@@ -15,6 +15,8 @@
 #import "TWConverter.h"
 #import "TweetClas.h"
 #import "TweetsCell.h"
+#import "location.h"
+#import <CoreLocation/CoreLocation.h>
 #import <TwitterKit/TwitterKit.h>
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
@@ -23,12 +25,18 @@
 {
     NSMutableArray *mediaArray;
     
+    
 }
+
 @property (nonatomic,strong) InstagramPaginationInfo *currentPaginationInfo;
 @end
 
 @implementation ActivityViewController
-
+{
+    CLLocationManager *manager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+}
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -40,15 +48,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    manager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    [self locationUpdate];
+    [self setCurrentCity];
     [self loadMedia];
-    [self twitterSearchTweets];
 }
+
+-(void) locationUpdate{
+    manager.delegate = self;
+    manager.desiredAccuracy = kCLLocationAccuracyBest;
+    [manager startUpdatingLocation];
+}
+
 
 - (void)loadMedia
 {
     [self.textFFF resignFirstResponder];
-    self.textFFF.text = @"Sheffield";
-    
+    self.textFFF.text = @"  ";
     InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
     [self MediaAtLocation];
     NSLog(@"located media loaded");
@@ -130,6 +147,58 @@
     return mediaArray.count;
 }
 
+-(void)setCurrentCity
+{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:manager.location
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       self.lat = [NSString stringWithFormat:@"%.4f", manager.location.coordinate.latitude];
+                       self.lont = [NSString stringWithFormat:@"%.4f",manager.location.coordinate.longitude];
+                       self.cityName = placemark.locality;
+                       //NSLog(@"***** placemark.country %@,%@,%@",self.cityName,self.lont,self.lat);
+                       [self twitterSearchTweets];
+                       [self.tableVi reloadData];
+                       self.textFFF.text = self.cityName;
+                   }];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+#pragma mark - CLLocationManagerDelegate Methods
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    
+    NSLog(@"Error: %@", error);
+    NSLog(@"Failed to get location! :(");
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    CLLocation *currentLocation = newLocation;
+    if (currentLocation != nil) {
+        //        self.latitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        //        self.longitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+    }
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            //NSLog(@"cityname = %@",self.cityName);
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    } ];
+}
+
 #pragma mark - Twitter data retrieve and parse
 - (void)twitterSearchTweets {
     
@@ -145,9 +214,9 @@
                  NSURL *requestAPI = [NSURL URLWithString:@"https://api.twitter.com/1.1/search/tweets.json"];
                  
                  NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-                 
-                 [parameters setObject:@"Sheffield" forKey:@"q"];
-                 [parameters setObject:@"53.38,-1.46,10mi" forKey:@"geocode"];
+                 NSString *locat = [[[self.lat stringByAppendingString:@","]stringByAppendingString:self.lont]stringByAppendingString:@",10mi"];
+                 [parameters setObject:self.cityName forKey:@"q"];
+                 [parameters setObject:locat forKey:@"geocode"];
                  [parameters setObject:@"20" forKey:@"count"];
                  //[parameters setObject:@"1" forKey:@"include_entities"];
                  
@@ -163,8 +232,8 @@
                       TWConverter *convert = [[TWConverter alloc]init];
                       self.array = [convert TWObjectConverter:tweets];
                       for (int i=0; i<[self.array count]; i++) {
-                          TweetClas *t =self.array[i];
-                          NSLog(@"name is +++ (((( %@,%@",t.userName,t.createdAt);
+                          //TweetClas *t =self.array[i];
+                          //NSLog(@"name is +++ (((( %@,%@",t.userName,t.createdAt);
                       }
                       if (self.array.count != 0) {
                           dispatch_async(dispatch_get_main_queue(), ^{
@@ -174,8 +243,6 @@
                   }];
              }
          } else {
-             
-             // Handle failure to get account access
              NSLog(@"%@", [error localizedDescription]);
          }
      }];

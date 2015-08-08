@@ -44,20 +44,6 @@
     geocoder = [[CLGeocoder alloc] init];
     [self locationUpdate];
     [self setCurrentCity];
-
-//    dispatch_queue_attr_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    dispatch_group_t group = dispatch_group_create();
-//    
-//    dispatch_group_async(group, queue, ^{
-//        [self setCurrentCity];
-//        NSLog(@"sync city name is *** %@",self.cityName);
-//    });
-//    dispatch_group_notify(group, queue, ^{
-//        [self loadCityDetails];
-//    });
-//    NSLog(@"city name is &&& %@",self.cityName);
-//    [self performSelector:@selector(loadCityDetails) withObject:self afterDelay:1.5];
-    //[self loadCityDetails];
 }
 -(void) locationUpdate{
     manager.delegate = self;
@@ -66,10 +52,7 @@
     
 }
 -(IBAction)buttonPressed:(id)sender{
-//    manager.delegate = self;
-//    manager.desiredAccuracy = kCLLocationAccuracyBest;
-//    [manager startUpdatingLocation];
-//    NSLog(@"pressed+ %@",self.label_c.text);
+
     self.cityName = self.searchCity.text;
     [self loadCityDetails];
     [self.label_c setText:self.cityName];
@@ -84,10 +67,8 @@
 
 - (void) loadCityDetails
 {
-//    [self setCurrentCity];
-//    NSString *loadMountainQueries = @"select * where { ?Mountain a dbpedia-owl:Mountain; dbpedia-owl:abstract ?abstract. FILTER(langMatches(lang(?abstract),\"EN\")) } limit 3";
     NSLog(@"here is load city detail %@",self.cityName);
-    NSString *loadMountainQueries = @"SELECT ?subject ?label ?lat ?long WHERE{<http://dbpedia.org/resource/Sheffield> geo:lat ?eiffelLat;geo:long ?eiffelLong.?subject geo:lat ?lat;geo:long ?long;rdfs:label ?label.FILTER(xsd:double(?lat) - xsd:double(?eiffelLat) <= 0.05 && xsd:double(?eiffelLat) - xsd:double(?lat) <= 0.05 && xsd:double(?long) - xsd:double(?eiffelLong) <= 0.05 && xsd:double(?eiffelLong) - xsd:double(?long) <= 0.05 && lang(?label) = \"en\").} LIMIT 20";
+    NSString *loadMountainQueries = @"SELECT ?subject ?label ?lat ?long WHERE{<http://dbpedia.org/resource/Sheffield> geo:lat ?eiffelLat;geo:long ?eiffelLong.?subject geo:lat ?lat;geo:long ?long;rdfs:label ?label.FILTER(xsd:double(?lat) - xsd:double(?eiffelLat) <= 0.05 && xsd:double(?eiffelLat) - xsd:double(?lat) <= 0.05 && xsd:double(?long) - xsd:double(?eiffelLong) <= 0.05 && xsd:double(?eiffelLong) - xsd:double(?long) <= 0.05 && lang(?label) = \"en\").} LIMIT 25";
     
     NSString *encodedLoadMountainQueries = [loadMountainQueries stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *urlString = [NSString stringWithFormat:@"http://dbpedia.org/sparql/?query=%@",encodedLoadMountainQueries];
@@ -151,6 +132,10 @@
     return resultArray;
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
 - (void)jsonParse{
    
     NSString* path  = @"http://maps.googleapis.com/maps/api/geocode/json?address=nanjing&sensor=true";
@@ -166,8 +151,6 @@
     NSNumber* lat = [locationDic objectForKey:@"lat"];
     NSNumber* lng = [locationDic objectForKey:@"lng"];
     NSLog(@"lat = %@, lng = %@",lat,lng);
-    
-    
 }
 
 -(void)setCurrentCity
@@ -235,7 +218,6 @@
 
 #pragma mark - UITableViewDelegate
 
-// The number of rows is equal to the number of places in the city
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
    // NSLog(@" +++++ %lu ",(unsigned long)self.placeList.count);
     return self.placeList.count;
@@ -245,11 +227,7 @@
     
     static NSString *kEarthquakeCellID = @"CityCell";
     CityDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kEarthquakeCellID];
-    
-    // Get the specific earthquake for this row.
-//    APLEarthquake *earthquake = (self.earthquakeList)[indexPath.row];
-//    
-//    [cell configureWithEarthquake:earthquake];
+
     NSArray *obj = [self.placeList objectAtIndex:indexPath.row];
     [cell.label1 setText: obj[0]];
     [cell.label2 setText: obj[1]];
