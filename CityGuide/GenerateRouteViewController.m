@@ -90,7 +90,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"Location: %@", newLocation);
+    //NSLog(@"Location: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     if (currentLocation != nil) {
         //        self.latitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
@@ -105,7 +105,12 @@
         }
     } ];
 }
-
+-(NSMutableArray *)GenerateLocations
+{
+    NSMutableArray *destinationS = [[NSMutableArray alloc]init];
+    
+    return destinationS;
+}
 
 - (void)showLinesFromSourceLati:(float)lat Long:(float)Lon
 {
@@ -158,7 +163,7 @@
     [request setSource:srcMapItem];
     [request setDestination:distMapItem];
     request.requestsAlternateRoutes = YES;
-    [request setTransportType:MKDirectionsTransportTypeAutomobile];
+    [request setTransportType:MKDirectionsTransportTypeWalking];
     
     MKDirections *direction = [[MKDirections alloc] initWithRequest:request];
     
@@ -176,16 +181,16 @@
             
             MKPolyline *line = [rout polyline];
             [_mapView addOverlay:line];
-//            NSLog(@"Rout Name : %@",rout.name);
-//            NSLog(@"Total Distance (in Meters) :%f",rout.distance);
+            NSLog(@"Rout Name : %@",rout.name);
+            NSLog(@"Total Distance (in Meters) :%f",rout.distance);
             
             NSArray *steps = [rout steps];
             
-//            NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
+            NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
             
             [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                NSLog(@"Rout Instruction : %@",[obj instructions]);
-//                NSLog(@"Rout Distance : %f",[obj distance]);
+                NSLog(@"Rout Instruction : %@",[obj instructions]);
+                NSLog(@"Rout Distance : %f",[obj distance]);
             }];
         }];
     }];
@@ -223,6 +228,8 @@
     
     return pinView;
 }
+
+#pragma mark - table view delegate
 
 
 - (void)didReceiveMemoryWarning {

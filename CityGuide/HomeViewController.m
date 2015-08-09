@@ -91,7 +91,7 @@
             //NSLog(@"address is +++ %@",v.location.address);
         }
         [self.tableV reloadData];
-        [self MapProccessAnnotations ];
+        [self MapProccessAnnotations];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
