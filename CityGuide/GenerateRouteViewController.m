@@ -50,13 +50,8 @@
         }
     }
     [locationManager startUpdatingLocation];
-    
-    
     //To draw poly line between mok source and destination
     //[self showLinesFromSourceLati:0.0 Long:0.0];
-    
-    
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -217,14 +212,10 @@
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotationPoint
 {
     
-    
-    
     static NSString *annotationIdentifier = @"annotationIdentifier";
-    
     MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotationPoint reuseIdentifier:annotationIdentifier];
     if ([[annotationPoint title] isEqualToString:@"Source"]) {
         pinView.pinColor = MKPinAnnotationColorRed;
-        
     }
     else{
         pinView.pinColor = MKPinAnnotationColorGreen;

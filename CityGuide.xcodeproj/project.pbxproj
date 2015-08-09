@@ -57,6 +57,7 @@
 		CC6CD25B1B76B3D6009E8A09 /* foursquare.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2571B76B3D6009E8A09 /* foursquare.png */; };
 		CC6CD25C1B76B3D6009E8A09 /* instag.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2581B76B3D6009E8A09 /* instag.png */; };
 		CC6CD25D1B76B3D6009E8A09 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2591B76B3D6009E8A09 /* twitter.png */; };
+		CC6CD2611B7733FA009E8A09 /* CityDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2601B7733FA009E8A09 /* CityDetailWebViewController.m */; };
 		CC6E27DD1B698600004A08E2 /* VenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DC1B698600004A08E2 /* VenuesViewController.m */; };
 		CC6E27E21B69A9D6004A08E2 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DF1B69A9D6004A08E2 /* FSConverter.m */; };
 		CC6E27E31B69A9D6004A08E2 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27E11B69A9D6004A08E2 /* FSVenue.m */; };
@@ -217,6 +218,8 @@
 		CC6CD2571B76B3D6009E8A09 /* foursquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foursquare.png; sourceTree = "<group>"; };
 		CC6CD2581B76B3D6009E8A09 /* instag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instag.png; sourceTree = "<group>"; };
 		CC6CD2591B76B3D6009E8A09 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		CC6CD25F1B7733FA009E8A09 /* CityDetailWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailWebViewController.h; sourceTree = "<group>"; };
+		CC6CD2601B7733FA009E8A09 /* CityDetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailWebViewController.m; sourceTree = "<group>"; };
 		CC6E27DB1B698600004A08E2 /* VenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesViewController.h; sourceTree = "<group>"; };
 		CC6E27DC1B698600004A08E2 /* VenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesViewController.m; sourceTree = "<group>"; };
 		CC6E27DE1B69A9D6004A08E2 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 			children = (
 				CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */,
 				CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */,
+				CC6CD25F1B7733FA009E8A09 /* CityDetailWebViewController.h */,
+				CC6CD2601B7733FA009E8A09 /* CityDetailWebViewController.m */,
 				CCFFEB291B5F0B2A00BF6364 /* CityDetailCell.h */,
 				CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */,
 			);
@@ -951,6 +956,7 @@
 				CCF3CA181B55CC69007EF470 /* JPSThumbnailAnnotationView.m in Sources */,
 				CCA70F4A1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				CC35479B1B44E33800A9812B /* AFHTTPSessionManager.m in Sources */,
+				CC6CD2611B7733FA009E8A09 /* CityDetailWebViewController.m in Sources */,
 				CC6E27E31B69A9D6004A08E2 /* FSVenue.m in Sources */,
 				CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */,
 				CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */,

@@ -262,15 +262,20 @@
         case 0: {
             NSArray *obj = [self.placeList objectAtIndex:buttonIndex];
             
-            [[UIApplication sharedApplication] openURL: [NSURL URLWithString:obj[1]]];
-        }
+            //[[UIApplication sharedApplication] openURL: [NSURL URLWithString:obj[1]]];
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vcc = [mainStoryboard instantiateViewControllerWithIdentifier: @"CityDetailWebViewController"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification" object:obj[1]];
+            NSLog(@"post url is %@",obj[1]);
+            [[SlideNavigationController sharedInstance] popToRootAndSwitchToViewController:vcc withCompletion:nil];
             break;
+        }
         case 1: {
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                     bundle: nil];
-            UIViewController *vc =[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
-            
-             NSDictionary *dicts = [NSDictionary dictionaryWithObjectsAndKeys:@"one1",@"one",@"two2",@"two",@"three3",@"three", nil];
+//            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+//                                                                     bundle: nil];
+//            UIViewController *vc =[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
+//            
+//             NSDictionary *dicts = [NSDictionary dictionaryWithObjectsAndKeys:@"one1",@"one",@"two2",@"two",@"three3",@"three", nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification2" object:self.placeList];
             NSLog(@"send data to another view");
             

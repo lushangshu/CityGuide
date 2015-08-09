@@ -41,7 +41,6 @@
 //    NSLog(@"!!!!! receive dict :%@,",dict);
     NSMutableArray *annot = [self generateAnnotations:dict];
     [self.myMapView addAnnotations:annot];
-    
 }
 
 - (void)removeAllAnnotationExceptOfCurrentUser {

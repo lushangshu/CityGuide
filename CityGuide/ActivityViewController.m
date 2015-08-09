@@ -307,6 +307,7 @@
     return self.array.count;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellIdentifier = @"cell";
@@ -323,12 +324,15 @@
         }
     }];
     
+//    self.tableVi.rowHeight = UITableViewAutomaticDimension;
+//    self.tableVi.estimatedRowHeight = 70.0;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+
 
 #pragma mark - UITextFieldDelegate methods
 

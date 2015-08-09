@@ -19,16 +19,23 @@
         ann.venueId = v[@"id"];
         NSArray *category = v[@"categories"];
         //NSLog(@"%@",category);
-        NSDictionary *vv =  [category objectAtIndex:0];
-        ann.prefix = vv[@"icon"][@"prefix"];
-        ann.suffix = vv[@"icon"][@"suffix"];
+        if ([category count]!=0) {
+            NSDictionary *vv =  [category objectAtIndex:0];
+            ann.prefix = vv[@"icon"][@"prefix"];
+            ann.suffix = vv[@"icon"][@"suffix"];
+            
+            ann.location.address = v[@"location"][@"address"];
+            ann.location.distance = v[@"location"][@"distance"];
+            
+            [ann.location setCoordinate:CLLocationCoordinate2DMake([v[@"location"][@"lat"] doubleValue],
+                                                                   [v[@"location"][@"lng"] doubleValue])];
+            [objects addObject:ann];
+        }
+        else{
+            
+            return objects;
+        }
         
-        ann.location.address = v[@"location"][@"address"];
-        ann.location.distance = v[@"location"][@"distance"];
-        
-        [ann.location setCoordinate:CLLocationCoordinate2DMake([v[@"location"][@"lat"] doubleValue],
-                                                      [v[@"location"][@"lng"] doubleValue])];
-        [objects addObject:ann];
     }
     return objects;
 }
