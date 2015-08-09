@@ -20,6 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.loading startAnimating];
+    [self.view setUserInteractionEnabled:YES];
     self.tableV.tableHeaderView = self.myMapView;
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -90,9 +92,13 @@
         }
         [self.tableV reloadData];
         [self MapProccessAnnotations ];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+    [self.loading stopAnimating];
+    [self.loading hidesWhenStopped];
+    [self.view setUserInteractionEnabled:NO];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar

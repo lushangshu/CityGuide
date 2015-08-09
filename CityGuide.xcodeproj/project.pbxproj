@@ -412,20 +412,12 @@
 				CCB9097A1B75582200F6A622 /* Activity */,
 				CC6E27D41B6982BE004A08E2 /* Map */,
 				CC6E27D31B6982B3004A08E2 /* Navigation */,
-				CC35477E1B42290D00A9812B /* MapViewController.h */,
-				CC35477F1B42290D00A9812B /* MapViewController.m */,
-				CC3547D41B45409200A9812B /* PreferenceController.h */,
-				CC3547D51B45409200A9812B /* PreferenceController.m */,
-				CC10AA571B7224CB0097BD15 /* cateG.plist */,
-				CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */,
-				CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */,
-				CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */,
-				CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */,
+				CC6CD2621B77A265009E8A09 /* OldVersionVCs */,
+				CC6CD2631B77A271009E8A09 /* PreferenceSettings */,
 				CC10AA561B716C7C0097BD15 /* CityDetail */,
 				CCBFCA3F1B5FDF190057FAF5 /* location.h */,
 				CCBFCA401B5FDF190057FAF5 /* location.m */,
-				CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */,
-				CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */,
+				CC10AA571B7224CB0097BD15 /* cateG.plist */,
 				CC35475B1B41D88B00A9812B /* Images.xcassets */,
 				CC3547CE1B44F47E00A9812B /* Main.storyboard */,
 				CC35475D1B41D88B00A9812B /* LaunchScreen.xib */,
@@ -577,6 +569,30 @@
 				CC6CD2591B76B3D6009E8A09 /* twitter.png */,
 			);
 			name = icons;
+			sourceTree = "<group>";
+		};
+		CC6CD2621B77A265009E8A09 /* OldVersionVCs */ = {
+			isa = PBXGroup;
+			children = (
+				CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */,
+				CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */,
+				CC35477E1B42290D00A9812B /* MapViewController.h */,
+				CC35477F1B42290D00A9812B /* MapViewController.m */,
+				CCF3CA0A1B53C480007EF470 /* FetchTimelineViewController.h */,
+				CCF3CA0B1B53C480007EF470 /* FetchTimelineViewController.m */,
+				CCF3CA0D1B55CC03007EF470 /* MapShopsViewController.h */,
+				CCF3CA0E1B55CC03007EF470 /* MapShopsViewController.m */,
+			);
+			name = OldVersionVCs;
+			sourceTree = "<group>";
+		};
+		CC6CD2631B77A271009E8A09 /* PreferenceSettings */ = {
+			isa = PBXGroup;
+			children = (
+				CC3547D41B45409200A9812B /* PreferenceController.h */,
+				CC3547D51B45409200A9812B /* PreferenceController.m */,
+			);
+			name = PreferenceSettings;
 			sourceTree = "<group>";
 		};
 		CC6E27D31B6982B3004A08E2 /* Navigation */ = {

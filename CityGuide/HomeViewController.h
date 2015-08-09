@@ -19,6 +19,7 @@
 @property (strong,nonatomic) CLLocationManager *locationManager;
 
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (nonatomic) NSMutableArray *res;
 @property (strong, nonatomic) NSArray *nearbyVenues;
 @property (nonatomic,strong) IBOutlet UITableView *tableV;
