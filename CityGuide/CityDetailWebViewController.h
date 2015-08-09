@@ -11,5 +11,12 @@
 @interface CityDetailWebViewController : UIViewController
 
 @property (strong,nonatomic) IBOutlet UIWebView *web;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
+@property (weak, nonatomic) IBOutlet UIButton *Refresh;
+@property (weak, nonatomic) IBOutlet UIButton *Forward;
+
+
+-(IBAction)RedirectToPage:(id)sender;
 
 @end

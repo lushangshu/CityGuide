@@ -689,20 +689,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="ejq-Ea-Id5">
-                                <rect key="frame" x="0.0" y="73" width="320" height="505"/>
+                                <rect key="frame" x="0.0" y="105" width="320" height="473"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tEm-fj-vnA" id="4hN-KN-K6a"/>
+                                </connections>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4sz-sv-Pxe">
+                                <rect key="frame" x="6" y="61" width="41" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ForwardButtonPressed:" destination="tEm-fj-vnA" eventType="touchUpInside" id="qfF-vb-OjO"/>
+                                    <action selector="goBack" destination="ejq-Ea-Id5" eventType="touchUpInside" id="LBO-zp-PJ7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3Jc-8D-kYH">
+                                <rect key="frame" x="55" y="67" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="search"/>
+                                <connections>
+                                    <action selector="RedirectToPage:" destination="tEm-fj-vnA" eventType="editingDidEnd" id="eRF-v8-j3o"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lwY-Ns-xvS">
+                                <rect key="frame" x="267" y="67" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="RefreshPage:" destination="tEm-fj-vnA" eventType="touchUpInside" id="g6M-tA-dJL"/>
+                                    <action selector="reload" destination="ejq-Ea-Id5" eventType="touchUpInside" id="6dr-Vj-07X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="Forward" destination="4sz-sv-Pxe" id="MFp-hq-Nk2"/>
+                        <outlet property="Refresh" destination="lwY-Ns-xvS" id="Z69-U2-PGl"/>
+                        <outlet property="textField" destination="3Jc-8D-kYH" id="Stv-5G-Oj2"/>
                         <outlet property="web" destination="ejq-Ea-Id5" id="bs6-Zh-JrD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTW-xw-RcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="-1374"/>
+            <point key="canvasLocation" x="1785" y="-1379"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="fKh-Od-Scf">

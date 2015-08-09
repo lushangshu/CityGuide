@@ -239,13 +239,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *buttonTitle = NSLocalizedString(@"Cancel", @"Cancel");
-    NSString *buttonTitle1 = NSLocalizedString(@"Show Site in Safari", @"Show Site in Safari");
+    NSString *buttonTitle1 = NSLocalizedString(@"Show Site in App", @"Show Site in App");
     NSString *buttonTitle2 = NSLocalizedString(@"Show Location in Maps", @"Show Location in Maps");
-    
+    NSString *buttonTitle3 = NSLocalizedString(@"Show Site in Safari", @"Show Site in Safari");
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
                                                        delegate:self
                                               cancelButtonTitle:buttonTitle destructiveButtonTitle:nil
-                                              otherButtonTitles:buttonTitle1, buttonTitle2, nil];
+                                              otherButtonTitles:buttonTitle1, buttonTitle2,buttonTitle3, nil];
     [sheet showInView:self.view];
 }
 
@@ -257,29 +257,28 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
     
     NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    //APLEarthquake *earthquake = (APLEarthquake *)(self.earthquakeList)[selectedIndexPath.row];
     switch (buttonIndex) {
         case 0: {
             NSArray *obj = [self.placeList objectAtIndex:buttonIndex];
-            
             //[[UIApplication sharedApplication] openURL: [NSURL URLWithString:obj[1]]];
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *vcc = [mainStoryboard instantiateViewControllerWithIdentifier: @"CityDetailWebViewController"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification" object:obj[1]];
-            NSLog(@"post url is %@",obj[1]);
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification3" object:obj[1]];
             [[SlideNavigationController sharedInstance] popToRootAndSwitchToViewController:vcc withCompletion:nil];
             break;
         }
         case 1: {
-//            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
-//                                                                     bundle: nil];
-//            UIViewController *vc =[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
-//            
-//             NSDictionary *dicts = [NSDictionary dictionaryWithObjectsAndKeys:@"one1",@"one",@"two2",@"two",@"three3",@"three", nil];
+
             [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification2" object:self.placeList];
             NSLog(@"send data to another view");
             
-            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];            NSLog(@"pressed ");
+            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
+            NSLog(@"pressed ");
+            break;
+        }
+        case 2: {
+            NSArray *obj = [self.placeList objectAtIndex:buttonIndex];
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString:obj[1]]];
             break;
         }
     }
