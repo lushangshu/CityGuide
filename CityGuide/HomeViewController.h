@@ -18,6 +18,7 @@
 @property (strong,nonatomic) IBOutlet MKMapView *myMapView;
 @property (strong,nonatomic) CLLocationManager *locationManager;
 
+@property (weak, nonatomic) IBOutlet UIButton *GenerateRouteButton;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (nonatomic) NSMutableArray *res;
@@ -25,7 +26,11 @@
 @property (nonatomic,strong) IBOutlet UITableView *tableV;
 @property (nonatomic,strong) IBOutlet UILabel *selectedVenus;
 
+@property (strong,nonatomic) NSString *testString;
 -(IBAction)backToLocation:(id)sender;
+-(IBAction)RadioVenueData:(id)sender;
+
++(id)sharedManager;
 
 //- (IBAction)bounceMenu:(id)sender;
 //- (IBAction)changeAnimationSelected:(id)sender;

@@ -279,7 +279,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="NUc-9C-ceM" kind="push" id="VpW-1u-dei"/>
+                                    <action selector="RadioVenueData:" destination="zxQ-c8-zro" eventType="touchUpInside" id="uSe-zZ-P7e"/>
+                                    <segue destination="NUc-9C-ceM" kind="push" identifier="VenueArraySeg" id="VpW-1u-dei"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SHY-bi-P4e">
@@ -298,6 +299,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="mNP-Zv-0mF"/>
                     <navigationItem key="navigationItem" title="Home" id="JRK-DI-0Qe"/>
                     <connections>
+                        <outlet property="GenerateRouteButton" destination="hut-Ze-Tu6" id="0Zo-Ou-26O"/>
                         <outlet property="myMapView" destination="P2u-lJ-GPM" id="PKc-hg-YRN"/>
                         <outlet property="mySearch" destination="Dz1-1O-6GQ" id="UNG-pn-OiI"/>
                         <outlet property="tableV" destination="dpz-zV-VJU" id="Uxs-fJ-bjk"/>
@@ -1155,15 +1157,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rqz-b8-nSs">
-                                <rect key="frame" x="16" y="81" width="112" height="65"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yKJ-Wx-bTb">
+                                <rect key="frame" x="27" y="282" width="266" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.20458380430000001" green="0.66595316790000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yKJ-Wx-bTb">
-                                <rect key="frame" x="27" y="308" width="115" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vz7-Rr-1l9">
+                                <rect key="frame" x="27" y="337" width="151" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.20458380430000001" green="0.66595316790000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1184,7 +1186,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="zxS-JQ-kmT">
-                                <rect key="frame" x="40" y="148" width="240" height="128"/>
+                                <rect key="frame" x="27" y="137" width="266" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vKS-5c-Edf">
@@ -1209,8 +1211,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vz7-Rr-1l9">
-                                <rect key="frame" x="27" y="337" width="151" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rqz-b8-nSs">
+                                <rect key="frame" x="104" y="73" width="112" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.20458380430000001" green="0.66595316790000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1228,10 +1230,10 @@
             </objects>
             <point key="canvasLocation" x="981" y="-2900"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Route Tabbar-->
         <scene sceneID="wQL-h6-zJv">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NUc-9C-ceM" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NUc-9C-ceM" customClass="RouteTabbar" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Amr-8d-yN3"/>
                     <nil key="simulatedBottomBarMetrics"/>

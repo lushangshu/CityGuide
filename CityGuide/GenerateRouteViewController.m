@@ -6,8 +6,9 @@
 //  Copyright (c) 2015年 lushangshu. All rights reserved.
 //
 #import <CoreLocation/CoreLocation.h>
+#import "RouteTabbar.h"
 #import "GenerateRouteViewController.h"
-
+#import "HomeViewController.h"
 
 
 @interface GenerateRouteViewController () <CLLocationManagerDelegate>
@@ -23,6 +24,7 @@
 @end
 
 @implementation GenerateRouteViewController
+
 @synthesize map_View,route_View;
 
 - (void)viewDidLoad {
@@ -49,10 +51,23 @@
             
         }
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserProfileSuccess:) name:@"Notification_GetUserProfileSuccess" object:nil];
+    
     [locationManager startUpdatingLocation];
+    RouteTabbar *tabbar;
+    NSArray * tarray = [tabbar passData];
+    NSLog(@"passed data is %@",tarray);
     //To draw poly line between mok source and destination
     //[self showLinesFromSourceLati:0.0 Long:0.0];
 }
+
+- (void) getUserProfileSuccess: (NSNotification*) aNotification
+{
+    NSString *b = [aNotification object];
+    NSLog(@"!!@!@!@ test notification is sdfew %@",b);
+}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];

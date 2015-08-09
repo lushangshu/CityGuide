@@ -24,6 +24,8 @@
 @property (strong,nonatomic) IBOutlet UISearchBar *arr;
 @property (strong,nonatomic) IBOutlet UIButton *search;
 
+@property (strong,nonatomic) NSArray *venueArray;
+
 -(IBAction)GenerateRoute;
 -(IBAction)segmentValueChanged:(id)sender;
 @end

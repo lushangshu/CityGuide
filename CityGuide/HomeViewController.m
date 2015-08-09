@@ -14,9 +14,11 @@
 #import "FSVenue.h"
 #import "FSConverter.h"
 #import "FSMainMapCell.h"
+#import "GenerateRouteViewController.h"
+#import "RouteTabbar.h"
 
 @implementation HomeViewController
-
+@synthesize testString;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,8 +36,17 @@
     //self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 503);
     [self searchBarSearchButtonClicked:self.mySearch];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler2:) name:@"mynotification2" object:nil];
+    
+    
+    
     [self.locationManager startUpdatingLocation];
 }
+
+-(IBAction)RadioVenueData:(id)sender{
+    NSString *a = @"adfa";
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_GetUserProfileSuccess" object: a userInfo:nil];
+}
+
 
 -(void) notificationHandler2:(NSNotification *) notification2{
     
@@ -86,6 +97,7 @@
         NSArray *venues = [dic valueForKeyPath:@"response.venues"];
         FSConverter *converter = [[FSConverter alloc]init];
         self.nearbyVenues = [converter convertToObjects:venues];
+        
         for (int i=0; i<[self.nearbyVenues count]; i++) {
             FSVenue *v =self.nearbyVenues[i];
             //NSLog(@"address is +++ %@",v.location.address);
@@ -99,6 +111,22 @@
     [self.loading stopAnimating];
     [self.loading hidesWhenStopped];
     [self.view setUserInteractionEnabled:NO];
+}
+
++(id)sharedManager
+{
+    static HomeViewController *sharedHomeVC = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken,^{
+        sharedHomeVC = [self new];
+    });
+    return sharedHomeVC;
+}
+-(id)init{
+    if (self = [super init]) {
+        testString = @"hello test singleton";
+    }
+    return self;
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -259,6 +287,10 @@
         FSVenueViewController *venuViewController = segue.destinationViewController;
         FSVenue *venue = self.nearbyVenues[indexPath.row];
         venuViewController.venueName = venue.name;
+    }
+    else if([segue.identifier isEqualToString:@"VenueArraySeg"]){
+        RouteTabbar *tab = segue.destinationViewController;
+        tab.venueArray = self.nearbyVenues;
     }
 }
 

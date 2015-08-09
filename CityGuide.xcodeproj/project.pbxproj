@@ -58,6 +58,7 @@
 		CC6CD25C1B76B3D6009E8A09 /* instag.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2581B76B3D6009E8A09 /* instag.png */; };
 		CC6CD25D1B76B3D6009E8A09 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2591B76B3D6009E8A09 /* twitter.png */; };
 		CC6CD2611B7733FA009E8A09 /* CityDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2601B7733FA009E8A09 /* CityDetailWebViewController.m */; };
+		CC6CD2661B77FE2A009E8A09 /* RouteTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2651B77FE2A009E8A09 /* RouteTabbar.m */; };
 		CC6E27DD1B698600004A08E2 /* VenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DC1B698600004A08E2 /* VenuesViewController.m */; };
 		CC6E27E21B69A9D6004A08E2 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DF1B69A9D6004A08E2 /* FSConverter.m */; };
 		CC6E27E31B69A9D6004A08E2 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27E11B69A9D6004A08E2 /* FSVenue.m */; };
@@ -220,6 +221,8 @@
 		CC6CD2591B76B3D6009E8A09 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		CC6CD25F1B7733FA009E8A09 /* CityDetailWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailWebViewController.h; sourceTree = "<group>"; };
 		CC6CD2601B7733FA009E8A09 /* CityDetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailWebViewController.m; sourceTree = "<group>"; };
+		CC6CD2641B77FE2A009E8A09 /* RouteTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteTabbar.h; sourceTree = "<group>"; };
+		CC6CD2651B77FE2A009E8A09 /* RouteTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteTabbar.m; sourceTree = "<group>"; };
 		CC6E27DB1B698600004A08E2 /* VenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesViewController.h; sourceTree = "<group>"; };
 		CC6E27DC1B698600004A08E2 /* VenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesViewController.m; sourceTree = "<group>"; };
 		CC6E27DE1B69A9D6004A08E2 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -617,6 +620,8 @@
 				CCB909731B75056100F6A622 /* FSVenueViewController.m */,
 				CCB9096F1B74FA2700F6A622 /* FSMainMapCell.h */,
 				CCB909701B74FA2700F6A622 /* FSMainMapCell.m */,
+				CC6CD2641B77FE2A009E8A09 /* RouteTabbar.h */,
+				CC6CD2651B77FE2A009E8A09 /* RouteTabbar.m */,
 				CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */,
 				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
 				CC6E27DB1B698600004A08E2 /* VenuesViewController.h */,
@@ -929,6 +934,7 @@
 				CC35479F1B44E33800A9812B /* AFURLRequestSerialization.m in Sources */,
 				CC7A89ED1B57C3C100505328 /* OAProblem.m in Sources */,
 				CC3547511B41D88B00A9812B /* AppDelegate.m in Sources */,
+				CC6CD2661B77FE2A009E8A09 /* RouteTabbar.m in Sources */,
 				CC7A89E31B57C3C100505328 /* NSURL+Base.m in Sources */,
 				CC7A89E11B57C3C100505328 /* NSMutableURLRequest+Parameters.m in Sources */,
 				CC3547C01B44E46D00A9812B /* InstagramTag.m in Sources */,

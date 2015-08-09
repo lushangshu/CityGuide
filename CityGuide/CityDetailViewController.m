@@ -264,7 +264,9 @@
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *vcc = [mainStoryboard instantiateViewControllerWithIdentifier: @"CityDetailWebViewController"];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification3" object:obj[1]];
+            
             [[SlideNavigationController sharedInstance] popToRootAndSwitchToViewController:vcc withCompletion:nil];
+//            [self presentViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CityDetailWebViewController"] animated:NO completion:nil];
             break;
         }
         case 1: {

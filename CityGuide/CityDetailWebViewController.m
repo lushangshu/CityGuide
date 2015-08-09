@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandlerURL:) name:@"mynotification3" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandlerURL:) name:@"mynotification3" object:nil];
+    
     NSString *urlStr= @"http://www.wikipedia.com/";
     NSURL *url = [NSURL URLWithString:urlStr];
     NSLog(@"url is %@",url);
@@ -25,6 +26,8 @@
     [self.Refresh setEnabled:NO];
     [self.web loadRequest:request];
 }
+
+
 
 -(void)notificationHandlerURL:(NSNotification *) mynotification3
 {
