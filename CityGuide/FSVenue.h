@@ -16,7 +16,7 @@
 
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
-@property (nonatomic,strong)NSNumber *distance;
+@property (nonatomic,strong)NSNumber *disTance;
 @property (nonatomic,strong)NSString *address;
 
 @end

@@ -11,7 +11,7 @@
 #import "HomeViewController.h"
 
 #import "AFNetworking.h"
-//#import "FSVenue.h"
+#import "FSVenue.h"
 #import "FSConverter.h"
 
 @interface GenerateRouteViewController () <CLLocationManagerDelegate>
@@ -58,7 +58,8 @@
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserProfileSuccess:) name:@"Notification_GetUserProfileSuccess" object:nil];
     
     [locationManager startUpdatingLocation];
-    NSLog(@"^^^^^&&&&&&(((())) %@",[[self.venueArray objectAtIndex:0]name]);
+    
+    //NSLog(@"%@",[[self.venueArray objectAtIndex:0]location]);
 
 }
 
@@ -74,7 +75,17 @@
 }
 
 -(IBAction)GenerateRoute{
-    [self showLinesFromSourceLati:0.0 Long:0.0];
+    FSVenue *venueItem1 = [self.venueArray objectAtIndex:0];
+    FSVenue *venueItem2 = [self.venueArray objectAtIndex:1];
+    FSVenue *venueItem3 = [self.venueArray objectAtIndex:2];
+    FSVenue *venueItem4 = [self.venueArray objectAtIndex:3];
+//    FSVenue *venueItem5 = [self.venueArray objectAtIndex:4];
+//    FSVenue *venueItem6 = [self.venueArray objectAtIndex:5];
+    [self showLinesFromSourceLati:venueItem1 Long:venueItem2];
+    [self showLinesFromSourceLati:venueItem2 Long:venueItem3];
+//    [self showLinesFromSourceLati:venueItem3 Long:venueItem4];
+//    [self showLinesFromSourceLati:venueItem4 Long:venueItem5];
+    //[self showLinesFromSourceLati:0.0 Long:0.0];
 }
 
 -(IBAction)segmentValueChanged:(UISegmentedControl *)sender
@@ -124,74 +135,64 @@
     [self.locationManager stopUpdatingLocation];
     
 }
+-(void)routeWithMultipleDirections:(NSArray *)venueList
+{
+    [[venueList objectAtIndex:0] name];
+    
 
-- (void)showLinesFromSourceLati:(float)lat Long:(float)Lon
+}
+
+- (void)showLinesFromSourceLati:(FSVenue *)deP Long:(FSVenue *)Arr
 {
     
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake
-    (53.385132,-1.480261);
-    
-    //Uncomment this below line to zoom at user current location and comment the above line
-    //    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(lat, Lon);
-    
-    //Place annotation for the Source
+    NSLog(@" ******** route from %@ to %@",deP.name,Arr.name);
+//    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake
+//    (53.385132,-1.480261);
+    CLLocationCoordinate2D coordinateDe = deP.location.coordinate;
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    [annotation setCoordinate:coordinate];
+    [annotation setCoordinate:coordinateDe];
     [annotation setTitle:@"Source"];
-    
     [_mapView addAnnotation:annotation];
     
     //To zoom in to the source location
-    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake
-    (53.385132,-1.480261);
+    CLLocationCoordinate2D startCoord = deP.location.coordinate;
     //    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(lat, Lon);
     MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 2000, 2000)];
     [_mapView setRegion:adjustedRegion animated:YES];
-    
     //Setting up Source point // start point
-    MKPlacemark *source = [[MKPlacemark alloc]initWithCoordinate:CLLocationCoordinate2DMake
-                           (53.385132,-1.480261) addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
-    //    MKPlacemark *source = [[MKPlacemark alloc]initWithCoordinate:CLLocationCoordinate2DMake(lat,Lon) addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
-    
+    MKPlacemark *source = [[MKPlacemark alloc]initWithCoordinate:deP.location.coordinate addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil]];
     MKMapItem *srcMapItem = [[MKMapItem alloc]initWithPlacemark:source];
     [srcMapItem setName:@"Source"];
-    
-    
+    // ------------------------------------------------- Set Destination Point
     //Setting the destination
-    MKPlacemark *destination = [[MKPlacemark alloc]initWithCoordinate:CLLocationCoordinate2DMake(53.377846,-1.461872) addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
+    MKPlacemark *destination = [[MKPlacemark alloc]initWithCoordinate:Arr.location.coordinate addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
     MKMapItem *distMapItem = [[MKMapItem alloc]initWithPlacemark:destination];
     [distMapItem setName:@"Destination"];
     
     //Place annotation for the destination
-    CLLocationCoordinate2D coordinate1 = CLLocationCoordinate2DMake(53.377846,-1.461872);
+    CLLocationCoordinate2D coordinate1 = Arr.location.coordinate;
     MKPointAnnotation *annotation1 = [[MKPointAnnotation alloc] init];
     [annotation1 setCoordinate:coordinate1];
     [annotation1 setTitle:@"Apple Inc"];
     [_mapView addAnnotation:annotation1];
     
-    
-    // Get Direction
+    //--------------------------------------------------- Get Direction
     MKDirectionsRequest *request = [[MKDirectionsRequest alloc]init];
     [request setSource:srcMapItem];
     [request setDestination:distMapItem];
     request.requestsAlternateRoutes = YES;
     [request setTransportType:MKDirectionsTransportTypeWalking];
     MKDirections *direction = [[MKDirections alloc] initWithRequest:request];
-    NSLog(@"!!!!!self respongse route is %@",self.responseRoute);
+//    NSLog(@"!!!!!self respongse route is %@",self.responseRoute);
     [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
-        
         if (error) {
             NSLog(@"Error:::%@",error);
         }
-        
         NSLog(@"response = %@",response);
         NSArray *arrRoutes = [response routes];
         NSLog(@"%@, arrRoutes Count is %lu",arrRoutes,(unsigned long)[arrRoutes count]);
-        
         [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
             rout = obj;
-            
             MKPolyline *line = [rout polyline];
             [_mapView addOverlay:line];
             //NSLog(@"Rout Name : %@",rout.name);
@@ -200,19 +201,15 @@
             NSArray *steps = [rout steps];
             
             //NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
-            
             [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSLog(@"Rout Instruction : %@",[obj instructions]);
-                NSLog(@"Rout Distance : %f",[obj distance]);
+//                NSLog(@"Rout Instruction : %@",[obj instructions]);
+//                NSLog(@"Rout Distance : %f",[obj distance]);
                 NSString *str_in = [obj instructions];
                 NSString *str_di = [NSString stringWithFormat:@"%f",[obj distance]];
                 NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di ,nil];
-                
-                NSLog(@"%@",routeB);
-                NSLog(@"^^&&^^&&");
+                //NSLog(@"%@",routeB);
                 [self.responseRoute addObjectsFromArray:routeB];
                 //NSLog(@"%@",route);
-                
             }];
         }];
     }];

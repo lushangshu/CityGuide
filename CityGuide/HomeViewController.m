@@ -86,7 +86,7 @@
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:@"M0AY5MCIO3I5HKZAU35MC1E4WQIBIVUFVPSL2MY0TSRP5JTI" forKey:@"client_id"];
     [params setObject:@"O3DM3WRVRABPMTMWMMGXC4WDEHUUIGGIRHP1Y0PTUEW2WTK3" forKey:@"client_secret"];
-    [params setObject:@" " forKey:@"query"];
+    [params setObject:@"food" forKey:@"query"];
     [params setObject:locat forKey:@"ll"];
     [params setObject:@"20140118" forKey:@"v"];
     [params setObject:@"30" forKey:@"limit"];
@@ -273,11 +273,11 @@
     }];
     if (venue.location.address) {
         [cell.venueAddress setText: [NSString stringWithFormat:@"%@m, %@",
-                                     venue.location.distance,
+                                     venue.location.disTance,
                                      venue.location.address]];
     } else {
         [cell.venueAddress setText: [NSString stringWithFormat:@"%@m",
-                                     venue.location.distance]];
+                                     venue.location.disTance]];
     }
     return cell;
 }
