@@ -12,6 +12,7 @@
 
 
 @interface GenerateRouteViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
+@property (strong,nonatomic) CLLocationManager *locationManager;
 
 @property (strong,nonatomic) IBOutlet UIView *map_View;
 @property (strong,nonatomic) IBOutlet UIView *route_View;

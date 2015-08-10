@@ -9,7 +9,10 @@
 #import "RouteTabbar.h"
 #import "GenerateRouteViewController.h"
 #import "HomeViewController.h"
-#import "FetchVenues.h"
+
+#import "AFNetworking.h"
+//#import "FSVenue.h"
+#import "FSConverter.h"
 
 @interface GenerateRouteViewController () <CLLocationManagerDelegate>
 {
@@ -52,12 +55,12 @@
         }
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserProfileSuccess:) name:@"Notification_GetUserProfileSuccess" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserProfileSuccess:) name:@"Notification_GetUserProfileSuccess" object:nil];
     
     [locationManager startUpdatingLocation];
     RouteTabbar *tabbar;
     NSArray * tarray = [tabbar passData];
-    NSLog(@"passed data is %@",tarray);
+//    NSLog(@"passed data is %@",tarray);
     //To draw poly line between mok source and destination
     //[self showLinesFromSourceLati:0.0 Long:0.0];
 }
@@ -71,6 +74,40 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+}
+
+-(void) fetching : (CLLocation *)location{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *lat = [NSString stringWithFormat:@"%f",location.coordinate.latitude ];
+    NSString *lon = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
+    
+    NSString *locat = [[lat stringByAppendingString:@","]stringByAppendingString:lon];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:@"M0AY5MCIO3I5HKZAU35MC1E4WQIBIVUFVPSL2MY0TSRP5JTI" forKey:@"client_id"];
+    [params setObject:@"O3DM3WRVRABPMTMWMMGXC4WDEHUUIGGIRHP1Y0PTUEW2WTK3" forKey:@"client_secret"];
+    [params setObject:@" " forKey:@"query"];
+    [params setObject:locat forKey:@"ll"];
+    [params setObject:@"20140118" forKey:@"v"];
+    [params setObject:@"30" forKey:@"limit"];
+    
+    [manager GET:@"https://api.foursquare.com/v2/venues/search" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"JSON: %@", responseObject);
+        NSDictionary *dic = responseObject;
+        NSArray *venues = [dic valueForKeyPath:@"response.venues"];
+        FSConverter *converter = [[FSConverter alloc]init];
+        self.venueArray = [converter convertToObjects:venues];
+        //NSLog(@"venue array is %@",self.venueArray);
+        
+        for (int i=0; i<[self.venueArray count]; i++) {
+            NSLog(@"address is +++ %@",[[self.venueArray objectAtIndex:i] name]);
+        }
+//        [self.tableV reloadData];
+//        [self MapProccessAnnotations];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
 }
 
 -(IBAction)GenerateRoute{
@@ -103,6 +140,7 @@
     
 }
 
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     //NSLog(@"Location: %@", newLocation);
@@ -119,12 +157,10 @@
             NSLog(@"%@", error.debugDescription);
         }
     } ];
-}
--(NSMutableArray *)GenerateLocations
-{
-    NSMutableArray *destinationS = [[NSMutableArray alloc]init];
+    [self fetching:newLocation];
     
-    return destinationS;
+    [self.locationManager stopUpdatingLocation];
+    
 }
 
 - (void)showLinesFromSourceLati:(float)lat Long:(float)Lon
@@ -178,18 +214,8 @@
     [request setDestination:distMapItem];
     request.requestsAlternateRoutes = YES;
     [request setTransportType:MKDirectionsTransportTypeWalking];
-    
-    [self GetDirections:request];
-    //NSLog(@"%@",routeGuide);
-    
-}
-
--(void)GetDirections:(MKDirectionsRequest *)request
-{
-    NSMutableArray *route = [[NSMutableArray alloc]init];
     MKDirections *direction = [[MKDirections alloc] initWithRequest:request];
-    
-    NSMutableArray *routeA = [[NSMutableArray alloc]init];
+    NSLog(@"!!!!!self respongse route is %@",self.responseRoute);
     [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
         
         if (error) {
@@ -199,61 +225,44 @@
         NSLog(@"response = %@",response);
         NSArray *arrRoutes = [response routes];
         NSLog(@"%@, arrRoutes Count is %lu",arrRoutes,(unsigned long)[arrRoutes count]);
-        for (int i=0; i<[arrRoutes count]; i++) {
-            rout = [arrRoutes objectAtIndex:i];
+        
+        [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+            rout = obj;
+            
             MKPolyline *line = [rout polyline];
             [_mapView addOverlay:line];
+            //NSLog(@"Rout Name : %@",rout.name);
+            //NSLog(@"Total Distance (in Meters) :%f",rout.distance);
+            
             NSArray *steps = [rout steps];
-            for (int j=0; j<[steps count]; j++) {
-                NSLog(@"Rout Instruction : %@",[[steps objectAtIndex:j] instructions]);
-                NSLog(@"Rout Distance : %f",[[steps objectAtIndex:j] distance]);
-                NSString *str_in = [[steps objectAtIndex:j] instructions];
-                NSString *str_di = [NSString stringWithFormat:@"%f",[[steps objectAtIndex:j] distance]];
+            
+            //NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
+            
+            [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                NSLog(@"Rout Instruction : %@",[obj instructions]);
+                NSLog(@"Rout Distance : %f",[obj distance]);
+                NSString *str_in = [obj instructions];
+                NSString *str_di = [NSString stringWithFormat:@"%f",[obj distance]];
                 NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di ,nil];
+                
+                NSLog(@"%@",routeB);
+                NSLog(@"^^&&^^&&");
                 [self.responseRoute addObjectsFromArray:routeB];
-            }
-        }
-        NSLog(@"%lu",(unsigned long)[self.responseRoute count]);
-        for (int i=0;i<[self.responseRoute count];i++) {
-            NSLog(@" BBBB %@",[self.responseRoute objectAtIndex:i]);
-        }
-//        [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//            
-//            rout = obj;
-//            
-//            MKPolyline *line = [rout polyline];
-//            [_mapView addOverlay:line];
-//            //NSLog(@"Rout Name : %@",rout.name);
-//            //NSLog(@"Total Distance (in Meters) :%f",rout.distance);
-//            
-//            NSArray *steps = [rout steps];
-//            
-//            //NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
-//            
-//            [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                NSLog(@"Rout Instruction : %@",[obj instructions]);
-//                NSLog(@"Rout Distance : %f",[obj distance]);
-//                NSString *str_in = [obj instructions];
-//                NSString *str_di = [NSString stringWithFormat:@"%f",[obj distance]];
-//                NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di ,nil];
-//                
-//                NSLog(@"%@",routeB);
-//                NSLog(@"^^&&^^&&");
-//                [self.responseRoute addObjectsFromArray:routeB];
-//                //NSLog(@"%@",route);
-//            }];
-//        }];
+                //NSLog(@"%@",route);
+                
+            }];
+        }];
     }];
+}
+
+-(NSMutableArray *)GetDirections:(MKDirectionsRequest *)request :(NSMutableArray *)routeListMArray
+{
+    return routeListMArray;
     
     //NSLog(@"%@",self.responseRoute);
     
 }
-
-
-
-
-
-
 
 #pragma -mark To draw the poly line
 //To draw the poly line

@@ -26,7 +26,7 @@
     [params setObject:@"food" forKey:@"query"];
     [params setObject:locat forKey:@"ll"];
     [params setObject:@"20140118" forKey:@"v"];
-    [params setObject:@"4" forKey:@"limit"];
+    [params setObject:@"3" forKey:@"limit"];
     
     [manager GET:@"https://api.foursquare.com/v2/venues/search" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //NSLog(@"JSON: %@", responseObject);
