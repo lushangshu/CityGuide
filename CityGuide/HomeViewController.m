@@ -289,8 +289,9 @@
         venuViewController.venueName = venue.name;
     }
     else if([segue.identifier isEqualToString:@"VenueArraySeg"]){
-        RouteTabbar *tab = segue.destinationViewController;
-        tab.venueArray = self.nearbyVenues;
+        GenerateRouteViewController *grv = segue.destinationViewController;
+        grv.venueArray = self.nearbyVenues;
+        grv.UserCurrentLocation = self.locationManager.location;
     }
 }
 

@@ -280,7 +280,7 @@
                                 </state>
                                 <connections>
                                     <action selector="RadioVenueData:" destination="zxQ-c8-zro" eventType="touchUpInside" id="uSe-zZ-P7e"/>
-                                    <segue destination="NUc-9C-ceM" kind="push" identifier="VenueArraySeg" id="VpW-1u-dei"/>
+                                    <segue destination="3mJ-Z4-jTR" kind="push" identifier="VenueArraySeg" id="fVe-id-WtP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SHY-bi-P4e">
@@ -318,7 +318,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="oOv-sp-Voq" userLabel="View-map">
-                                <rect key="frame" x="0.0" y="64" width="334" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="334" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="Zpk-Ld-pbN">
@@ -363,12 +363,23 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="86r-f6-tOx">
-                                        <rect key="frame" x="0.0" y="95" width="334" height="360"/>
+                                        <rect key="frame" x="0.0" y="95" width="334" height="409"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="3mJ-Z4-jTR" id="WvS-J7-e2B"/>
                                         </connections>
                                     </mapView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="gZP-Yj-zSa">
+                                        <rect key="frame" x="101" y="459" width="123" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Map"/>
+                                            <segment title="Route"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentValueChanged:" destination="3mJ-Z4-jTR" eventType="valueChanged" id="5Ln-Zi-Zlf"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -377,7 +388,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dbZ-0N-i4V">
-                                        <rect key="frame" x="0.0" y="88" width="335" height="367"/>
+                                        <rect key="frame" x="0.0" y="88" width="335" height="419"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
@@ -391,21 +402,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.20458380430000001" green="0.66595316790000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="gZP-Yj-zSa">
-                                <rect key="frame" x="89" y="475" width="123" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Map"/>
-                                    <segment title="Route"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentValueChanged:" destination="3mJ-Z4-jTR" eventType="valueChanged" id="5Ln-Zi-Zlf"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="4VH-Ft-AD1"/>
+                    <navigationItem key="navigationItem" id="DTZ-an-ctr"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
@@ -419,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqC-T3-DiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-2017"/>
+            <point key="canvasLocation" x="981" y="-2226"/>
         </scene>
         <!--Map-->
         <scene sceneID="0Mx-4U-9kb">
@@ -1242,13 +1243,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3mJ-Z4-jTR" kind="relationship" relationship="viewControllers" id="UGl-0Z-jzf"/>
                         <segue destination="PZq-fW-7iC" kind="relationship" relationship="viewControllers" id="2Sm-sk-vP4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTT-DR-gtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="-2279"/>
+            <point key="canvasLocation" x="1364" y="-2640"/>
         </scene>
         <!--Venues-->
         <scene sceneID="gAR-Zn-NsE">
@@ -1318,7 +1318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgd-WX-Vcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-2649"/>
+            <point key="canvasLocation" x="1842" y="-2640"/>
         </scene>
     </scenes>
     <resources>

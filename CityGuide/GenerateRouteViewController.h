@@ -26,6 +26,7 @@
 @property (strong,nonatomic) IBOutlet UIButton *search;
 
 @property (strong,nonatomic) NSArray *venueArray;
+@property (strong,nonatomic) CLLocation *UserCurrentLocation;
 
 @property (strong,nonatomic) NSMutableArray *responseRoute;
 
