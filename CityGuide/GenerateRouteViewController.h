@@ -26,6 +26,8 @@
 
 @property (strong,nonatomic) NSArray *venueArray;
 
+@property (strong,nonatomic) NSMutableArray *responseRoute;
+
 -(IBAction)GenerateRoute;
 -(IBAction)segmentValueChanged:(id)sender;
 @end

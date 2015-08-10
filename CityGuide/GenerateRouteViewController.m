@@ -9,7 +9,7 @@
 #import "RouteTabbar.h"
 #import "GenerateRouteViewController.h"
 #import "HomeViewController.h"
-
+#import "FetchVenues.h"
 
 @interface GenerateRouteViewController () <CLLocationManagerDelegate>
 {
@@ -129,8 +129,7 @@
 
 - (void)showLinesFromSourceLati:(float)lat Long:(float)Lon
 {
-    //    myLat=lat;
-    //    myLon=Lon;
+    
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake
     (53.385132,-1.480261);
     
@@ -180,8 +179,17 @@
     request.requestsAlternateRoutes = YES;
     [request setTransportType:MKDirectionsTransportTypeWalking];
     
+    [self GetDirections:request];
+    //NSLog(@"%@",routeGuide);
+    
+}
+
+-(void)GetDirections:(MKDirectionsRequest *)request
+{
+    NSMutableArray *route = [[NSMutableArray alloc]init];
     MKDirections *direction = [[MKDirections alloc] initWithRequest:request];
     
+    NSMutableArray *routeA = [[NSMutableArray alloc]init];
     [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
         
         if (error) {
@@ -190,26 +198,59 @@
         
         NSLog(@"response = %@",response);
         NSArray *arrRoutes = [response routes];
-        [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
-            rout = obj;
-            
+        NSLog(@"%@, arrRoutes Count is %lu",arrRoutes,(unsigned long)[arrRoutes count]);
+        for (int i=0; i<[arrRoutes count]; i++) {
+            rout = [arrRoutes objectAtIndex:i];
             MKPolyline *line = [rout polyline];
             [_mapView addOverlay:line];
-            NSLog(@"Rout Name : %@",rout.name);
-            NSLog(@"Total Distance (in Meters) :%f",rout.distance);
-            
             NSArray *steps = [rout steps];
-            
-            NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
-            
-            [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSLog(@"Rout Instruction : %@",[obj instructions]);
-                NSLog(@"Rout Distance : %f",[obj distance]);
-            }];
-        }];
+            for (int j=0; j<[steps count]; j++) {
+                NSLog(@"Rout Instruction : %@",[[steps objectAtIndex:j] instructions]);
+                NSLog(@"Rout Distance : %f",[[steps objectAtIndex:j] distance]);
+                NSString *str_in = [[steps objectAtIndex:j] instructions];
+                NSString *str_di = [NSString stringWithFormat:@"%f",[[steps objectAtIndex:j] distance]];
+                NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di ,nil];
+                [self.responseRoute addObjectsFromArray:routeB];
+            }
+        }
+        NSLog(@"%lu",(unsigned long)[self.responseRoute count]);
+        for (int i=0;i<[self.responseRoute count];i++) {
+            NSLog(@" BBBB %@",[self.responseRoute objectAtIndex:i]);
+        }
+//        [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//            
+//            rout = obj;
+//            
+//            MKPolyline *line = [rout polyline];
+//            [_mapView addOverlay:line];
+//            //NSLog(@"Rout Name : %@",rout.name);
+//            //NSLog(@"Total Distance (in Meters) :%f",rout.distance);
+//            
+//            NSArray *steps = [rout steps];
+//            
+//            //NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
+//            
+//            [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//                NSLog(@"Rout Instruction : %@",[obj instructions]);
+//                NSLog(@"Rout Distance : %f",[obj distance]);
+//                NSString *str_in = [obj instructions];
+//                NSString *str_di = [NSString stringWithFormat:@"%f",[obj distance]];
+//                NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di ,nil];
+//                
+//                NSLog(@"%@",routeB);
+//                NSLog(@"^^&&^^&&");
+//                [self.responseRoute addObjectsFromArray:routeB];
+//                //NSLog(@"%@",route);
+//            }];
+//        }];
     }];
+    
+    //NSLog(@"%@",self.responseRoute);
+    
 }
+
+
+
 
 
 

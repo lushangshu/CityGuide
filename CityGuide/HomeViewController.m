@@ -43,7 +43,7 @@
 }
 
 -(IBAction)RadioVenueData:(id)sender{
-    NSString *a = @"adfa";
+    NSString *a = @"";
     [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_GetUserProfileSuccess" object: a userInfo:nil];
 }
 

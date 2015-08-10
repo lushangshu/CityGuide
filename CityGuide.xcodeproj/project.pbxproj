@@ -59,6 +59,7 @@
 		CC6CD25D1B76B3D6009E8A09 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6CD2591B76B3D6009E8A09 /* twitter.png */; };
 		CC6CD2611B7733FA009E8A09 /* CityDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2601B7733FA009E8A09 /* CityDetailWebViewController.m */; };
 		CC6CD2661B77FE2A009E8A09 /* RouteTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2651B77FE2A009E8A09 /* RouteTabbar.m */; };
+		CC6CD2691B780FB8009E8A09 /* FetchVenues.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2681B780FB8009E8A09 /* FetchVenues.m */; };
 		CC6E27DD1B698600004A08E2 /* VenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DC1B698600004A08E2 /* VenuesViewController.m */; };
 		CC6E27E21B69A9D6004A08E2 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27DF1B69A9D6004A08E2 /* FSConverter.m */; };
 		CC6E27E31B69A9D6004A08E2 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6E27E11B69A9D6004A08E2 /* FSVenue.m */; };
@@ -223,6 +224,8 @@
 		CC6CD2601B7733FA009E8A09 /* CityDetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailWebViewController.m; sourceTree = "<group>"; };
 		CC6CD2641B77FE2A009E8A09 /* RouteTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteTabbar.h; sourceTree = "<group>"; };
 		CC6CD2651B77FE2A009E8A09 /* RouteTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteTabbar.m; sourceTree = "<group>"; };
+		CC6CD2671B780FB8009E8A09 /* FetchVenues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchVenues.h; sourceTree = "<group>"; };
+		CC6CD2681B780FB8009E8A09 /* FetchVenues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchVenues.m; sourceTree = "<group>"; };
 		CC6E27DB1B698600004A08E2 /* VenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesViewController.h; sourceTree = "<group>"; };
 		CC6E27DC1B698600004A08E2 /* VenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesViewController.m; sourceTree = "<group>"; };
 		CC6E27DE1B69A9D6004A08E2 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -622,6 +625,8 @@
 				CCB909701B74FA2700F6A622 /* FSMainMapCell.m */,
 				CC6CD2641B77FE2A009E8A09 /* RouteTabbar.h */,
 				CC6CD2651B77FE2A009E8A09 /* RouteTabbar.m */,
+				CC6CD2671B780FB8009E8A09 /* FetchVenues.h */,
+				CC6CD2681B780FB8009E8A09 /* FetchVenues.m */,
 				CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */,
 				CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */,
 				CC6E27DB1B698600004A08E2 /* VenuesViewController.h */,
@@ -916,6 +921,7 @@
 				CC7A89E61B57C3C100505328 /* sha1.c in Sources */,
 				CC3547BC1B44E46D00A9812B /* InstagramLocation.m in Sources */,
 				CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
+				CC6CD2691B780FB8009E8A09 /* FetchVenues.m in Sources */,
 				CC35479E1B44E33800A9812B /* AFURLConnectionOperation.m in Sources */,
 				CC3547A21B44E33800A9812B /* UIImageView+AFNetworking.m in Sources */,
 				CCA70F561B5724D80071FD17 /* HomeViewController.m in Sources */,
