@@ -14,11 +14,18 @@
 @interface CityDetailViewController : ViewController <SlideNavigationControllerDelegate>
 
 @property (nonatomic,weak) IBOutlet UILabel * label_c;
+@property (nonatomic,weak) IBOutlet UILabel * label_w;
 @property (nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSString *cityName;
 @property (nonatomic,strong) IBOutlet UITextField *searchCity;
 
 @property (nonatomic) NSMutableArray *placeList;
+
+@property (strong,nonatomic) NSString *w_main;
+@property (nonatomic,strong) NSString *w_description;
+@property (nonatomic,strong) NSString *w_temperature;
+@property (nonatomic,strong) NSString *w_mintemp;
+@property (nonatomic,strong) NSString *w_maxtemp;
 
 @end
 

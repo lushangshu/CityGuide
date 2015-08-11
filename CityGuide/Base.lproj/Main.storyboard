@@ -598,13 +598,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The city you are in :  Sheffield" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j3J-uw-nAd">
-                                <rect key="frame" x="158" y="100" width="194" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search other city" minimumFontSize="17" id="dxy-Th-gC5">
                                 <rect key="frame" x="16" y="69" width="221" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -665,16 +658,27 @@
                                     <action selector="buttonPressed:" destination="um0-WP-vYh" eventType="touchUpInside" id="oLc-5s-9gZ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ottawa.jpg" id="8kv-D9-Day">
-                                <rect key="frame" x="24" y="112" width="104" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The city you are in :  Sheffield" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j3J-uw-nAd">
+                                <rect key="frame" x="16" y="95" width="166" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Eg-1G-acN">
+                                <rect key="frame" x="220" y="107" width="91" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="City" id="9Ms-0N-ZRe"/>
                     <connections>
                         <outlet property="label_c" destination="j3J-uw-nAd" id="cPP-jR-tiF"/>
+                        <outlet property="label_w" destination="6Eg-1G-acN" id="ajw-cM-WFT"/>
                         <outlet property="searchCity" destination="dxy-Th-gC5" id="z9U-ej-MQC"/>
                         <outlet property="tableView" destination="8UK-3u-Aod" id="TW1-8T-mMa"/>
                     </connections>
@@ -1326,7 +1330,6 @@
         <image name="foursquare.png" width="204" height="204"/>
         <image name="instag.png" width="400" height="400"/>
         <image name="map.png" width="321" height="462"/>
-        <image name="ottawa.jpg" width="100" height="94"/>
         <image name="twitter.png" width="1024" height="1024"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

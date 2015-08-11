@@ -134,6 +134,46 @@
     return resultArray;
 }
 
+#pragma mark -- city weather 
+-(void)FetchWeatherInfo : (NSString *) cityName
+{
+    NSString *baseUrl = @"http://api.openweathermap.org/data/2.5/weather?q=";
+    NSString *URLstr = [[baseUrl stringByAppendingString: cityName]stringByAppendingString:@",uk"];
+    NSURL *url = [NSURL URLWithString:URLstr];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/html", @"text/xml",nil];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         NSString *json = [operation responseString];
+         NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+         NSDictionary *w_dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
+         
+         NSArray *weather = w_dic[@"weather"];
+         NSDictionary *ww_dic = [weather objectAtIndex:0];
+         self.w_main = ww_dic[@"main"];
+         self.w_description = ww_dic[@"description"];
+         double temp = [w_dic[@"main"][@"temp"] doubleValue]-273.15;
+         double mint = [w_dic[@"main"][@"temp_min"] doubleValue]-273.15;
+         double maxt = [w_dic[@"main"][@"temp_max"] doubleValue]-273.15;
+         self.w_temperature = [NSString stringWithFormat:@"%.2f",temp];
+         self.w_mintemp = [NSString stringWithFormat:@"%.2f",mint];
+         self.w_maxtemp = [NSString stringWithFormat:@"%.2f",maxt];
+         NSLog(@"Weather in this city is main %@,desc %@,temp %@,min %@,max %@",self.w_main,self.w_description,self.w_temperature,self.w_mintemp,self.w_maxtemp);
+         [self.label_w setText:self.w_temperature];
+         
+     }
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Response %@", [operation responseString]);
+         NSLog(@"Error: %@", error);
+     }];
+    
+    [operation start];
+    
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
@@ -169,9 +209,7 @@
                        self.cityName = placemark.locality;
                        NSLog(@"!!!!! placemark.country %@",self.cityName);
                        [self loadCityDetails];
-                       LocalWeather *lw = [LocalWeather alloc];
-                       NSArray *returnedWea = [lw FetchWeatherInfo:self.cityName];
-                       
+                       [self FetchWeatherInfo:self.cityName];
                    }];
 }
 

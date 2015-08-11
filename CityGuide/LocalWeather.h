@@ -16,5 +16,5 @@
 @property (nonatomic,strong) NSString *w_mintemp;
 @property (nonatomic,strong) NSString *w_maxtemp;
 
--(NSArray *)FetchWeatherInfo : (NSString *) cityName;
+
 @end
