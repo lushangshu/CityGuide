@@ -21,6 +21,7 @@
 #import "SlideNavigationContorllerAnimatorScaleAndFade.h"
 #import "SlideNavigationContorllerAnimatorSlideAndFade.h"
 
+#import "LocalWeather.h"
 
 
 @interface CityDetailViewController () <CLLocationManagerDelegate>
@@ -67,7 +68,7 @@
 
 - (void) loadCityDetails
 {
-    NSLog(@"here is load city detail %@",self.cityName);
+    //NSLog(@"here is load city detail %@",self.cityName);
     NSString *loadMountainQueries = @"SELECT ?subject ?label ?lat ?long WHERE{<http://dbpedia.org/resource/Sheffield> geo:lat ?eiffelLat;geo:long ?eiffelLong.?subject geo:lat ?lat;geo:long ?long;rdfs:label ?label.FILTER(xsd:double(?lat) - xsd:double(?eiffelLat) <= 0.05 && xsd:double(?eiffelLat) - xsd:double(?lat) <= 0.05 && xsd:double(?long) - xsd:double(?eiffelLong) <= 0.05 && xsd:double(?eiffelLong) - xsd:double(?long) <= 0.05 && lang(?label) = \"en\").} LIMIT 25";
     
     NSString *encodedLoadMountainQueries = [loadMountainQueries stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -75,8 +76,9 @@
 
     NSString *url_1 = @"http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=SELECT+%3Fsubject+%3Flabel+%3Flat+%3Flong+WHERE%7B%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F";
     NSString *url_2 = @"%3E+geo%3Alat+%3FeiffelLat%3Bgeo%3Along+%3FeiffelLong.%3Fsubject+geo%3Alat+%3Flat%3Bgeo%3Along+%3Flong%3Brdfs%3Alabel+%3Flabel.FILTER%28xsd%3Adouble%28%3Flat%29+-+xsd%3Adouble%28%3FeiffelLat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLat%29+-+xsd%3Adouble%28%3Flat%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3Flong%29+-+xsd%3Adouble%28%3FeiffelLong%29+%3C%3D+0.05+%26%26+xsd%3Adouble%28%3FeiffelLong%29+-+xsd%3Adouble%28%3Flong%29+%3C%3D+0.05+%26%26+lang%28%3Flabel%29+%3D+%22en%22%29.%7D+LIMIT+20&format=application%2Fsparql-results%2Bjson&timeout=10000&debug=on";
-    
+    NSString *encodeCityName = [self.cityName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //NSLog(@"city name is $$$$ %@",self.cityName);
+    //NSString *fakeUrlstr = [[url_1 stringByAppendingString:self.cityName]stringByAppendingString:url_2];
     NSString *fakeUrlstr = [[url_1 stringByAppendingString:self.cityName]stringByAppendingString:url_2];
     //NSLog(@"faeke url is ------ %@",fakeUrlstr);
     NSURL *fakeurl = [NSURL URLWithString:fakeUrlstr];
@@ -167,6 +169,9 @@
                        self.cityName = placemark.locality;
                        NSLog(@"!!!!! placemark.country %@",self.cityName);
                        [self loadCityDetails];
+                       LocalWeather *lw = [LocalWeather alloc];
+                       NSArray *returnedWea = [lw FetchWeatherInfo:self.cityName];
+                       
                    }];
 }
 

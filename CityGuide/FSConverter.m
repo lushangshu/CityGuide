@@ -25,7 +25,7 @@
             ann.suffix = vv[@"icon"][@"suffix"];
             
             ann.location.address = v[@"location"][@"address"];
-            ann.location.disTance = v[@"location"][@"distance"];
+            //ann.location.disTance = v[@"location"][@"distance"];
             
             [ann.location setCoordinate:CLLocationCoordinate2DMake([v[@"location"][@"lat"] doubleValue],
                                                                    [v[@"location"][@"lng"] doubleValue])];

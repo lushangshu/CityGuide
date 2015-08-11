@@ -31,15 +31,14 @@
     
     self.mySearch.delegate = self;
     self.myMapView.delegate = self;
-    [self.myMapView setShowsUserLocation:YES];
     
     //self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 503);
     [self searchBarSearchButtonClicked:self.mySearch];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler2:) name:@"mynotification2" object:nil];
     
-    
-    
     [self.locationManager startUpdatingLocation];
+    [self.myMapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+
 }
 
 -(IBAction)RadioVenueData:(id)sender{
@@ -104,6 +103,7 @@
         }
         [self.tableV reloadData];
         [self MapProccessAnnotations];
+        [self.locationManager stopUpdatingLocation];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -190,6 +190,9 @@
            fromLocation:(CLLocation *)oldLocation {
     [self.locationManager stopUpdatingLocation];
     [self fetching:newLocation];
+    
+    [self.myMapView showsUserLocation];
+    [self.locationManager stopUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -208,6 +211,7 @@
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
@@ -272,12 +276,12 @@
         }
     }];
     if (venue.location.address) {
-        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m, %@",
-                                     venue.location.disTance,
-                                     venue.location.address]];
+//        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m, %@",
+//                                     venue.location.disTance,
+//                                     venue.location.address]];
     } else {
-        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m",
-                                     venue.location.disTance]];
+//        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m",
+//                                     venue.location.disTance]];
     }
     return cell;
 }

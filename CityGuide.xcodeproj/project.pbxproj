@@ -105,6 +105,7 @@
 		CCA70F6F1B57496F0071FD17 /* IKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6C1B57496F0071FD17 /* IKCell.m */; };
 		CCA70F701B57496F0071FD17 /* IKMediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */; };
 		CCAC04901B6920D600D5D7A9 /* GenerateRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */; };
+		CCB846A71B7A5CE1002E52B5 /* LocalWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB846A61B7A5CE1002E52B5 /* LocalWeather.m */; };
 		CCB909711B74FA2700F6A622 /* FSMainMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB909701B74FA2700F6A622 /* FSMainMapCell.m */; };
 		CCB909741B75056100F6A622 /* FSVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB909731B75056100F6A622 /* FSVenueViewController.m */; };
 		CCB909791B75581300F6A622 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB909781B75581300F6A622 /* ActivityViewController.m */; };
@@ -312,6 +313,8 @@
 		CCA70F6E1B57496F0071FD17 /* IKMediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMediaCell.m; sourceTree = "<group>"; };
 		CCAC048E1B6920D600D5D7A9 /* GenerateRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateRouteViewController.h; sourceTree = "<group>"; };
 		CCAC048F1B6920D600D5D7A9 /* GenerateRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateRouteViewController.m; sourceTree = "<group>"; };
+		CCB846A51B7A5CE1002E52B5 /* LocalWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalWeather.h; sourceTree = "<group>"; };
+		CCB846A61B7A5CE1002E52B5 /* LocalWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalWeather.m; sourceTree = "<group>"; };
 		CCB9096F1B74FA2700F6A622 /* FSMainMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMainMapCell.h; sourceTree = "<group>"; };
 		CCB909701B74FA2700F6A622 /* FSMainMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMainMapCell.m; sourceTree = "<group>"; };
 		CCB909721B75056100F6A622 /* FSVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenueViewController.h; sourceTree = "<group>"; };
@@ -415,6 +418,8 @@
 				CC3547501B41D88B00A9812B /* AppDelegate.m */,
 				CC3547551B41D88B00A9812B /* ViewController.h */,
 				CC3547561B41D88B00A9812B /* ViewController.m */,
+				CCB846A51B7A5CE1002E52B5 /* LocalWeather.h */,
+				CCB846A61B7A5CE1002E52B5 /* LocalWeather.m */,
 				CCB9097A1B75582200F6A622 /* Activity */,
 				CC6E27D41B6982BE004A08E2 /* Map */,
 				CC6E27D31B6982B3004A08E2 /* Navigation */,
@@ -920,6 +925,7 @@
 				CC7A89E71B57C3C100505328 /* OACall.m in Sources */,
 				CC7A89E61B57C3C100505328 /* sha1.c in Sources */,
 				CC3547BC1B44E46D00A9812B /* InstagramLocation.m in Sources */,
+				CCB846A71B7A5CE1002E52B5 /* LocalWeather.m in Sources */,
 				CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				CC6CD2691B780FB8009E8A09 /* FetchVenues.m in Sources */,
 				CC35479E1B44E33800A9812B /* AFURLConnectionOperation.m in Sources */,

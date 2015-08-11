@@ -29,7 +29,7 @@
     [params setObject:@"3" forKey:@"limit"];
     
     [manager GET:@"https://api.foursquare.com/v2/venues/search" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //NSLog(@"JSON: %@", responseObject);
+        NSLog(@"JSON: %@", responseObject);
         NSDictionary *dic = responseObject;
         NSArray *venues = [dic valueForKeyPath:@"response.venues"];
         FSConverter *converter = [[FSConverter alloc]init];
