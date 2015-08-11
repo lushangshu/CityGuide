@@ -32,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     self.segment.hidden = NO;
     self.mapView.delegate=self;
     self.mapView.showsUserLocation=YES;
     [self.arr setText:@"Sheffield Railway Station (SHF),53.377846,-1.461872"];
@@ -92,10 +92,12 @@
 {
     switch (sender.selectedSegmentIndex) {
         case 0:
+            self.segment.hidden = NO;
             self.map_View.hidden = NO;
             self.route_View.hidden = YES;
             break;
         case 1:
+            self.segment.hidden = NO;
             self.map_View.hidden = YES;
             self.route_View.hidden = NO;
             break;

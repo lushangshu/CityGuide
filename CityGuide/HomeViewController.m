@@ -276,12 +276,12 @@
         }
     }];
     if (venue.location.address) {
-//        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m, %@",
-//                                     venue.location.disTance,
-//                                     venue.location.address]];
+        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m, %@",
+                                     venue.location.disTance,
+                                     venue.location.address]];
     } else {
-//        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m",
-//                                     venue.location.disTance]];
+        [cell.venueAddress setText: [NSString stringWithFormat:@"%@m",
+                                     venue.location.disTance]];
     }
     return cell;
 }

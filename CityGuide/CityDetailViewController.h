@@ -15,6 +15,12 @@
 
 @property (nonatomic,weak) IBOutlet UILabel * label_c;
 @property (nonatomic,weak) IBOutlet UILabel * label_w;
+@property (weak, nonatomic) IBOutlet UILabel *label_temp;
+@property (weak, nonatomic) IBOutlet UILabel *tempRange;
+
+@property (weak, nonatomic) IBOutlet UILabel *label_description;
+@property (weak, nonatomic) IBOutlet UIImageView *image_weather;
+
 @property (nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSString *cityName;
 @property (nonatomic,strong) IBOutlet UITextField *searchCity;
