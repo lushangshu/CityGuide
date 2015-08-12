@@ -39,7 +39,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler2:) name:@"mynotification2" object:nil];
     
     [self.locationManager startUpdatingLocation];
-    [self.myMapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    [self.myMapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:NO];
     FSVenue *ve = [[FSVenue alloc]init];
     ve.location.coordinate = self.locationManager.location.coordinate;
     ve.name = @"user Location";
@@ -303,6 +303,7 @@
         FSVenueViewController *venuViewController = segue.destinationViewController;
         FSVenue *venue = self.nearbyVenues[indexPath.row];
         venuViewController.venueName = venue.name;
+        venuViewController.venue = venue;
     }
     else if([segue.identifier isEqualToString:@"VenueArraySeg"]){
         GenerateRouteViewController *grv = segue.destinationViewController;

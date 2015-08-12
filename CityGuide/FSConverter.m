@@ -8,6 +8,7 @@
 
 #import "FSConverter.h"
 #import "FSVenue.h"
+#import "FSPhoto.h"
 
 @implementation FSConverter
 
@@ -35,6 +36,20 @@
             
             return objects;
         }
+        
+    }
+    return objects;
+}
+
+-(NSArray *)convertVPhotoToObjects:(NSArray *)items
+{
+    NSMutableArray *objects = [NSMutableArray arrayWithCapacity:items.count];
+    for(NSDictionary *p in items){
+        FSPhoto *pho = [[FSPhoto alloc]init];
+        pho.id = p[@"id"];
+        pho.prefix =p[@"prefix"];
+        pho.suffix =p[@"suffix"];
+        [objects addObject:pho];
         
     }
     return objects;

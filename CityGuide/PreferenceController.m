@@ -87,7 +87,7 @@
     
    self.selectedCateg = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
     //NSLog(@"$$$ %@",self.selectedCateg);
-   // NSLog(@"### %@",[dict objectForKey:@"name"]);
+   //NSLog(@"### %@",[dict objectForKey:@"name"]);
 }
 
 #pragma mark - tableview
@@ -135,7 +135,7 @@
         [selectedItems addObject:cell.textLabel.text];
     }
     
-    self.label.text = [selectedItems componentsJoinedByString:@"_and_"];
+    self.label.text = [selectedItems componentsJoinedByString:@" and "];
     //NSLog(@"selected dic is && %@",self.selectedCateg);
 }
 

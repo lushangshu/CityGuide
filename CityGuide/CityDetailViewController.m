@@ -162,7 +162,7 @@
          self.w_mintemp = [NSString stringWithFormat:@"%.2f",mint];
          self.w_maxtemp = [NSString stringWithFormat:@"%.2f",maxt];
 //         NSLog(@"Weather in this city is main %@,desc %@,temp %@,min %@,max %@",self.w_main,self.w_description,self.w_temperature,self.w_mintemp,self.w_maxtemp);
-         NSString *strTempRange = [[[@"Temp from" stringByAppendingString:self.w_mintemp]stringByAppendingString:@" to "]stringByAppendingString:self.w_maxtemp];
+         NSString *strTempRange = [[[@"Temp from " stringByAppendingString:self.w_mintemp]stringByAppendingString:@" to "]stringByAppendingString:self.w_maxtemp];
          [self.label_w setText:self.w_main];
          [self.label_temp setText:self.w_temperature];
          [self.tempRange setText:strTempRange];

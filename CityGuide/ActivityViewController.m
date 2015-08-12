@@ -24,8 +24,7 @@
 @interface ActivityViewController ()
 {
     NSMutableArray *mediaArray;
-    
-    
+
 }
 
 @property (nonatomic,strong) InstagramPaginationInfo *currentPaginationInfo;
