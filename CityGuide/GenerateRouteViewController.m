@@ -115,6 +115,11 @@
     
 }
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.mapView showsUserLocation];
+}
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
@@ -149,7 +154,7 @@
     CLLocationCoordinate2D coordinateDe = deP.location.coordinate;
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     [annotation setCoordinate:coordinateDe];
-    [annotation setTitle:@"Source"];
+    [annotation setTitle:deP.name];
     [_mapView addAnnotation:annotation];
     
     //To zoom in to the source location
@@ -160,19 +165,22 @@
     //Setting up Source point // start point
     MKPlacemark *source = [[MKPlacemark alloc]initWithCoordinate:deP.location.coordinate addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil]];
     MKMapItem *srcMapItem = [[MKMapItem alloc]initWithPlacemark:source];
-    [srcMapItem setName:@"Source"];
+    [srcMapItem setName:deP.name];
     // ------------------------------------------------- Set Destination Point
     //Setting the destination
     MKPlacemark *destination = [[MKPlacemark alloc]initWithCoordinate:Arr.location.coordinate addressDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil] ];
     MKMapItem *distMapItem = [[MKMapItem alloc]initWithPlacemark:destination];
-    [distMapItem setName:@"Destination"];
+    [distMapItem setName:Arr.name];
     
     //Place annotation for the destination
     CLLocationCoordinate2D coordinate1 = Arr.location.coordinate;
     MKPointAnnotation *annotation1 = [[MKPointAnnotation alloc] init];
     [annotation1 setCoordinate:coordinate1];
-    [annotation1 setTitle:@"Apple Inc"];
+    [annotation1 setTitle:Arr.name];
     [_mapView addAnnotation:annotation1];
+    
+//    NSArray *annotas = [[NSArray alloc] initWithObjects:deP.name,Arr.name, nil];
+//    [_mapView addAnnotations:annotas];
     
     //--------------------------------------------------- Get Direction
     MKDirectionsRequest *request = [[MKDirectionsRequest alloc]init];
@@ -238,16 +246,17 @@
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotationPoint
 {
     
-    static NSString *annotationIdentifier = @"annotationIdentifier";
-    MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotationPoint reuseIdentifier:annotationIdentifier];
-    if ([[annotationPoint title] isEqualToString:@"Source"]) {
-        pinView.pinColor = MKPinAnnotationColorRed;
-    }
-    else{
-        pinView.pinColor = MKPinAnnotationColorGreen;
-    }
-    
-    return pinView;
+//    static NSString *annotationIdentifier = @"annotationIdentifier";
+//    MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotationPoint reuseIdentifier:annotationIdentifier];
+//    if ([[annotationPoint title] isEqualToString:@"Source"]) {
+//        pinView.pinColor = MKPinAnnotationColorRed;
+//    }
+//    else{
+//        pinView.pinColor = MKPinAnnotationColorGreen;
+//    }
+//    
+//    return pinView;
+    return nil;
 }
 
 #pragma mark - table view delegate
