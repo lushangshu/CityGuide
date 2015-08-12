@@ -18,7 +18,10 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    integer = 0;
+    [lebel setText:[NSString stringWithFormat:@"%ld",(long)integer]];
     // Do any additional setup after loading the view from its nib.
     self.datas = [NSArray arrayWithObjects:@"Arts & Entertainment",
                   @"College & University",
@@ -49,6 +52,19 @@
     //NSLog(@"%@",self.categoryID);
 }
 
+-(IBAction)saveDataUsingUserDefault:(id)sender{
+    [[NSUserDefaults standardUserDefaults] setInteger:integer forKey:@"integer"];
+}
+
+-(IBAction)outPutDataUsingUserDeafult:(id)sender{
+    integer = [[NSUserDefaults standardUserDefaults] integerForKey:@"integer"];
+    [lebel setText:[NSString stringWithFormat:@"%ld",(long)integer]];
+}
+
+-(IBAction)testUD:(id)sender{
+    integer = integer +1;
+    [lebel setText:[NSString stringWithFormat:@"%ld",(long)integer]];
+}
 -(IBAction)saveData
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
@@ -73,6 +89,8 @@
 
     
 }
+
+
 
 -(IBAction)outPutData
 {

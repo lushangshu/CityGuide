@@ -11,6 +11,10 @@
 
 @interface PreferenceController : UIViewController <UITableViewDataSource,UITableViewDelegate,SlideNavigationControllerDelegate>
 
+{
+    IBOutlet UILabel *lebel;
+    NSInteger integer;
+}
 @property(nonatomic,strong)NSArray *datas;
 @property(nonatomic,strong)NSMutableDictionary *categoryID;
 @property(nonatomic,strong)NSMutableDictionary *selectedCateg;
@@ -23,4 +27,9 @@
 
 -(IBAction)saveData;
 -(IBAction)outPutData;
+
+-(IBAction)saveDataUsingUserDefault:(id)sender;
+-(IBAction)outPutDataUsingUserDeafult:(id)sender;
+-(IBAction)testUD:(id)sender;
+
 @end
