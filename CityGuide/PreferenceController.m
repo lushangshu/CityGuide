@@ -98,6 +98,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     cell.textLabel.text = self.datas[indexPath.row];
+    
+    cell.backgroundColor = [UIColor colorWithRed:43 green:164 blue:255 alpha:0];
+    cell.textLabel.backgroundColor = [UIColor whiteColor];
+    
     NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"settings"];
     NSMutableArray *arr = [[NSMutableArray alloc] initWithContentsOfFile:path];
     //NSLog(@"@@@@@ %@,$$$$ %@",cell.textLabel.text,[arr objectAtIndex:indexPath.row]);

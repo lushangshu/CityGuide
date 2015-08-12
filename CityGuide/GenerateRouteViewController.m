@@ -28,7 +28,7 @@
 
 @implementation GenerateRouteViewController
 
-@synthesize map_View,route_View,venueArray;
+@synthesize map_View,route_View,venueArray,userVenue;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -75,17 +75,16 @@
 }
 
 -(IBAction)GenerateRoute{
+    FSVenue *venueDeparture = [[FSVenue alloc]init];
     FSVenue *venueItem1 = [self.venueArray objectAtIndex:0];
     FSVenue *venueItem2 = [self.venueArray objectAtIndex:1];
     FSVenue *venueItem3 = [self.venueArray objectAtIndex:2];
     FSVenue *venueItem4 = [self.venueArray objectAtIndex:3];
-//    FSVenue *venueItem5 = [self.venueArray objectAtIndex:4];
-//    FSVenue *venueItem6 = [self.venueArray objectAtIndex:5];
+    
+    [self showLinesFromSourceLati:self.userVenue Long:venueItem1];
     [self showLinesFromSourceLati:venueItem1 Long:venueItem2];
     [self showLinesFromSourceLati:venueItem2 Long:venueItem3];
-//    [self showLinesFromSourceLati:venueItem3 Long:venueItem4];
-//    [self showLinesFromSourceLati:venueItem4 Long:venueItem5];
-    //[self showLinesFromSourceLati:0.0 Long:0.0];
+
 }
 
 -(IBAction)segmentValueChanged:(UISegmentedControl *)sender
@@ -140,7 +139,6 @@
 -(void)routeWithMultipleDirections:(NSArray *)venueList
 {
     [[venueList objectAtIndex:0] name];
-    
 
 }
 
@@ -148,8 +146,6 @@
 {
     
     NSLog(@" ******** route from %@ to %@",deP.name,Arr.name);
-//    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake
-//    (53.385132,-1.480261);
     CLLocationCoordinate2D coordinateDe = deP.location.coordinate;
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     [annotation setCoordinate:coordinateDe];
@@ -220,7 +216,6 @@
 -(NSMutableArray *)GetDirections:(MKDirectionsRequest *)request :(NSMutableArray *)routeListMArray
 {
     return routeListMArray;
-    
     //NSLog(@"%@",self.responseRoute);
     
 }

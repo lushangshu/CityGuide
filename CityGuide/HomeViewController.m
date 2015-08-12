@@ -18,10 +18,12 @@
 #import "RouteTabbar.h"
 
 @implementation HomeViewController
-@synthesize testString;
+@synthesize testString,userVenue;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //[self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:43 green:164 blue:255 alpha:1]];
+    
     [self.loading startAnimating];
     [self.view setUserInteractionEnabled:YES];
     self.tableV.tableHeaderView = self.myMapView;
@@ -38,6 +40,16 @@
     
     [self.locationManager startUpdatingLocation];
     [self.myMapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    FSVenue *ve = [[FSVenue alloc]init];
+    ve.location.coordinate = self.locationManager.location.coordinate;
+    ve.name = @"user Location";
+    ve.prefix = @"null";
+    ve.suffix = @"null";
+    ve.location.disTance = 0;
+    ve.venueId = 0;
+    //NSLog(@"test la is %f",self.locationManager.location.coordinate.latitude);
+    self.userVenue = ve;
+
 
 }
 
@@ -296,6 +308,9 @@
         GenerateRouteViewController *grv = segue.destinationViewController;
         grv.venueArray = self.nearbyVenues;
         grv.UserCurrentLocation = self.locationManager.location;
+        grv.userVenue = self.userVenue;
+       //NSLog(@"@@@@@ %@,%f",self.userVenue.name,self.userVenue.location.coordinate.latitude);
+        
     }
 }
 

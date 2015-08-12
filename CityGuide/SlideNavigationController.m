@@ -103,6 +103,7 @@ static SlideNavigationController *singletonInstance;
 
 - (void)setup
 {
+    
     if (singletonInstance)
         NSLog(@"Singleton instance already exists. You can only instantiate one instance of SlideNavigationController. This could cause major issues");
     

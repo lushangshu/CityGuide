@@ -9,6 +9,7 @@
 #import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
 #import "SlideNavigationController.h"
+#import "FSVenue.h"
 
 @interface HomeViewController : UIViewController <UISearchBarDelegate, MKMapViewDelegate,CLLocationManagerDelegate,SlideNavigationControllerDelegate>
 
@@ -25,7 +26,7 @@
 @property (strong, nonatomic) NSArray *nearbyVenues;
 @property (nonatomic,strong) IBOutlet UITableView *tableV;
 @property (nonatomic,strong) IBOutlet UILabel *selectedVenus;
-
+@property (nonatomic,strong) FSVenue *userVenue;
 @property (strong,nonatomic) NSString *testString;
 -(IBAction)backToLocation:(id)sender;
 -(IBAction)RadioVenueData:(id)sender;

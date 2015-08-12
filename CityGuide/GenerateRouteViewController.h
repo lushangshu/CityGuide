@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
+#import "FSVenue.h"
 
 
 @interface GenerateRouteViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
@@ -27,6 +28,7 @@
 
 @property (strong,nonatomic) NSArray *venueArray;
 @property (strong,nonatomic) CLLocation *UserCurrentLocation;
+@property (strong,nonatomic) FSVenue *userVenue;
 
 @property (strong,nonatomic) NSMutableArray *responseRoute;
 
