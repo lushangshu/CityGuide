@@ -98,7 +98,7 @@
 
 - (void)testGetMediaFromTag:(NSString *)tag
 {
-    [[InstagramEngine sharedEngine] getMediaWithTagName:tag count:15 maxId:self.currentPaginationInfo.nextMaxId withSuccess:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
+    [[InstagramEngine sharedEngine] getMediaWithTagName:tag count:50 maxId:self.currentPaginationInfo.nextMaxId withSuccess:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
         self.currentPaginationInfo = paginationInfo;
         [mediaArray addObjectsFromArray:media];
         [self reloadData];
@@ -140,6 +140,7 @@
 - (void)reloadData
 {
     [self.collections reloadData];
+    [self.tableVi reloadData];
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -216,7 +217,7 @@
                  NSString *locat = [[[self.lat stringByAppendingString:@","]stringByAppendingString:self.lont]stringByAppendingString:@",10mi"];
                  [parameters setObject:self.cityName forKey:@"q"];
                  [parameters setObject:locat forKey:@"geocode"];
-                 [parameters setObject:@"20" forKey:@"count"];
+                 [parameters setObject:@"50" forKey:@"count"];
                  //[parameters setObject:@"1" forKey:@"include_entities"];
                  
                  SLRequest *posts = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:requestAPI parameters:parameters];
@@ -315,7 +316,7 @@
     [cell.name setText:[venue userName]];
     [cell.text setText:[venue tweetText]];
     [cell.createTime setText:[venue createdAt]];
-    cell.imageView.image = [UIImage imageNamed:@"0.png"];
+    //cell.imageView.image = [UIImage imageNamed:@"0.png"];
     [self downloadImageWithURL:[NSURL URLWithString:[venue profileUrl]] completionBlock:^(BOOL succeeded, UIImage *image) {
         if (succeeded) {
             // change the image in the cell
