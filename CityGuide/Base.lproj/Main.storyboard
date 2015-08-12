@@ -1292,7 +1292,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SAV-eu-ohX">
-                                <rect key="frame" x="75" y="525" width="170" height="30"/>
+                                <rect key="frame" x="75" y="538" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="See venue in Foursquare">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1300,7 +1300,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UDT-mP-hGI">
-                                <rect key="frame" x="209" y="369" width="95" height="34"/>
+                                <rect key="frame" x="206" y="375" width="95" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Call Venue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1319,11 +1319,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vKS-5c-Edf">
-                                <rect key="frame" x="0.0" y="427" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="530" width="320" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20458380430000001" green="0.66595316790000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d9b-DN-pGh">
-                                    <size key="itemSize" width="85" height="92"/>
+                                    <size key="itemSize" width="105" height="92"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1333,21 +1333,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="92"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="D1H-OE-1jk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="85" height="92"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <outlet property="imageView" destination="D1H-OE-1jk" id="DO4-zN-kEe"/>
+                                            <outlet property="imageView" destination="D1H-OE-1jk" id="Kkn-p7-fm1"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ug2-ka-R8u" id="pWN-S3-7Ab"/>
+                                    <outlet property="delegate" destination="Ug2-ka-R8u" id="9gu-e1-hFJ"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rqz-b8-nSs">
                                 <rect key="frame" x="0.0" y="65" width="320" height="77"/>
@@ -1357,7 +1361,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BXl-LH-EJO">
-                                <rect key="frame" x="160" y="346" width="79" height="21"/>
+                                <rect key="frame" x="150" y="346" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1378,7 +1382,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R1H-83-IXD">
-                                <rect key="frame" x="205" y="292" width="80" height="80"/>
+                                <rect key="frame" x="16" y="442" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kDz-08-psh">
+                                <rect key="frame" x="115" y="442" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Tb6-f9-kbP">
+                                <rect key="frame" x="213" y="442" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -1393,6 +1405,8 @@
                         <outlet property="VenuePhone" destination="0vd-yN-zuS" id="7Gx-55-u4D"/>
                         <outlet property="VenueRating" destination="BXl-LH-EJO" id="d15-mI-NnS"/>
                         <outlet property="imagePhoto" destination="R1H-83-IXD" id="RfM-Pd-eh8"/>
+                        <outlet property="imagePhoto2" destination="kDz-08-psh" id="Jcp-Dl-STN"/>
+                        <outlet property="imagePhoto3" destination="Tb6-f9-kbP" id="kKY-lO-iUh"/>
                         <outlet property="nameLabel" destination="rqz-b8-nSs" id="0Ml-Ka-v8N"/>
                     </connections>
                 </viewController>
