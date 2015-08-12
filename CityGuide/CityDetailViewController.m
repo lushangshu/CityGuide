@@ -123,13 +123,15 @@
         
         NSDictionary *sub = [subject objectForKey:@"subject"];
         NSString *url = [sub objectForKey:@"value"];
+        NSString *url_half = [url substringFromIndex:28];
+        NSString *url_1 = [@"https://en.wikipedia.org/wiki/" stringByAppendingString:url_half];
         NSDictionary *lat = [subject objectForKey:@"lat"];
         NSString *lati = [lat objectForKey:@"value"];
         NSDictionary *log = [subject objectForKey:@"long"];
         NSString *longi = [log objectForKey:@"value"];
         
         //NSLog(@"^^^ Label is %@, url is %@, lat is %@, long is %@",name,url,lati,longi);
-        NSArray *array = [[NSArray alloc]initWithObjects:name,url,lati,longi, nil];
+        NSArray *array = [[NSArray alloc]initWithObjects:name,url_1,lati,longi, nil];
         [resultArray addObject:array];
     }
     return resultArray;
@@ -168,6 +170,9 @@
          }
          else if([self.w_main isEqualToString:@"Cloud"]){
              [self.image_weather setImage:[UIImage imageNamed:@"clouds.png"]];
+         }
+         else if([self.w_main isEqualToString:@"Mist"]){
+             [self.image_weather setImage:[UIImage imageNamed:@"mist.png"]];
          }
          [self.label_w setText:self.w_main];
          [self.label_temp setText:self.w_temperature];
@@ -265,10 +270,10 @@
     return YES;
 }
 
-- (BOOL)slideNavigationControllerShouldDisplayRightMenu
-{
-    return YES;
-}
+//- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+//{
+//    return YES;
+//}
 
 #pragma mark - UITableViewDelegate
 
@@ -287,6 +292,7 @@
     [cell.label2 setText: obj[1]];
     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",(long)(indexPath.row % 5)]];
     [cell.imageView setImage:image];
+    NSLog(@"dbpedia url is %@",obj[1]);
     return cell;
 }
 
@@ -318,17 +324,13 @@
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *vcc = [mainStoryboard instantiateViewControllerWithIdentifier: @"CityDetailWebViewController"];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification3" object:obj[1]];
-            
             [[SlideNavigationController sharedInstance] popToRootAndSwitchToViewController:vcc withCompletion:nil];
-//            [self presentViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CityDetailWebViewController"] animated:NO completion:nil];
             break;
         }
         case 1: {
 
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification2" object:self.placeList];
-            NSLog(@"send data to another view");
-            
-            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification2" object:self.placeList];
+//            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
             NSLog(@"pressed ");
             break;
         }

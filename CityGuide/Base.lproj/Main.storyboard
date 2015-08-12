@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="370"/>
+            <point key="canvasLocation" x="-202" y="1458"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5W2-xL-ggI">
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdf-AP-MvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="-1374"/>
+            <point key="canvasLocation" x="1066" y="288"/>
         </scene>
         <!--Left Menu View Controller-->
         <scene sceneID="1EH-6G-dLH">
@@ -209,7 +209,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZi-jg-r1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92" y="-2169"/>
+            <point key="canvasLocation" x="-44" y="-2440"/>
         </scene>
         <!--Item-->
         <scene sceneID="8Ez-Wp-4Pa">
@@ -358,14 +358,14 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="afk-l9-h0f">
                                                             <rect key="frame" x="7" y="4" width="80" height="33"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="11"/>
+                                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" red="0.18240273169999999" green="0.64274732720000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gj8-Ps-7Mi">
                                                             <rect key="frame" x="106" y="1" width="206" height="42"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="9"/>
+                                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="10"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" red="0.18240273169999999" green="0.64274732720000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </label>
@@ -438,7 +438,7 @@
                                             <outlet property="delegate" destination="3mJ-Z4-jTR" id="WvS-J7-e2B"/>
                                         </connections>
                                     </mapView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j36-kW-gtc">
+                                    <button opaque="NO" alpha="0.49999999999999994" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j36-kW-gtc">
                                         <rect key="frame" x="260" y="20" width="56" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,7 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ez-J5-iN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596" y="-321"/>
+            <point key="canvasLocation" x="716" y="767"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dkk-ed-t4B">
@@ -556,7 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qt3-tU-hhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="-321"/>
+            <point key="canvasLocation" x="1369" y="767"/>
         </scene>
         <!--Configuration View Controller-->
         <scene sceneID="tTW-GN-wKN">
@@ -610,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAh-aJ-vHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="-1374"/>
+            <point key="canvasLocation" x="526" y="-1766"/>
         </scene>
         <!--Title-->
         <scene sceneID="7SP-HC-IpE">
@@ -654,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50B-WA-swh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2192" y="-1386"/>
+            <point key="canvasLocation" x="1854" y="748"/>
         </scene>
         <!--City-->
         <scene sceneID="nn2-6E-Qk0">
@@ -675,7 +675,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityCell" rowHeight="66" id="SbS-sh-hxz" customClass="CityDetailCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CityCell" rowHeight="66" id="SbS-sh-hxz" customClass="CityDetailCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SbS-sh-hxz" id="wo4-42-iho">
@@ -783,7 +783,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8h-EB-NYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1400" y="-1374"/>
+            <point key="canvasLocation" x="526" y="-3206"/>
         </scene>
         <!--City Detail Web View Controller-->
         <scene sceneID="Dh5-w1-ogt">
@@ -844,7 +844,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTW-xw-RcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="-1379"/>
+            <point key="canvasLocation" x="-24" y="-3245"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="fKh-Od-Scf">
@@ -857,7 +857,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfw-i6-ycm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2968" y="-2555"/>
+            <point key="canvasLocation" x="3360" y="1085"/>
         </scene>
         <!--Route-->
         <scene sceneID="cPV-vm-BZV">
@@ -897,7 +897,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9C-10-HVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3331" y="-2571"/>
+            <point key="canvasLocation" x="3723" y="1069"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zLd-83-epK">
@@ -916,7 +916,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zq6-7p-1Oz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="203" y="480"/>
+            <point key="canvasLocation" x="323" y="1568"/>
         </scene>
         <!--Preference Setting-->
         <scene sceneID="RR2-vg-1x4">
@@ -985,7 +985,7 @@
                                     <action selector="outPutData" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="LNp-2D-Uje"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cf9-xB-AcT">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cf9-xB-AcT">
                                 <rect key="frame" x="212" y="77" width="91" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
@@ -1010,7 +1010,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKv-gJ-tLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="-1374"/>
+            <point key="canvasLocation" x="38" y="-1714"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="qYU-Hw-7fs">
@@ -1147,7 +1147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3D-M9-2kT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-3270"/>
+            <point key="canvasLocation" x="992" y="-1578"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="2da-pQ-2a4">
@@ -1220,7 +1220,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cE6-aP-yuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="-3304"/>
+            <point key="canvasLocation" x="2356" y="784"/>
         </scene>
         <!--Media View Controller-->
         <scene sceneID="bar-Ww-COe">
@@ -1268,7 +1268,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agf-EH-LSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255" y="-3304"/>
+            <point key="canvasLocation" x="2725" y="784"/>
         </scene>
         <!--topics-->
         <scene sceneID="k5q-Kh-bjn">
@@ -1283,7 +1283,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mx8-9l-hBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="489"/>
+            <point key="canvasLocation" x="885" y="1577"/>
         </scene>
         <!--Venue View Controller-->
         <scene sceneID="vnv-PQ-kFo">
@@ -1378,6 +1378,10 @@
                                 <rect key="frame" x="7" y="433" width="89" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kDz-08-psh">
+                                <rect key="frame" x="110" y="433" width="91" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Tb6-f9-kbP">
                                 <rect key="frame" x="214" y="433" width="90" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1390,9 +1394,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UDT-mP-hGI">
-                                <rect key="frame" x="190" y="370" width="95" height="34"/>
+                                <rect key="frame" x="214" y="391" width="95" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Call Venue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1401,10 +1407,17 @@
                                     <action selector="dialVenue:" destination="Ug2-ka-R8u" eventType="touchUpInside" id="qHM-V6-Ci3"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kDz-08-psh">
-                                <rect key="frame" x="110" y="433" width="91" height="98"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="om6-SO-sKG">
+                                <rect key="frame" x="234" y="247" width="51" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Like">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="LikeVenue" destination="Ug2-ka-R8u" eventType="touchUpInside" id="8Yo-mv-bNS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20458380430000001" green="0.66595316790000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1443,7 +1456,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTT-DR-gtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="-2681"/>
+            <point key="canvasLocation" x="2356" y="1407"/>
         </scene>
         <!--Venues-->
         <scene sceneID="gAR-Zn-NsE">
@@ -1513,7 +1526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgd-WX-Vcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255" y="-2681"/>
+            <point key="canvasLocation" x="2725" y="1407"/>
         </scene>
     </scenes>
     <resources>

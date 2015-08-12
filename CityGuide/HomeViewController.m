@@ -244,7 +244,7 @@
 #pragma mark - MKMapViewDelegate
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.03f, 0.03f)) animated:YES];
     
 }
 
@@ -261,10 +261,26 @@
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    if ([annotation conformsToProtocol:@protocol(JPSThumbnailAnnotationProtocol)]) {
-        return [((NSObject<JPSThumbnailAnnotationProtocol> *)annotation) annotationViewInMap:mapView];
+//    if ([annotation conformsToProtocol:@protocol(JPSThumbnailAnnotationProtocol)]) {
+//        return [((NSObject<JPSThumbnailAnnotationProtocol> *)annotation) annotationViewInMap:mapView];
+//    }
+//    return nil;
+    if (annotation == mapView.userLocation)
+        return nil;
+    
+    static NSString *s = @"ann";
+    MKAnnotationView *pin = [mapView dequeueReusableAnnotationViewWithIdentifier:s];
+    if (!pin) {
+        pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:s];
+        pin.canShowCallout = YES;
+        pin.image = [UIImage imageNamed:@"pin1.png"];
+        pin.calloutOffset = CGPointMake(0, 0);
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        pin.rightCalloutAccessoryView = button;
+        
     }
-    return nil;
+    return pin;
+
 }
 
 - (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
@@ -345,10 +361,10 @@
     return YES;
 }
 
-- (BOOL)slideNavigationControllerShouldDisplayRightMenu
-{
-    return YES;
-}
+//- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+//{
+//    return YES;
+//}
 
 
 

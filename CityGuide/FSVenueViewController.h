@@ -32,4 +32,5 @@
 @property (nonatomic,strong) NSArray *photos;
 
 -(IBAction)dialVenue:(id)sender;
+-(IBAction)LikeVenue;
 @end

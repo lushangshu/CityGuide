@@ -31,10 +31,10 @@
     return YES;
 }
 
-- (BOOL)slideNavigationControllerShouldDisplayRightMenu
-{
-    return YES;
-}
+//- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+//{
+//    return YES;
+//}
 
 
 /*

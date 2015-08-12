@@ -35,7 +35,7 @@
     [annotation setCoordinate:venue.location.coordinate];
     [annotation setTitle:venue.name];
     [self.VenueMap addAnnotation:annotation];
-    [self.VenueMap setRegion:MKCoordinateRegionMake(venue.location.coordinate, MKCoordinateSpanMake(0.01f, 0.01f)) animated:YES];
+    [self.VenueMap setRegion:MKCoordinateRegionMake(venue.location.coordinate, MKCoordinateSpanMake(0.001f, 0.001f)) animated:YES];
     self.nameLabel.text = venueName;
     //NSLog(@"location %@",venue.venueId);
     [self FetchVenuePhotsUsingVenueID];
@@ -100,6 +100,33 @@
     
 
     
+}
+
+-(IBAction)LikeVenue{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"favorateVenues.plist"];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        plistPath = [[NSBundle mainBundle] pathForResource:@"favorateVenues" ofType:@"plist"];
+    }
+    NSMutableArray *venu = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
+    NSArray *v = [NSArray arrayWithObjects:self.venue,self.venueName, nil];
+    [venu addObject:v];
+    NSArray *vv = [venu copy];
+    NSString *error = nil;
+    NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:vv  format:NSPropertyListXMLFormat_v1_0 options:NSPropertyListMutableContainersAndLeaves error:&error];
+    
+    if(plistData)
+    {
+        [plistData writeToFile:plistPath atomically:YES];
+        NSLog(@"saved venue data to favorateVenue.plist");
+    }
+    else
+    {
+        NSLog(@"save failed");
+    }
 }
 
 - (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
