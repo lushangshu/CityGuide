@@ -135,7 +135,7 @@
     return resultArray;
 }
 
-#pragma mark -- city weather 
+#pragma mark -- city weather
 -(void)FetchWeatherInfo : (NSString *) cityName
 {
     NSString *baseUrl = @"http://api.openweathermap.org/data/2.5/weather?q=";
@@ -163,6 +163,12 @@
          self.w_maxtemp = [NSString stringWithFormat:@"%.2f",maxt];
 //         NSLog(@"Weather in this city is main %@,desc %@,temp %@,min %@,max %@",self.w_main,self.w_description,self.w_temperature,self.w_mintemp,self.w_maxtemp);
          NSString *strTempRange = [[[@"Temp from " stringByAppendingString:self.w_mintemp]stringByAppendingString:@" to "]stringByAppendingString:self.w_maxtemp];
+         if ([self.w_main isEqualToString:@"Clear"]) {
+             [self.image_weather setImage:[UIImage imageNamed:@"sunny.png"]];
+         }
+         else if([self.w_main isEqualToString:@"Cloud"]){
+             [self.image_weather setImage:[UIImage imageNamed:@"clouds.png"]];
+         }
          [self.label_w setText:self.w_main];
          [self.label_temp setText:self.w_temperature];
          [self.tempRange setText:strTempRange];

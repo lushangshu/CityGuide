@@ -69,10 +69,28 @@
         NSArray *detail = [dic valueForKeyPath:@"response"];
         FSConverter *converter = [[FSConverter alloc]init];
         FSVenueDetail *vd = [converter convertVDetailToObjects:detail];
-        [self.VenueAddress setText:[vd.formattedAddress objectAtIndex:0]];
         [self.VenuePhone setText:vd.phone];
-        [self.VenuePostCode setText:[vd.formattedAddress objectAtIndex:2]];
-        [self.VenueRating setText:[vd.formattedAddress objectAtIndex:1]];
+        if ([vd.formattedAddress count]==3) {
+            [self.VenueAddress setText:[vd.formattedAddress objectAtIndex:0]];
+            [self.VenuePostCode setText:[vd.formattedAddress objectAtIndex:2]];
+            [self.VenueRating setText:[vd.formattedAddress objectAtIndex:1]];
+        }
+        else if([vd.formattedAddress count]==2)
+        {
+            [self.VenueAddress setText:[vd.formattedAddress objectAtIndex:0]];
+            [self.VenuePostCode setText:[vd.formattedAddress objectAtIndex:1]];
+            [self.VenueRating setText:@"Address Information Cann't load"];
+        }
+        else if([vd.formattedAddress count]==1){
+            [self.VenueAddress setText:[vd.formattedAddress objectAtIndex:0]];
+            [self.VenuePostCode setText:@"Address Information Cann't load"];
+            [self.VenueRating setText:@"Address Information Cann't load"];
+        }
+        else {
+            [self.VenueAddress setText:@"Address Information Cann't load"];
+            [self.VenuePostCode setText:@"Address Information Cann't load"];
+            [self.VenueRating setText:@"Address Information Cann't load"];
+        }
         self.phoneNumber = vd.phone;
         //NSLog(@"venud detail is %@,%@,%@,%@",vd.rating,vd.formattedAddress,vd.phone,vd.canonicalUrl);
         
