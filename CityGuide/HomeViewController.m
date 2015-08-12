@@ -23,9 +23,9 @@
 {
     [super viewDidLoad];
     //[self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:43 green:164 blue:255 alpha:1]];
-    
+    [self.mySearch setText:@"Sheffield"];
     [self.loading startAnimating];
-    [self.view setUserInteractionEnabled:YES];
+    //[self.view setUserInteractionEnabled:YES];
     self.tableV.tableHeaderView = self.myMapView;
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -39,7 +39,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler2:) name:@"mynotification2" object:nil];
     
     [self.locationManager startUpdatingLocation];
-    [self.myMapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:NO];
+//    [self.myMapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:NO];
     FSVenue *ve = [[FSVenue alloc]init];
     ve.location.coordinate = self.locationManager.location.coordinate;
     ve.name = @"user Location";
