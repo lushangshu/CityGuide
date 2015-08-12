@@ -7,6 +7,7 @@
 //
 
 #import "PreferenceController.h"
+#import "AppDelegate.h"
 
 @interface PreferenceController ()
 
@@ -20,9 +21,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    integer = 0;
-    [lebel setText:[NSString stringWithFormat:@"%ld",(long)integer]];
-    // Do any additional setup after loading the view from its nib.
+    [self.navigationItem setTitle:@"Preference Setting"];
+    
     self.datas = [NSArray arrayWithObjects:@"Arts & Entertainment",
                   @"College & University",
                   @"Event",
@@ -35,6 +35,10 @@
                   nil];
     [self initCategory];
     [self.tableview setEditing:YES animated:YES];
+    
+    self.categoryId = [[NSMutableArray alloc] init];
+    self.categoryName = [[NSMutableArray alloc] init];
+    
 }
 
 -(void)initCategory{
@@ -51,20 +55,12 @@
     [self.categoryID setObject:@"4d4b7105d754a06379d81259" forKey:@"Travel & Transport"];
     //NSLog(@"%@",self.categoryID);
 }
-
--(IBAction)saveDataUsingUserDefault:(id)sender{
-    [[NSUserDefaults standardUserDefaults] setInteger:integer forKey:@"integer"];
+-(IBAction)reloadData:(id)sender
+{
+    [self.tableview reloadData];
 }
 
--(IBAction)outPutDataUsingUserDeafult:(id)sender{
-    integer = [[NSUserDefaults standardUserDefaults] integerForKey:@"integer"];
-    [lebel setText:[NSString stringWithFormat:@"%ld",(long)integer]];
-}
 
--(IBAction)testUD:(id)sender{
-    integer = integer +1;
-    [lebel setText:[NSString stringWithFormat:@"%ld",(long)integer]];
-}
 -(IBAction)saveData
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
@@ -81,17 +77,13 @@
     {
         [plistData writeToFile:plistPath atomically:YES];
         NSLog(@"saved data");
+        
     }
     else
     {
         NSLog(@"save failed");
     }
-
-    
 }
-
-
-
 -(IBAction)outPutData
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
@@ -102,9 +94,9 @@
     {
         plistPath = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
     }
-    
-   self.selectedCateg = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    //NSLog(@"$$$ %@",self.selectedCateg);
+    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+   //self.selectedCateg = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSLog(@"$$$ %@",dic);
    //NSLog(@"### %@",[dict objectForKey:@"name"]);
 }
 
@@ -117,16 +109,21 @@
     UITableViewCell *cell = cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     cell.textLabel.text = self.datas[indexPath.row];
     
-    cell.backgroundColor = [UIColor colorWithRed:43 green:164 blue:255 alpha:0];
-    cell.textLabel.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor colorWithRed:43 green:164 blue:255 alpha:0.7];
+    //cell.textLabel.backgroundColor = [UIColor blueColor];
     
     NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"settings"];
-    NSMutableArray *arr = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    //NSMutableArray *arr = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    NSDictionary *dic = [[NSDictionary alloc]initWithContentsOfFile:path];
     //NSLog(@"@@@@@ %@,$$$$ %@",cell.textLabel.text,[arr objectAtIndex:indexPath.row]);
-    
-    if ([cell.textLabel.text isEqualToString: [arr objectAtIndex:indexPath.row] ]) {
-        [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    for (int i=0; i<[[dic allKeys] count]; i++) {
+        if ([cell.textLabel.text isEqualToString: [[dic allKeys]objectAtIndex:i ]]) {
+            [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        }
     }
+//    if ([cell.textLabel.text isEqualToString: [dic allKeys]]) {
+//        [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+//    }
     return cell;
 }
 

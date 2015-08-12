@@ -94,6 +94,7 @@
 		CC89C62F1B7AD9D8006D043A /* RouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C62E1B7AD9D8006D043A /* RouteCell.m */; };
 		CC89C6321B7B5B82006D043A /* FSPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C6311B7B5B82006D043A /* FSPhoto.m */; };
 		CC89C6351B7B809C006D043A /* FSVenueDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C6341B7B809C006D043A /* FSVenueDetail.m */; };
+		CC89C6371B7BBAA1006D043A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC89C6361B7BBAA1006D043A /* CoreData.framework */; };
 		CCA70F461B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F3D1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m */; };
 		CCA70F471B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F3F1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScale.m */; };
 		CCA70F481B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F411B56C2E50071FD17 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
@@ -296,6 +297,7 @@
 		CC89C6311B7B5B82006D043A /* FSPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPhoto.m; sourceTree = "<group>"; };
 		CC89C6331B7B809C006D043A /* FSVenueDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenueDetail.h; sourceTree = "<group>"; };
 		CC89C6341B7B809C006D043A /* FSVenueDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenueDetail.m; sourceTree = "<group>"; };
+		CC89C6361B7BBAA1006D043A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CCA70F3B1B56C2E50071FD17 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
 		CCA70F3C1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
 		CCA70F3D1B56C2E50071FD17 /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC89C6371B7BBAA1006D043A /* CoreData.framework in Frameworks */,
 				CCBFCA4E1B602ACA0057FAF5 /* CoreLocation.framework in Frameworks */,
 				CC7A89661B57555500505328 /* Accounts.framework in Frameworks */,
 				CC3547DE1B4563EA00A9812B /* Fabric.framework in Frameworks */,
@@ -504,6 +507,7 @@
 		CC35477D1B4228B100A9812B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC89C6361B7BBAA1006D043A /* CoreData.framework */,
 				CCBFCA4D1B602ACA0057FAF5 /* CoreLocation.framework */,
 				CC7A89651B57555500505328 /* Accounts.framework */,
 				CC3547DA1B4563EA00A9812B /* Fabric.framework */,

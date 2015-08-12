@@ -211,7 +211,7 @@
             </objects>
             <point key="canvasLocation" x="92" y="-2169"/>
         </scene>
-        <!--Home-->
+        <!--Item-->
         <scene sceneID="8Ez-Wp-4Pa">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="zxQ-c8-zro" customClass="HomeViewController" sceneMemberID="viewController">
@@ -222,6 +222,7 @@
                             <searchBar contentMode="redraw" id="Dz1-1O-6GQ">
                                 <rect key="frame" x="0.0" y="65" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dpz-zV-VJU">
@@ -299,7 +300,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="mNP-Zv-0mF"/>
-                    <navigationItem key="navigationItem" title="Home" id="JRK-DI-0Qe"/>
+                    <navigationItem key="navigationItem" id="JRK-DI-0Qe"/>
                     <connections>
                         <outlet property="GenerateRouteButton" destination="hut-Ze-Tu6" id="0Zo-Ou-26O"/>
                         <outlet property="myMapView" destination="P2u-lJ-GPM" id="PKc-hg-YRN"/>
@@ -916,10 +917,10 @@
             </objects>
             <point key="canvasLocation" x="203" y="480"/>
         </scene>
-        <!--Title-->
+        <!--Preference Setting-->
         <scene sceneID="RR2-vg-1x4">
             <objects>
-                <viewController storyboardIdentifier="PreferenceController" id="7Ci-Pm-fZ1" customClass="PreferenceController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreferenceController" title="Preference Setting" id="7Ci-Pm-fZ1" customClass="PreferenceController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mDw-GH-R5w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -960,7 +961,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lJm-1F-dNz">
-                                <rect key="frame" x="219" y="105" width="91" height="30"/>
+                                <rect key="frame" x="219" y="120" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
                                 <state key="normal" title="Save">
@@ -968,11 +969,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveDataUsingUserDefault:" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="Q2J-9P-61D"/>
+                                    <action selector="saveData" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="AXg-SJ-Ue6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uoz-cg-3Cr">
-                                <rect key="frame" x="233" y="154" width="77" height="30"/>
+                                <rect key="frame" x="219" y="153" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
                                 <state key="normal" title="output">
@@ -980,34 +981,28 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="outPutDataUsingUserDeafult:" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="uIU-qH-Xsv"/>
+                                    <action selector="outPutData" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="LNp-2D-Uje"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pvS-Me-Zqa">
-                                <rect key="frame" x="249" y="67" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cf9-xB-AcT">
+                                <rect key="frame" x="212" y="77" width="91" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Test">
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="testUD:" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="4rw-Hh-A08"/>
+                                    <action selector="reloadData:" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="zVr-JR-fSI"/>
+                                    <action selector="saveData" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="5WJ-Hf-8Hw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dmj-TW-ysg">
-                                <rect key="frame" x="164" y="91" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.18240273169279342" green="0.64274732715898586" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Dh1-ge-r0V"/>
                     <connections>
                         <outlet property="label" destination="RX4-6k-WlG" id="3ha-pd-7mZ"/>
-                        <outlet property="lebel" destination="Dmj-TW-ysg" id="ijI-qO-q1N"/>
-                        <outlet property="save" destination="lJm-1F-dNz" id="SU2-2I-pr7"/>
                         <outlet property="tableview" destination="emI-3d-6x9" id="BLS-vH-ggA"/>
                     </connections>
                 </viewController>

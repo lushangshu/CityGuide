@@ -49,8 +49,23 @@
     ve.venueId = 0;
     //NSLog(@"test la is %f",self.locationManager.location.coordinate.latitude);
     self.userVenue = ve;
+    [self showPlistFileCategories];
 
-
+}
+-(void)showPlistFileCategories
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"settings.plist"];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        plistPath = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    }
+    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    //self.selectedCateg = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSLog(@"$$$ %@",dic);
+    //NSLog(@"### %@",[dict objectForKey:@"name"]);
 }
 
 -(IBAction)RadioVenueData:(id)sender{

@@ -13,11 +13,14 @@
 
 {
     IBOutlet UILabel *lebel;
-    NSInteger integer;
 }
 @property(nonatomic,strong)NSArray *datas;
 @property(nonatomic,strong)NSMutableDictionary *categoryID;
 @property(nonatomic,strong)NSMutableDictionary *selectedCateg;
+
+@property(nonatomic,strong)NSMutableArray *categoryId;
+@property(nonatomic,strong)NSMutableArray *categoryName;
+@property(nonatomic,strong)NSMutableArray *selecteValues;
 
 @property(nonatomic,strong)NSArray *selectedData;
 
@@ -28,8 +31,5 @@
 -(IBAction)saveData;
 -(IBAction)outPutData;
 
--(IBAction)saveDataUsingUserDefault:(id)sender;
--(IBAction)outPutDataUsingUserDeafult:(id)sender;
--(IBAction)testUD:(id)sender;
 
 @end
