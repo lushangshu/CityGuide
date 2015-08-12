@@ -20,6 +20,7 @@
 @property (strong,nonatomic) IBOutlet UIView *route_View;
 @property (strong,nonatomic) IBOutlet UISegmentedControl *segment;
 
+
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (strong,nonatomic) IBOutlet UIView *searchSubV;
@@ -35,4 +36,5 @@
 
 -(IBAction)GenerateRoute;
 -(IBAction)segmentValueChanged:(id)sender;
+-(IBAction)ReloadRoute:(id)sender;
 @end

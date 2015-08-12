@@ -33,6 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.responseRoute = [[NSMutableArray alloc]init];
      self.segment.hidden = NO;
     self.mapView.delegate=self;
     self.mapView.showsUserLocation=YES;
@@ -87,6 +88,11 @@
     [self showLinesFromSourceLati:venueItem1 Long:venueItem2];
     [self showLinesFromSourceLati:venueItem2 Long:venueItem3];
     
+}
+
+-(IBAction)ReloadRoute:(id)sender
+{
+    [self.routeTable reloadData];
 }
 
 -(IBAction)segmentValueChanged:(UISegmentedControl *)sender
@@ -199,7 +205,7 @@
         }
         NSArray *arrRoutes = [response routes];
         NSLog(@"%@, arrRoutes Count is %lu",arrRoutes,(unsigned long)[arrRoutes count]);
-        self.responseRoute = [[NSMutableArray alloc]init];
+        
         for (int i=0; i<[arrRoutes count]; i++) {
             rout = [arrRoutes objectAtIndex:i];
             MKPolyline *line = [rout polyline];
@@ -213,11 +219,12 @@
                 NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di, nil];
                 //NSLog(@"route B in for loop %@",routeB);
                 [self.responseRoute addObjectsFromArray:routeB];
-                [self.routeTable reloadData];
-                //NSLog(@"%@",self.responseRoute);
+                
+                //NSLog(@"interesting %@",self.responseRoute);
             }
         }
-        
+      NSLog(@"interesting %@",self.responseRoute);
+      [self.routeTable reloadData];
     }];
     
 //    [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
@@ -299,9 +306,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"cell";
     RouteCell *cell = [self.routeTable dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+//    NSArray *routeArray = [self.responseRoute objectAtIndex:indexPath.row];
     
-    [cell.RouteLength setText:[self.responseRoute objectAtIndex:indexPath.row]];
-    [cell.RoutName setText:@"name"];
+//    if ([routeArray count]!=0) {
+//        [cell.RouteLength setText:[routeArray objectAtIndex:0]];
+//        [cell.RoutName setText:[routeArray objectAtIndex:1]];
+//    }
+//    else{
+        [cell.RouteLength setText:[self.responseRoute objectAtIndex:indexPath.row]];
+        [cell.RoutName setText:@"name"];
+//    }
+    
     return cell;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
