@@ -39,16 +39,11 @@
     self.nameLabel.text = venueName;
     //NSLog(@"location %@",venue.venueId);
     [self FetchVenuePhotsUsingVenueID];
+    NSLog(@"venue id is %@",venue.venueId);
+    self.phoneNumber = @"null";
+    [self FetchVenueInfoUsingVenueID:venue.venueId];
 }
 
-//- (id)initWithCoder:(NSCoder *)aDecoder
-//{
-//    self = [super initWithCoder:aDecoder];
-//    if (self) {
-//        mediaArray = [[NSMutableArray alloc] init];
-//    }
-//    return self;
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -57,6 +52,35 @@
 
 -(void)FetchVenueInfoUsingVenueID: (NSString *)venueID
 {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:@"M0AY5MCIO3I5HKZAU35MC1E4WQIBIVUFVPSL2MY0TSRP5JTI" forKey:@"client_id"];
+    [params setObject:@"O3DM3WRVRABPMTMWMMGXC4WDEHUUIGGIRHP1Y0PTUEW2WTK3" forKey:@"client_secret"];
+    [params setObject:@"20150812" forKey:@"v"];
+    
+    NSString *url1 = @"https://api.foursquare.com/v2/venues/";
+    NSString *url2 = venueID;
+    NSString *url = [url1 stringByAppendingString:url2];
+    //NSLog(@"url is %@",url);
+    [manager GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"JSON: %@", responseObject);
+        NSDictionary *dic = responseObject;
+        NSArray *detail = [dic valueForKeyPath:@"response"];
+        FSConverter *converter = [[FSConverter alloc]init];
+        FSVenueDetail *vd = [converter convertVDetailToObjects:detail];
+        [self.VenueAddress setText:[vd.formattedAddress objectAtIndex:0]];
+        [self.VenuePhone setText:vd.phone];
+        [self.VenuePostCode setText:[vd.formattedAddress objectAtIndex:2]];
+        [self.VenueRating setText:[vd.formattedAddress objectAtIndex:1]];
+        self.phoneNumber = vd.phone;
+        //NSLog(@"venud detail is %@,%@,%@,%@",vd.rating,vd.formattedAddress,vd.phone,vd.canonicalUrl);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+
     
 }
 
@@ -75,8 +99,14 @@
                                }
                            }];
 }
+-(IBAction)dialVenue:(id)sender{
+    NSString *tel = @"tel:";
+    NSString *phone = [tel stringByAppendingString:self.phoneNumber];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phone]];
+}
 -(void)FetchVenuePhotsUsingVenueID
 {
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];

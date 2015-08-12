@@ -9,6 +9,7 @@
 #import "FSConverter.h"
 #import "FSVenue.h"
 #import "FSPhoto.h"
+#import "FSVenueDetail.h"
 
 @implementation FSConverter
 
@@ -55,6 +56,17 @@
     return objects;
 }
 
+-(FSVenueDetail *)convertVDetailToObjects:(NSDictionary *)venue
+{
+    FSVenueDetail *vd = [[FSVenueDetail alloc]init];
+    //NSLog(@"venue is %@",venue);
+    vd.phone = venue[@"venue"][@"contact"][@"phone"];
+    //vd.rating = venue[@"venue"][@"venueRatingBlacklisted"];
+    vd.formattedAddress = venue[@"venue"][@"location"][@"formattedAddress"];
+    vd.canonicalUrl = venue[@"veneu"][@"canonicalUrl"];
+    //NSLog(@"%@,%@,%@,%@",vd.phone,vd.rating,vd.formattedAddress,vd.canonicalUrl);
+    return vd;
+}
 
 
 @end

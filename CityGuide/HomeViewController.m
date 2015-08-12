@@ -279,7 +279,7 @@
     FSMainMapCell *cell = [self.tableV dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     FSVenue *venue = self.nearbyVenues[indexPath.row];
     [cell.venuName setText:[venue name]];
-    NSString *venueImg = [venue.prefix stringByAppendingString:venue.suffix];
+    NSString *venueImg = [[venue.prefix stringByAppendingString:@"20x20"] stringByAppendingString: venue.suffix];
     cell.imageView.image = [UIImage imageNamed:@"0.png"];
     [self downloadImageWithURL:[NSURL URLWithString:venueImg] completionBlock:^(BOOL succeeded, UIImage *image) {
         if (succeeded) {

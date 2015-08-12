@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FSVenueDetail.h"
 
 @interface FSConverter : NSObject
 - (NSArray *)convertToObjects:(NSArray *)venues;
 -(NSArray *)convertVPhotoToObjects:(NSArray *)items;
+-(FSVenueDetail *)convertVDetailToObjects:(NSArray *)items;
 
 @end
