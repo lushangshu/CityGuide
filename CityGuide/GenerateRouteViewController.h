@@ -20,6 +20,7 @@
 @property (strong,nonatomic) IBOutlet UIView *route_View;
 @property (strong,nonatomic) IBOutlet UISegmentedControl *segment;
 
+@property (weak, nonatomic) IBOutlet UILabel *RouteTotalDescription;
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 

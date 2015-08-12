@@ -23,6 +23,8 @@
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
     NSMutableArray *blockRoutes;
+    
+    unsigned long totalLength;
 }
 
 @end
@@ -34,10 +36,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.responseRoute = [[NSMutableArray alloc]init];
+    totalLength = 0;
      self.segment.hidden = NO;
     self.mapView.delegate=self;
     self.mapView.showsUserLocation=YES;
-    [self.arr setText:@"Sheffield Railway Station (SHF),53.377846,-1.461872"];
+    [self.arr setText:@"Destination"];
     
     //to get the current location
     locationManager=[[CLLocationManager alloc] init];
@@ -198,33 +201,36 @@
     [request setTransportType:MKDirectionsTransportTypeWalking];
     MKDirections *direction = [[MKDirections alloc] initWithRequest:request];
 //    NSLog(@"!!!!!self respongse route is %@",self.responseRoute);
-    __block NSArray *arrays;
     [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
         if (error) {
             NSLog(@"error happend %@",error);
         }
         NSArray *arrRoutes = [response routes];
-        NSLog(@"%@, arrRoutes Count is %lu",arrRoutes,(unsigned long)[arrRoutes count]);
+        //NSLog(@"%@, arrRoutes Count is %lu",arrRoutes,(unsigned long)[arrRoutes count]);
         
         for (int i=0; i<[arrRoutes count]; i++) {
             rout = [arrRoutes objectAtIndex:i];
             MKPolyline *line = [rout polyline];
             [_mapView addOverlay:line];
             NSArray *steps = [rout steps];
+            totalLength = totalLength + [rout distance];
             for (int j=0; j<[steps count]; j++) {
                 NSString *str_in = [[steps objectAtIndex:j] instructions];
                 double dist = [[steps objectAtIndex:j] distance];
                 NSNumber *num = [NSNumber numberWithDouble:dist];
                 NSString *str_di = [num stringValue];
-                NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di, nil];
+                NSArray *routeB = [[NSArray alloc]initWithObjects:rout.name,str_in,str_di, nil];
                 //NSLog(@"route B in for loop %@",routeB);
-                [self.responseRoute addObjectsFromArray:routeB];
-                
+                [self.responseRoute addObject:routeB];
                 //NSLog(@"interesting %@",self.responseRoute);
             }
         }
-      NSLog(@"interesting %@",self.responseRoute);
+      //NSLog(@"interesting %@",self.responseRoute);
       [self.routeTable reloadData];
+        
+        NSString *routeLength = [[NSNumber numberWithUnsignedLong:totalLength] stringValue];
+        NSString *routedescri = [[@"Route length is " stringByAppendingString:routeLength]stringByAppendingString:@" m"];
+        [self.RouteTotalDescription setText:routedescri];
     }];
     
 //    [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
@@ -306,17 +312,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"cell";
     RouteCell *cell = [self.routeTable dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-//    NSArray *routeArray = [self.responseRoute objectAtIndex:indexPath.row];
-    
-//    if ([routeArray count]!=0) {
-//        [cell.RouteLength setText:[routeArray objectAtIndex:0]];
-//        [cell.RoutName setText:[routeArray objectAtIndex:1]];
-//    }
-//    else{
-        [cell.RouteLength setText:[self.responseRoute objectAtIndex:indexPath.row]];
-        [cell.RoutName setText:@"name"];
-//    }
-    
+    NSArray *array = [self.responseRoute objectAtIndex:indexPath.row];
+    NSString *routeStr = [[[[array objectAtIndex:1] stringByAppendingString:@" and "]stringByAppendingString:[array objectAtIndex:2]]stringByAppendingString:@" m"];
+    [cell.RouteLength setText:routeStr];
+    [cell.RoutName setText:[array objectAtIndex:0]];
+    //[cell.RouteLength setText:[self.responseRoute objectAtIndex:indexPath.row]];
+    //[cell.RoutName setText:[self.responseRoute objectAtIndex:indexPath.row]];
+
     return cell;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
