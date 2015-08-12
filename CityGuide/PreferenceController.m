@@ -38,7 +38,7 @@
     
     self.categoryId = [[NSMutableArray alloc] init];
     self.categoryName = [[NSMutableArray alloc] init];
-    
+    [self reloadData];
 }
 
 -(void)initCategory{
@@ -55,7 +55,7 @@
     [self.categoryID setObject:@"4d4b7105d754a06379d81259" forKey:@"Travel & Transport"];
     //NSLog(@"%@",self.categoryID);
 }
--(IBAction)reloadData:(id)sender
+-(IBAction)reloadData
 {
     [self.tableview reloadData];
 }
@@ -95,9 +95,10 @@
         plistPath = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
     }
     NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSString *message = [NSString stringWithFormat:@"%@",dic];
    //self.selectedCateg = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Categories" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil , nil];
     NSLog(@"$$$ %@",dic);
-   //NSLog(@"### %@",[dict objectForKey:@"name"]);
 }
 
 #pragma mark - tableview

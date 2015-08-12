@@ -993,6 +993,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="reloadData" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="Law-2Q-VoD"/>
                                     <action selector="reloadData:" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="zVr-JR-fSI"/>
                                     <action selector="saveData" destination="7Ci-Pm-fZ1" eventType="touchUpInside" id="5WJ-Hf-8Hw"/>
                                 </connections>
