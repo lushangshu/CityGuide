@@ -28,6 +28,7 @@
 @property (nonatomic,strong) IBOutlet UILabel *selectedVenus;
 @property (nonatomic,strong) FSVenue *userVenue;
 @property (strong,nonatomic) NSString *testString;
+@property (strong,nonatomic) NSDictionary *selectedCates;
 -(IBAction)backToLocation:(id)sender;
 -(IBAction)RadioVenueData:(id)sender;
 

@@ -62,9 +62,9 @@
     {
         plistPath = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
     }
-    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    self.selectedCates = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
     //self.selectedCateg = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    NSLog(@"$$$ %@",dic);
+    NSLog(@"$$$ %@",self.selectedCates);
     //NSLog(@"### %@",[dict objectForKey:@"name"]);
 }
 
@@ -108,11 +108,18 @@
     NSString *lat = [NSString stringWithFormat:@"%f",location.coordinate.latitude ];
     NSString *lon = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
     
+    NSString *category = [[NSString alloc]init];
+    if ([self.selectedCates count]==0) {
+        category = @" ";
+    }
+    else{
+        category = [[self.selectedCates allKeys] objectAtIndex:0];
+    }
     NSString *locat = [[lat stringByAppendingString:@","]stringByAppendingString:lon];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:@"M0AY5MCIO3I5HKZAU35MC1E4WQIBIVUFVPSL2MY0TSRP5JTI" forKey:@"client_id"];
     [params setObject:@"O3DM3WRVRABPMTMWMMGXC4WDEHUUIGGIRHP1Y0PTUEW2WTK3" forKey:@"client_secret"];
-    [params setObject:@"art" forKey:@"query"];
+    [params setObject:category forKey:@"query"];
     [params setObject:locat forKey:@"ll"];
     [params setObject:@"20140118" forKey:@"v"];
     [params setObject:@"30" forKey:@"limit"];
