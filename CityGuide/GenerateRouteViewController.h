@@ -14,6 +14,7 @@
 
 @interface GenerateRouteViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
 @property (strong,nonatomic) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UITableView *routeTable;
 
 @property (strong,nonatomic) IBOutlet UIView *map_View;
 @property (strong,nonatomic) IBOutlet UIView *route_View;
@@ -30,7 +31,7 @@
 @property (strong,nonatomic) CLLocation *UserCurrentLocation;
 @property (strong,nonatomic) FSVenue *userVenue;
 
-@property (strong,nonatomic) NSMutableArray *responseRoute;
+@property (strong,nonatomic) __block NSMutableArray *responseRoute;
 
 -(IBAction)GenerateRoute;
 -(IBAction)segmentValueChanged:(id)sender;

@@ -9,10 +9,10 @@
 #import "RouteTabbar.h"
 #import "GenerateRouteViewController.h"
 #import "HomeViewController.h"
-
 #import "AFNetworking.h"
 #import "FSVenue.h"
 #import "FSConverter.h"
+#import "RouteCell.h"
 
 @interface GenerateRouteViewController () <CLLocationManagerDelegate>
 {
@@ -22,13 +22,14 @@
     
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
+    NSMutableArray *blockRoutes;
 }
 
 @end
 
 @implementation GenerateRouteViewController
 
-@synthesize map_View,route_View,venueArray,userVenue;
+@synthesize map_View,route_View,venueArray,userVenue,responseRoute;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,6 +55,7 @@
             
         }
     }
+    
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserProfileSuccess:) name:@"Notification_GetUserProfileSuccess" object:nil];
     
@@ -84,7 +86,7 @@
     [self showLinesFromSourceLati:self.userVenue Long:venueItem1];
     [self showLinesFromSourceLati:venueItem1 Long:venueItem2];
     [self showLinesFromSourceLati:venueItem2 Long:venueItem3];
-
+    
 }
 
 -(IBAction)segmentValueChanged:(UISegmentedControl *)sender
@@ -190,35 +192,62 @@
     [request setTransportType:MKDirectionsTransportTypeWalking];
     MKDirections *direction = [[MKDirections alloc] initWithRequest:request];
 //    NSLog(@"!!!!!self respongse route is %@",self.responseRoute);
+    __block NSArray *arrays;
     [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
         if (error) {
-            NSLog(@"Error:::%@",error);
+            NSLog(@"error happend %@",error);
         }
-        NSLog(@"response = %@",response);
         NSArray *arrRoutes = [response routes];
         NSLog(@"%@, arrRoutes Count is %lu",arrRoutes,(unsigned long)[arrRoutes count]);
-        [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            rout = obj;
+        self.responseRoute = [[NSMutableArray alloc]init];
+        for (int i=0; i<[arrRoutes count]; i++) {
+            rout = [arrRoutes objectAtIndex:i];
             MKPolyline *line = [rout polyline];
             [_mapView addOverlay:line];
-            //NSLog(@"Rout Name : %@",rout.name);
-            //NSLog(@"Total Distance (in Meters) :%f",rout.distance);
-            
             NSArray *steps = [rout steps];
-            
-            //NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
-            [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                NSLog(@"Rout Instruction : %@",[obj instructions]);
-//                NSLog(@"Rout Distance : %f",[obj distance]);
-                NSString *str_in = [obj instructions];
-                NSString *str_di = [NSString stringWithFormat:@"%f",[obj distance]];
-                NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di ,nil];
-                //NSLog(@"%@",routeB);
+            for (int j=0; j<[steps count]; j++) {
+                NSString *str_in = [[steps objectAtIndex:j] instructions];
+                double dist = [[steps objectAtIndex:j] distance];
+                NSNumber *num = [NSNumber numberWithDouble:dist];
+                NSString *str_di = [num stringValue];
+                NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di, nil];
+                //NSLog(@"route B in for loop %@",routeB);
                 [self.responseRoute addObjectsFromArray:routeB];
-                //NSLog(@"%@",route);
-            }];
-        }];
+                [self.routeTable reloadData];
+                //NSLog(@"%@",self.responseRoute);
+            }
+        }
+        
     }];
+    
+//    [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+//        if (error) {
+//            NSLog(@"Error:::%@",error);
+//        }
+//        NSLog(@"response = %@",response);
+//        NSArray *arrRoutes = [response routes];
+//        NSLog(@"%@, arrRoutes Count is %lu",arrRoutes,(unsigned long)[arrRoutes count]);
+//        [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//            rout = obj;
+//            MKPolyline *line = [rout polyline];
+//            [_mapView addOverlay:line];
+//            //NSLog(@"Rout Name : %@",rout.name);
+//            //NSLog(@"Total Distance (in Meters) :%f",rout.distance);
+//            
+//            NSArray *steps = [rout steps];
+//            //NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
+//            [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+////                NSLog(@"Rout Instruction : %@",[obj instructions]);
+////                NSLog(@"Rout Distance : %f",[obj distance]);
+//                NSString *str_in = [obj instructions];
+//                NSString *str_di = [NSString stringWithFormat:@"%f",[obj distance]];
+//                NSArray *routeB = [[NSArray alloc]initWithObjects:str_in,str_di ,nil];
+//                NSLog(@"%@",routeB);
+//                //NSLog(@"%@",self.responseRoute);
+//            }];
+//        }];
+//        
+//    }];
 }
 
 -(NSMutableArray *)GetDirections:(MKDirectionsRequest *)request :(NSMutableArray *)routeListMArray
@@ -234,7 +263,7 @@
     
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolylineView* aView = [[MKPolylineView alloc]initWithPolyline:(MKPolyline*)overlay] ;
-        aView.strokeColor = [[UIColor colorWithRed:69.0/255.0 green:147.0/255.0 blue:240.0/255.0 alpha:1.0] colorWithAlphaComponent:1];
+        aView.strokeColor = [[UIColor colorWithRed:69.0/255.0 green:147.0/255.0 blue:240.0/255.0 alpha:0.8] colorWithAlphaComponent:1];
         //        aView.strokeColor=[UIColor greenColor];
         aView.lineWidth = 10;
         return aView;
@@ -261,6 +290,36 @@
 
 #pragma mark - table view delegate
 
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.responseRoute count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"cell";
+    RouteCell *cell = [self.routeTable dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    [cell.RouteLength setText:[self.responseRoute objectAtIndex:indexPath.row]];
+    [cell.RoutName setText:@"name"];
+    return cell;
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if ([segue.identifier isEqualToString:@"VenueDetailSeg"]) {
+//        NSIndexPath *indexPath = [self.tableV indexPathForSelectedRow];
+//        FSVenueViewController *venuViewController = segue.destinationViewController;
+//        FSVenue *venue = self.nearbyVenues[indexPath.row];
+//        venuViewController.venueName = venue.name;
+//    }
+//    else if([segue.identifier isEqualToString:@"VenueArraySeg"]){
+//        GenerateRouteViewController *grv = segue.destinationViewController;
+//        grv.venueArray = self.nearbyVenues;
+//        grv.UserCurrentLocation = self.locationManager.location;
+//        grv.userVenue = self.userVenue;
+//        //NSLog(@"@@@@@ %@,%f",self.userVenue.name,self.userVenue.location.coordinate.latitude);
+//        
+//    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
