@@ -24,6 +24,8 @@
     [super viewDidLoad];
     //[self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:43 green:164 blue:255 alpha:1]];
     [self.mySearch setText:@"Sheffield"];
+    [self.mySearch setTintColor:[UIColor blackColor]];
+    [self.mySearch setBackgroundColor:[UIColor colorWithRed:15 green:175 blue:255 alpha:0.5]];
     [self.loading startAnimating];
     //[self.view setUserInteractionEnabled:YES];
     self.tableV.tableHeaderView = self.myMapView;

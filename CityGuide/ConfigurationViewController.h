@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 #import "SlideNavigationController.h"
+#import "IntroView.h"
 
-@interface ConfigurationViewController : ViewController <SlideNavigationControllerDelegate>
+@interface ConfigurationViewController : ViewController <SlideNavigationControllerDelegate,IntroViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *subview;
 
 @end
