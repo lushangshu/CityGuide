@@ -161,7 +161,7 @@
 - (void)showLinesFromSourceLati:(FSVenue *)deP Long:(FSVenue *)Arr
 {
     
-    NSLog(@" ******** route from %@ to %@",deP.name,Arr.name);
+    //NSLog(@" ******** route from %@ to %@",deP.name,Arr.name);
     CLLocationCoordinate2D coordinateDe = deP.location.coordinate;
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     [annotation setCoordinate:coordinateDe];

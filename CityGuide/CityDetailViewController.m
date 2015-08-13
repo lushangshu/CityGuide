@@ -168,7 +168,7 @@
          if ([self.w_main isEqualToString:@"Clear"]) {
              [self.image_weather setImage:[UIImage imageNamed:@"sunny.png"]];
          }
-         else if([self.w_main isEqualToString:@"Cloud"]){
+         else if([self.w_main isEqualToString:@"Cloud"]||([self.w_main isEqualToString:@"Clouds"])){
              [self.image_weather setImage:[UIImage imageNamed:@"clouds.png"]];
          }
          else if([self.w_main isEqualToString:@"Mist"]||[self.w_main isEqualToString:@"Fog"]){
@@ -204,11 +204,11 @@
     NSArray* arrayResult =[dic objectForKey:@"results"];
     NSDictionary* resultDic = [arrayResult objectAtIndex:0];
     NSDictionary* geometryDic = [resultDic objectForKey:@"geometry"];
-    NSLog(@"!!!!!!!geometryDic: %@,  resultDic:%@",geometryDic,resultDic);
+    //NSLog(@"!!!!!!!geometryDic: %@,  resultDic:%@",geometryDic,resultDic);
     NSDictionary* locationDic = [geometryDic objectForKey:@"location"];
     NSNumber* lat = [locationDic objectForKey:@"lat"];
     NSNumber* lng = [locationDic objectForKey:@"lng"];
-    NSLog(@"lat = %@, lng = %@",lat,lng);
+    //NSLog(@"lat = %@, lng = %@",lat,lng);
 }
 
 -(void)setCurrentCity
@@ -223,7 +223,7 @@
                        }
                        CLPlacemark *placemark = [placemarks objectAtIndex:0];
                        self.cityName = placemark.locality;
-                       NSLog(@"!!!!! placemark.country %@",self.cityName);
+                       //NSLog(@"!!!!! placemark.country %@",self.cityName);
                        [self loadCityDetails];
                        [self FetchWeatherInfo:self.cityName];
                    }];
@@ -292,20 +292,20 @@
     [cell.label2 setText: obj[1]];
     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",(long)(indexPath.row % 5)]];
     [cell.imageView setImage:image];
-    NSLog(@"dbpedia url is %@",obj[1]);
+    //NSLog(@"dbpedia url is %@",obj[1]);
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *buttonTitle = NSLocalizedString(@"Cancel", @"Cancel");
-    NSString *buttonTitle1 = NSLocalizedString(@"Show Site in App", @"Show Site in App");
-    NSString *buttonTitle2 = NSLocalizedString(@"Show Location in Maps", @"Show Location in Maps");
-    NSString *buttonTitle3 = NSLocalizedString(@"Show Site in Safari", @"Show Site in Safari");
+    NSString *buttonTitle2 = NSLocalizedString(@"Show Wikipedia in App", @"Show Wikipedia in App");
+    //NSString *buttonTitle2 = NSLocalizedString(@"Show Location in Maps", @"Show Location in Maps");
+    NSString *buttonTitle1 = NSLocalizedString(@"Show Site in Safari", @"Show Site in Safari");
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
                                                        delegate:self
                                               cancelButtonTitle:buttonTitle destructiveButtonTitle:nil
-                                              otherButtonTitles:buttonTitle1, buttonTitle2,buttonTitle3, nil];
+                                              otherButtonTitles:buttonTitle1,buttonTitle2, nil];
     [sheet showInView:self.view];
 }
 
@@ -318,7 +318,7 @@
     
     NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
     switch (buttonIndex) {
-        case 0: {
+        case 1: {
             NSArray *obj = [self.placeList objectAtIndex:buttonIndex];
             //[[UIApplication sharedApplication] openURL: [NSURL URLWithString:obj[1]]];
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -327,14 +327,14 @@
             [[SlideNavigationController sharedInstance] popToRootAndSwitchToViewController:vcc withCompletion:nil];
             break;
         }
-        case 1: {
+        case 2: {
 
 //            [[NSNotificationCenter defaultCenter] postNotificationName:@"mynotification2" object:self.placeList];
 //            [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
             NSLog(@"pressed ");
             break;
         }
-        case 2: {
+        case 0: {
             NSArray *obj = [self.placeList objectAtIndex:buttonIndex];
             [[UIApplication sharedApplication] openURL: [NSURL URLWithString:obj[1]]];
             break;

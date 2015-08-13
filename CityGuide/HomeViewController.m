@@ -41,7 +41,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler2:) name:@"mynotification2" object:nil];
     
     [self.locationManager startUpdatingLocation];
-//    [self.myMapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:NO];
     FSVenue *ve = [[FSVenue alloc]init];
     ve.location.coordinate = self.locationManager.location.coordinate;
     ve.name = @"user Location";
@@ -263,10 +262,7 @@
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-//    if ([annotation conformsToProtocol:@protocol(JPSThumbnailAnnotationProtocol)]) {
-//        return [((NSObject<JPSThumbnailAnnotationProtocol> *)annotation) annotationViewInMap:mapView];
-//    }
-//    return nil;
+
     if (annotation == mapView.userLocation)
         return nil;
     
@@ -320,8 +316,6 @@
     FSVenue *venue = self.nearbyVenues[indexPath.row];
     [cell.venuName setText:[venue name]];
     NSString *venueImg = [[venue.prefix stringByAppendingString:@"bg_32"] stringByAppendingString: venue.suffix];
-    NSLog(@"images url is %@",venueImg);
-    //cell.imageView.image = [UIImage imageNamed:@"0.png"];
     [self downloadImageWithURL:[NSURL URLWithString:venueImg] completionBlock:^(BOOL succeeded, UIImage *image) {
         if (succeeded) {
             // change the image in the cell
