@@ -82,6 +82,11 @@
 
 -(IBAction)GenerateRoute{
     FSVenue *venueDeparture = [[FSVenue alloc]init];
+   
+    int i_1 = arc4random()%[self.venueArray count];
+    int i_2 = arc4random()%[self.venueArray count];
+    int i_3 = arc4random()%[self.venueArray count];
+    int i_4 = arc4random()%[self.venueArray count];
     FSVenue *venueItem1 = [self.venueArray objectAtIndex:0];
     FSVenue *venueItem2 = [self.venueArray objectAtIndex:1];
     FSVenue *venueItem3 = [self.venueArray objectAtIndex:2];

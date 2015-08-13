@@ -147,14 +147,19 @@
             [params setObject:category forKey:@"query"];
             [params setObject:locat forKey:@"ll"];
             [params setObject:@"20140118" forKey:@"v"];
-            [params setObject:@"30" forKey:@"limit"];
+            [params setObject:@"10" forKey:@"limit"];
             [manager GET:@"https://api.foursquare.com/v2/venues/search" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 //NSLog(@"JSON: %@", responseObject);
                 NSDictionary *dic = responseObject;
                 NSArray *venues = [dic valueForKeyPath:@"response.venues"];
                 FSConverter *converter = [[FSConverter alloc]init];
                 self.nearbyVenues = [converter convertToObjects:venues];
-                
+                [self.totalVenueList addObjectsFromArray:self.nearbyVenues];
+//                self.nearbyVenues = [self.totalVenueList copy];
+                self.nearbyVenues =[[NSSet setWithArray:self.totalVenueList] allObjects];
+                for (int i=0; i<[self.nearbyVenues count]; i++) {
+                    NSLog(@"venues are %@",[[self.nearbyVenues objectAtIndex:i]name]);
+                }
                 [self.tableV reloadData];
                 [self MapProccessAnnotations];
                 [self.locationManager stopUpdatingLocation];
@@ -163,8 +168,8 @@
                 NSLog(@"Error: %@", error);
             }];
         }
+        
     }
-    
 }
 
 +(id)sharedManager
