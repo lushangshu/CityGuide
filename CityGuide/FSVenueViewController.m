@@ -183,7 +183,7 @@
             NSString *url1 = [[str1_1 stringByAppendingString:str3]stringByAppendingString:str1_2];
             NSString *url2 = [[str2_1 stringByAppendingString:str3]stringByAppendingString:str2_2];
             NSString *url3 = [[str3_1 stringByAppendingString:str3]stringByAppendingString:str3_2];
-            NSLog(@"photo image is %@,%@,%@",url1,url2,url3);
+            //NSLog(@"photo image is %@,%@,%@",url1,url2,url3);
             [self downloadImageWithURL:[NSURL URLWithString:url1] completionBlock:^(BOOL succeeded, UIImage *image) {
                 if (succeeded) {
                     // change the image in the cell
