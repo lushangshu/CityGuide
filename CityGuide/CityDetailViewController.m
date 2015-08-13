@@ -174,6 +174,9 @@
          else if([self.w_main isEqualToString:@"Mist"]||[self.w_main isEqualToString:@"Fog"]){
              [self.image_weather setImage:[UIImage imageNamed:@"mist.png"]];
          }
+         else if([self.w_main isEqualToString:@"Drizzle"]||[self.w_main isEqualToString:@"Rainy"]){
+             [self.image_weather setImage:[UIImage imageNamed:@"rain.png"]];
+         }
          [self.label_w setText:self.w_main];
          [self.label_temp setText:self.w_temperature];
          [self.tempRange setText:strTempRange];

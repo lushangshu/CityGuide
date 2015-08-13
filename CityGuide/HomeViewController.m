@@ -138,13 +138,13 @@
         }];
     }
     else{
-        for (int i=0; i<[[self.selectedCates allKeys] count]; i++) {
-            category = [[self.selectedCates allKeys] objectAtIndex:i];
+        for (int i=0; i<[[self.selectedCates allValues] count]; i++) {
+            category = [[self.selectedCates allValues] objectAtIndex:i];
             NSString *locat = [[lat stringByAppendingString:@","]stringByAppendingString:lon];
             NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
             [params setObject:@"M0AY5MCIO3I5HKZAU35MC1E4WQIBIVUFVPSL2MY0TSRP5JTI" forKey:@"client_id"];
             [params setObject:@"O3DM3WRVRABPMTMWMMGXC4WDEHUUIGGIRHP1Y0PTUEW2WTK3" forKey:@"client_secret"];
-            [params setObject:category forKey:@"query"];
+            [params setObject:category forKey:@"categoryId"];
             [params setObject:locat forKey:@"ll"];
             [params setObject:@"20140118" forKey:@"v"];
             [params setObject:@"10" forKey:@"limit"];
