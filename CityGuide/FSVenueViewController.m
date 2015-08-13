@@ -79,17 +79,17 @@
         {
             [self.VenueAddress setText:[vd.formattedAddress objectAtIndex:0]];
             [self.VenuePostCode setText:[vd.formattedAddress objectAtIndex:1]];
-            [self.VenueRating setText:@"Address Information Cann't load"];
+            [self.VenueRating setText:@" "];
         }
         else if([vd.formattedAddress count]==1){
             [self.VenueAddress setText:[vd.formattedAddress objectAtIndex:0]];
-            [self.VenuePostCode setText:@"Address Information Cann't load"];
-            [self.VenueRating setText:@"Address Information Cann't load"];
+            [self.VenuePostCode setText:@" "];
+            [self.VenueRating setText:@" "];
         }
         else {
-            [self.VenueAddress setText:@"Address Information Cann't load"];
-            [self.VenuePostCode setText:@"Address Information Cann't load"];
-            [self.VenueRating setText:@"Address Information Cann't load"];
+            [self.VenueAddress setText:@" "];
+            [self.VenuePostCode setText:@" "];
+            [self.VenueRating setText:@" "];
         }
         self.phoneNumber = vd.phone;
         //NSLog(@"venud detail is %@,%@,%@,%@",vd.rating,vd.formattedAddress,vd.phone,vd.canonicalUrl);

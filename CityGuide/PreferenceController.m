@@ -23,15 +23,15 @@
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Preference Setting"];
     
-    self.datas = [NSArray arrayWithObjects:@"Arts & Entertainment",
-                  @"College & University",
-                  @"Event",
+    self.datas = [NSArray arrayWithObjects:@"Entertainment",
+                  @"Education",
+                  @"News",
                   @"Food",
-                  @"Outdoors & Recreation",
-                  @"States & Municipalities",
-                  @"Professional & Other Places",
+                  @"Outdoors",
+                  @"States",
+                  @"Professional",
                   @"Residence",
-                  @"Travel & Transport",
+                  @"Transport",
                   nil];
     [self initCategory];
     [self.tableview setEditing:YES animated:YES];
@@ -44,15 +44,15 @@
 -(void)initCategory{
     self.categoryID = [NSMutableDictionary dictionary];
     self.selectedCateg = [NSMutableDictionary dictionary];
-    [self.categoryID setObject:@"4d4b7104d754a06370d81259" forKey:@"Arts & Entertainment"];
-    [self.categoryID setObject:@"4d4b7105d754a06372d81259" forKey:@"College & University"];
-    [self.categoryID setObject:@"4d4b7105d754a06373d81259" forKey:@"Event"];
+    [self.categoryID setObject:@"4d4b7104d754a06370d81259" forKey:@"Entertainment"];
+    [self.categoryID setObject:@"4d4b7105d754a06372d81259" forKey:@"Education"];
+    [self.categoryID setObject:@"4d4b7105d754a06373d81259" forKey:@"News"];
     [self.categoryID setObject:@"4d4b7105d754a06374d81259" forKey:@"Food"];
-    [self.categoryID setObject:@"4d4b7105d754a06377d81259" forKey:@"Outdoors & Recreation"];
-    [self.categoryID setObject:@"530e33ccbcbc57f1066bbfe4" forKey:@"States & Municipalities"];
-    [self.categoryID setObject:@"4d4b7105d754a06375d81259" forKey:@"Professional & Other Places"];
+    [self.categoryID setObject:@"4d4b7105d754a06377d81259" forKey:@"Outdoors"];
+    [self.categoryID setObject:@"530e33ccbcbc57f1066bbfe4" forKey:@"States"];
+    [self.categoryID setObject:@"4d4b7105d754a06375d81259" forKey:@"Professional"];
     [self.categoryID setObject:@"4e67e38e036454776db1fb3a" forKey:@"Residence"];
-    [self.categoryID setObject:@"4d4b7105d754a06379d81259" forKey:@"Travel & Transport"];
+    [self.categoryID setObject:@"4d4b7105d754a06379d81259" forKey:@"Transport"];
     //NSLog(@"%@",self.categoryID);
 }
 -(IBAction)reloadData
