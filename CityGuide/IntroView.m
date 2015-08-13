@@ -82,8 +82,11 @@
 -(void)createViewOne{
     
     UIView *view = [[UIView alloc] initWithFrame:self.frame];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.frame.size.height*.05, self.frame.size.width*.8, 60)];
+//    CGFloat originWidth = self.frame.size.width;
+//    CGFloat originHeight = self.frame.size.height;
+//    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(originWidth, 0, originWidth, originHeight)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.frame.size.height*.04, self.frame.size.width*.8, 60)];
     titleLabel.center = CGPointMake(self.center.x, self.frame.size.height*.1);
     titleLabel.text = [NSString stringWithFormat:@"Help Guide 1"];
     titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:40.0];
@@ -94,11 +97,11 @@
     
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.1, self.frame.size.width*.8, self.frame.size.width)];
     imageview.contentMode = UIViewContentModeScaleAspectFit;
-    imageview.image = [UIImage imageNamed:@"Intro_Screen_One"];
+    imageview.image = [UIImage imageNamed:@"CityAvenues.png"];
     [view addSubview:imageview];
     
-    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.7, self.frame.size.width*.8, 60)];
-    descriptionLabel.text = [NSString stringWithFormat:@"Shortly Description"];
+    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.5, self.frame.size.width*.8, 60)];
+    descriptionLabel.text = [NSString stringWithFormat:@"Nearby Location and Special Route Recommend"];
     descriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18.0];
     descriptionLabel.textColor = [UIColor whiteColor];
     descriptionLabel.textAlignment =  NSTextAlignmentCenter;
@@ -133,11 +136,11 @@
     
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.1, self.frame.size.width*.8, self.frame.size.width)];
     imageview.contentMode = UIViewContentModeScaleAspectFit;
-    imageview.image = [UIImage imageNamed:@"Intro_Screen_Two"];
+    imageview.image = [UIImage imageNamed:@"Route.png"];
     [view addSubview:imageview];
     
     UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.7, self.frame.size.width*.8, 60)];
-    descriptionLabel.text = [NSString stringWithFormat:@"Shortly Description"];
+    descriptionLabel.text = [NSString stringWithFormat:@"Generate Special Route For You"];
     descriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18.0];
     descriptionLabel.textColor = [UIColor whiteColor];
     descriptionLabel.textAlignment =  NSTextAlignmentCenter;
@@ -171,15 +174,12 @@
     
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.1, self.frame.size.width*.8, self.frame.size.width)];
     imageview.contentMode = UIViewContentModeScaleAspectFit;
-    imageview.image = [UIImage imageNamed:@"Intro_Screen_Two"];
-    [view addSubview:imageview];
-    imageview.contentMode = UIViewContentModeScaleAspectFit;
-    imageview.image = [UIImage imageNamed:@"Intro_Screen_Three"];
+    imageview.image = [UIImage imageNamed:@"cityDetail.png"];
     [view addSubview:imageview];
     
     
     UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.7, self.frame.size.width*.8, 60)];
-    descriptionLabel.text = [NSString stringWithFormat:@"Shortly Description"];
+    descriptionLabel.text = [NSString stringWithFormat:@"What's Famous in City"];
     descriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18.0];
     descriptionLabel.textColor = [UIColor whiteColor];
     descriptionLabel.textAlignment =  NSTextAlignmentCenter;
@@ -214,14 +214,11 @@
     
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.1, self.frame.size.width*.8, self.frame.size.width)];
     imageview.contentMode = UIViewContentModeScaleAspectFit;
-    imageview.image = [UIImage imageNamed:@"Intro_Screen_Two"];
-    [view addSubview:imageview];
-    imageview.contentMode = UIViewContentModeScaleAspectFit;
-    imageview.image = [UIImage imageNamed:@"Intro_Screen_Four"];
+    imageview.image = [UIImage imageNamed:@"Activities"];
     [view addSubview:imageview];
     
     UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.7, self.frame.size.width*.8, 60)];
-    descriptionLabel.text = [NSString stringWithFormat:@"Shortly Description"];
+    descriptionLabel.text = [NSString stringWithFormat:@"What People Show In City"];
     descriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18.0];
     descriptionLabel.textColor = [UIColor whiteColor];
     descriptionLabel.textAlignment =  NSTextAlignmentCenter;

@@ -171,7 +171,7 @@
          else if([self.w_main isEqualToString:@"Cloud"]){
              [self.image_weather setImage:[UIImage imageNamed:@"clouds.png"]];
          }
-         else if([self.w_main isEqualToString:@"Mist"]){
+         else if([self.w_main isEqualToString:@"Mist"]||[self.w_main isEqualToString:@"Fog"]){
              [self.image_weather setImage:[UIImage imageNamed:@"mist.png"]];
          }
          [self.label_w setText:self.w_main];
