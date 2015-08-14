@@ -127,7 +127,11 @@
             NSDictionary *dic = responseObject;
             NSArray *venues = [dic valueForKeyPath:@"response.venues"];
             FSConverter *converter = [[FSConverter alloc]init];
-            self.nearbyVenues = [converter convertToObjects:venues];
+            NSArray *testArray = [converter convertToObjects:venues];
+            //self.nearbyVenues = [converter convertToObjects:venues];
+            
+            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"location.disTance" ascending:YES];
+            self.nearbyVenues = [testArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
             
             [self.tableV reloadData];
             [self MapProccessAnnotations];
@@ -147,7 +151,7 @@
             [params setObject:category forKey:@"categoryId"];
             [params setObject:locat forKey:@"ll"];
             [params setObject:@"20140118" forKey:@"v"];
-            [params setObject:@"10" forKey:@"limit"];
+            [params setObject:@"30" forKey:@"limit"];
             [manager GET:@"https://api.foursquare.com/v2/venues/search" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 //NSLog(@"JSON: %@", responseObject);
                 NSDictionary *dic = responseObject;
@@ -155,11 +159,12 @@
                 FSConverter *converter = [[FSConverter alloc]init];
                 self.nearbyVenues = [converter convertToObjects:venues];
                 [self.totalVenueList addObjectsFromArray:self.nearbyVenues];
-//                self.nearbyVenues = [self.totalVenueList copy];
+
                 self.nearbyVenues =[[NSSet setWithArray:self.totalVenueList] allObjects];
-                for (int i=0; i<[self.nearbyVenues count]; i++) {
-                    NSLog(@"venues are %@",[[self.nearbyVenues objectAtIndex:i]name]);
-                }
+                NSArray *array = self.nearbyVenues;
+                NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"location.disTance" ascending:YES];
+                self.nearbyVenues = [array sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
+                
                 [self.tableV reloadData];
                 [self MapProccessAnnotations];
                 [self.locationManager stopUpdatingLocation];
@@ -301,6 +306,7 @@
         pin.rightCalloutAccessoryView = button;
         
     }
+    //[pin addObserver:self forKeyPath:@selector(;) options:NSKeyValueObservingOptionNew context:@"It was selected"];
     return pin;
 
 }
@@ -333,6 +339,8 @@
     }
     return 0;
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"cell";
