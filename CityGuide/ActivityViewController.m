@@ -47,6 +47,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"People's Activities"];
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
     [self locationUpdate];

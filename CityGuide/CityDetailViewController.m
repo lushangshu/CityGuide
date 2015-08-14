@@ -43,6 +43,7 @@
     //location operation
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
+    [self.navigationItem setTitle:@"City"];
     [self locationUpdate];
     [self setCurrentCity];
 }

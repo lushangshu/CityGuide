@@ -24,6 +24,7 @@
         self.introView.backgroundColor = [UIColor greenColor];
         [self.view addSubview:self.introView];
     }
+    [self.navigationItem setTitle:@"Help"];
 }
 
 - (void)didReceiveMemoryWarning {

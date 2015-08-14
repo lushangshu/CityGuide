@@ -31,6 +31,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Location Detail"];
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     [annotation setCoordinate:venue.location.coordinate];
     [annotation setTitle:venue.name];

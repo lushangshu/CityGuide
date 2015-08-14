@@ -35,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Recommend Route"];
     self.responseRoute = [[NSMutableArray alloc]init];
     totalLength = 0;
      self.segment.hidden = NO;
@@ -64,7 +65,7 @@
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserProfileSuccess:) name:@"Notification_GetUserProfileSuccess" object:nil];
     
     [locationManager startUpdatingLocation];
-    
+    [self GenerateRoute];
     //NSLog(@"%@",[[self.venueArray objectAtIndex:0]location]);
 
 }

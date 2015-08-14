@@ -24,6 +24,7 @@
 {
     [super viewDidLoad];
     self.totalVenueList = [[NSMutableArray alloc]init];
+    [self.navigationItem setTitle:@"Nearby Locations"];
     //[self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:43 green:164 blue:255 alpha:1]];
     [self.mySearch setText:@"Sheffield"];
     [self.mySearch setTintColor:[UIColor blackColor]];
