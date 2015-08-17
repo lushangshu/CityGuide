@@ -43,13 +43,11 @@
 		CC3547D01B44F47E00A9812B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3547CE1B44F47E00A9812B /* Main.storyboard */; };
 		CC3547D31B44F60A00A9812B /* IKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547D21B44F60A00A9812B /* IKCollectionViewController.m */; };
 		CC3547D61B45409200A9812B /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3547D51B45409200A9812B /* PreferenceController.m */; };
-		CC3547D81B4545FF00A9812B /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = CC3547D71B4545FF00A9812B /* map.png */; };
 		CC3547DE1B4563EA00A9812B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3547DA1B4563EA00A9812B /* Fabric.framework */; };
 		CC3547DF1B4563EA00A9812B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3547DB1B4563EA00A9812B /* TwitterKit.framework */; };
 		CC3547E01B4563EA00A9812B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC3547DC1B4563EA00A9812B /* TwitterKitResources.bundle */; };
 		CC3547E11B4563EA00A9812B /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3547DD1B4563EA00A9812B /* TwitterCore.framework */; };
 		CC66AEAC1B46B5B70002C846 /* NearbyActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */; };
-		CC66AEAE1B46B7940002C846 /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC66AEAD1B46B7940002C846 /* city.png */; };
 		CC6CD24F1B76919B009E8A09 /* TWConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD24E1B76919B009E8A09 /* TWConverter.m */; };
 		CC6CD2521B769FF0009E8A09 /* TweetClas.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2511B769FF0009E8A09 /* TweetClas.m */; };
 		CC6CD2551B76A0F5009E8A09 /* TweetsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6CD2541B76A0F5009E8A09 /* TweetsCell.m */; };
@@ -113,9 +111,6 @@
 		CCA70F501B56C48E0071FD17 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F4F1B56C48E0071FD17 /* LeftMenuViewController.m */; };
 		CCA70F531B56C4F00071FD17 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F521B56C4F00071FD17 /* RightMenuViewController.m */; };
 		CCA70F561B5724D80071FD17 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F551B5724D80071FD17 /* HomeViewController.m */; };
-		CCA70F5B1B5727380071FD17 /* animation.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F571B5727380071FD17 /* animation.png */; };
-		CCA70F5D1B5727380071FD17 /* leftMenu1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F591B5727380071FD17 /* leftMenu1.jpg */; };
-		CCA70F5E1B5727380071FD17 /* rightMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCA70F5A1B5727380071FD17 /* rightMenu.jpg */; };
 		CCA70F631B5736FA0071FD17 /* CityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */; };
 		CCA70F661B57377F0071FD17 /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F651B57377F0071FD17 /* ConfigurationViewController.m */; };
 		CCA70F691B5749130071FD17 /* IKMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA70F681B5749130071FD17 /* IKMediaViewController.m */; };
@@ -138,9 +133,6 @@
 		CCF3CA171B55CC69007EF470 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA131B55CC69007EF470 /* JPSThumbnailAnnotation.m */; };
 		CCF3CA181B55CC69007EF470 /* JPSThumbnailAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA151B55CC69007EF470 /* JPSThumbnailAnnotationView.m */; };
 		CCF3CA191B55CC69007EF470 /* JPSThumnail.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF3CA161B55CC69007EF470 /* JPSThumnail.m */; };
-		CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1A1B55CCC5007EF470 /* apple.jpg */; };
-		CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1B1B55CCC5007EF470 /* empire.jpg */; };
-		CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */; };
 		CCFFEB2B1B5F0B2A00BF6364 /* CityDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */; };
 /* End PBXBuildFile section */
 
@@ -220,14 +212,12 @@
 		CC3547D21B44F60A00A9812B /* IKCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKCollectionViewController.m; sourceTree = "<group>"; };
 		CC3547D41B45409200A9812B /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
 		CC3547D51B45409200A9812B /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
-		CC3547D71B4545FF00A9812B /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		CC3547DA1B4563EA00A9812B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = AFNetworking/Fabric.framework; sourceTree = "<group>"; };
 		CC3547DB1B4563EA00A9812B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = AFNetworking/TwitterKit.framework; sourceTree = "<group>"; };
 		CC3547DC1B4563EA00A9812B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = AFNetworking/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		CC3547DD1B4563EA00A9812B /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = AFNetworking/TwitterCore.framework; sourceTree = "<group>"; };
 		CC66AEAA1B46B5B70002C846 /* NearbyActViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyActViewController.h; sourceTree = "<group>"; };
 		CC66AEAB1B46B5B70002C846 /* NearbyActViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyActViewController.m; sourceTree = "<group>"; };
-		CC66AEAD1B46B7940002C846 /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
 		CC6CD24D1B76919B009E8A09 /* TWConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWConverter.h; sourceTree = "<group>"; };
 		CC6CD24E1B76919B009E8A09 /* TWConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWConverter.m; sourceTree = "<group>"; };
 		CC6CD2501B769FF0009E8A09 /* TweetClas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetClas.h; sourceTree = "<group>"; };
@@ -336,9 +326,6 @@
 		CCA70F521B56C4F00071FD17 /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
 		CCA70F541B5724D80071FD17 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		CCA70F551B5724D80071FD17 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		CCA70F571B5727380071FD17 /* animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation.png; sourceTree = "<group>"; };
-		CCA70F591B5727380071FD17 /* leftMenu1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu1.jpg; sourceTree = "<group>"; };
-		CCA70F5A1B5727380071FD17 /* rightMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightMenu.jpg; sourceTree = "<group>"; };
 		CCA70F611B5736FA0071FD17 /* CityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailViewController.h; sourceTree = "<group>"; };
 		CCA70F621B5736FA0071FD17 /* CityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailViewController.m; sourceTree = "<group>"; };
 		CCA70F641B57377F0071FD17 /* ConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationViewController.h; sourceTree = "<group>"; };
@@ -377,9 +364,6 @@
 		CCF3CA141B55CC69007EF470 /* JPSThumbnailAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSThumbnailAnnotationView.h; sourceTree = "<group>"; };
 		CCF3CA151B55CC69007EF470 /* JPSThumbnailAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSThumbnailAnnotationView.m; sourceTree = "<group>"; };
 		CCF3CA161B55CC69007EF470 /* JPSThumnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSThumnail.m; sourceTree = "<group>"; };
-		CCF3CA1A1B55CCC5007EF470 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
-		CCF3CA1B1B55CCC5007EF470 /* empire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empire.jpg; sourceTree = "<group>"; };
-		CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ottawa.jpg; sourceTree = "<group>"; };
 		CCFFEB291B5F0B2A00BF6364 /* CityDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailCell.h; sourceTree = "<group>"; };
 		CCFFEB2A1B5F0B2A00BF6364 /* CityDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -496,15 +480,7 @@
 				CCBFCA4C1B600C690057FAF5 /* bankbuilding */,
 				CC7A89F81B57D37700505328 /* leftMenu.jpg */,
 				CC89C62B1B7AB6A9006D043A /* menu-button.png */,
-				CCA70F571B5727380071FD17 /* animation.png */,
 				CC89C6271B7AB587006D043A /* gear.png */,
-				CCA70F591B5727380071FD17 /* leftMenu1.jpg */,
-				CCA70F5A1B5727380071FD17 /* rightMenu.jpg */,
-				CCF3CA1A1B55CCC5007EF470 /* apple.jpg */,
-				CCF3CA1B1B55CCC5007EF470 /* empire.jpg */,
-				CCF3CA1C1B55CCC5007EF470 /* ottawa.jpg */,
-				CC66AEAD1B46B7940002C846 /* city.png */,
-				CC3547D71B4545FF00A9812B /* map.png */,
 				CC35474C1B41D88B00A9812B /* Info.plist */,
 				CC35474D1B41D88B00A9812B /* main.m */,
 			);
@@ -945,30 +921,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC89C64B1B7C9AA9006D043A /* Route.png in Resources */,
-				CCA70F5E1B5727380071FD17 /* rightMenu.jpg in Resources */,
-				CC3547D81B4545FF00A9812B /* map.png in Resources */,
 				CC3547D01B44F47E00A9812B /* Main.storyboard in Resources */,
 				CC6CD25C1B76B3D6009E8A09 /* instag.png in Resources */,
 				CC6CD25A1B76B3D6009E8A09 /* facebook.png in Resources */,
-				CCF3CA1F1B55CCC5007EF470 /* ottawa.jpg in Resources */,
 				CCBFCA491B600C610057FAF5 /* 3.png in Resources */,
 				CC89C6201B7AAADC006D043A /* clouds.png in Resources */,
 				CC89C63F1B7C076E006D043A /* mist.png in Resources */,
-				CCA70F5D1B5727380071FD17 /* leftMenu1.jpg in Resources */,
 				CC89C6221B7AAADC006D043A /* rain.png in Resources */,
 				CC6CD25B1B76B3D6009E8A09 /* foursquare.png in Resources */,
 				CC89C63B1B7BF855006D043A /* pin1.png in Resources */,
 				CC89C64A1B7C9AA9006D043A /* cityDetail.png in Resources */,
 				CC89C6211B7AAADC006D043A /* cloudy.png in Resources */,
-				CC66AEAE1B46B7940002C846 /* city.png in Resources */,
 				CCBFCA481B600C610057FAF5 /* 2.png in Resources */,
 				CC6CD25D1B76B3D6009E8A09 /* twitter.png in Resources */,
 				CC89C6281B7AB587006D043A /* gear.png in Resources */,
 				CC7A89F91B57D37700505328 /* leftMenu.jpg in Resources */,
 				CC89C6491B7C9AA9006D043A /* CityAvenues.png in Resources */,
 				CC89C6231B7AAADC006D043A /* sunny.png in Resources */,
-				CCF3CA1E1B55CCC5007EF470 /* empire.jpg in Resources */,
-				CCF3CA1D1B55CCC5007EF470 /* apple.jpg in Resources */,
 				CC35475F1B41D88B00A9812B /* LaunchScreen.xib in Resources */,
 				CC35475C1B41D88B00A9812B /* Images.xcassets in Resources */,
 				CC89C6481B7C9AA9006D043A /* Activities.png in Resources */,
@@ -976,7 +945,6 @@
 				CC89C6391B7BF698006D043A /* pin.png in Resources */,
 				CCBFCA471B600C610057FAF5 /* 0.png in Resources */,
 				CCBFCA4A1B600C610057FAF5 /* 4.png in Resources */,
-				CCA70F5B1B5727380071FD17 /* animation.png in Resources */,
 				CC89C63D1B7BFC12006D043A /* favorateVenues.plist in Resources */,
 				CC89C62C1B7AB6A9006D043A /* menu-button.png in Resources */,
 				CC3547E01B4563EA00A9812B /* TwitterKitResources.bundle in Resources */,
